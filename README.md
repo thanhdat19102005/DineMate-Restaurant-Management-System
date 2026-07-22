@@ -87,7 +87,7 @@ Develop a smart restaurant management system that enables customers to browse me
 ##  Dashboard
 
 <p align="center">
-  <img src="./docs/images/dashboard.png.png" width="100%">
+  <img src="./docs/images/dashboard.png" width="100%">
 </p>
 
 
