@@ -1,0 +1,1380 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\entities\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\entities\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.domain\\rules\\categoryrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|solutionrelative:dinemate.domain\\rules\\categoryrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.server\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|solutionrelative:dinemate.server\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\commands\\deletecategoryhistorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\commands\\deletecategoryhistorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\commands\\deletecategoryhistorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\commands\\deletecategoryhistorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\deletecategoryhistoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\deletecategoryhistoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\deletedcategoryhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\deletedcategoryhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\repositories\\restauranttablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\repositories\\restauranttablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.domain\\rules\\deleterestauranttablerules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|solutionrelative:dinemate.domain\\rules\\deleterestauranttablerules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\commands\\deletecategorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\commands\\deletecategorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\commands\\deletecategorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\commands\\deletecategorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\deletecategoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\deletecategoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\deletedcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\deletedcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\commands\\updatecategorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\commands\\updatecategorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\commands\\updatecategorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\commands\\updatecategorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\updatedcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\updatedcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\updatecategoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\updatecategoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.server\\controllers\\restauranttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|solutionrelative:dinemate.server\\controllers\\restauranttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.domain\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|solutionrelative:dinemate.domain\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\commands\\createcategorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\commands\\createcategorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\commands\\createcategorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\commands\\createcategorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\createdcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\createdcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\createcategoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\createcategoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\repositories\\createrestauranttablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\repositories\\createrestauranttablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\entities\\categoryhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\entities\\categoryhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\entities\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\entities\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\queries\\getcategorymanagementqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\queries\\getcategorymanagementqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\categories\\queries\\getcategorymanagementquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\categories\\queries\\getcategorymanagementquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.domain\\rules\\restauranttablerules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|solutionrelative:dinemate.domain\\rules\\restauranttablerules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\identity\\appusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\identity\\appusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|solutionrelative:dinemate.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\categorymanagementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\categorymanagementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\categoryhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\categoryhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\pagedcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\pagedcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\categorystatisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\categorystatisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\categorydetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\categorydetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\categories\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\categories\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\entities\\restauranttablehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\entities\\restauranttablehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\entities\\restauranttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\entities\\restauranttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.domain\\rules\\createrestauranttablevalidationrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|solutionrelative:dinemate.domain\\rules\\createrestauranttablevalidationrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\interfaces\\irestauranttablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\interfaces\\irestauranttablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\createrestauranttableresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\createrestauranttableresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\createdrestauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\createdrestauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\commands\\createrestauranttablecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\commands\\createrestauranttablecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\commands\\createrestauranttablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\commands\\createrestauranttablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Migrations\\20260716173253_AddCategoryHistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DineMate.Infrastructure\\Migrations\\20260716173253_AddCategoryHistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Migrations\\20260716165950_AddCategoryHistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DineMate.Infrastructure\\Migrations\\20260716165950_AddCategoryHistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|solutionrelative:dinemate.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\commands\\deleterestauranttablehistorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\commands\\deleterestauranttablehistorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.domain\\rules\\deleterestauranttablehistoryrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|solutionrelative:dinemate.domain\\rules\\deleterestauranttablehistoryrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\commands\\deleterestauranttablehistorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\commands\\deleterestauranttablehistorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\deleterestauranttablehistoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\deleterestauranttablehistoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\deletedrestauranttablehistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\deletedrestauranttablehistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\entities\\restauranttableqr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\entities\\restauranttableqr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176B4A0F-8AFC-5BEB-A3C6-B34862189DFB}|DineMate.Server\\DineMate.Server.csproj|solutionrelative:dinemate.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\persistence\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\persistence\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\commands\\updaterestauranttablecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\commands\\updaterestauranttablecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\commands\\updaterestauranttablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\commands\\updaterestauranttablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\updaterestauranttableresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\updaterestauranttableresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\updaterestauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\updaterestauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.domain\\rules\\updaterestauranttablevalidationrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F94E51DE-8E8D-8FD8-8BD5-DDF23E5FE570}|DineMate.Domain\\DineMate.Domain.csproj|solutionrelative:dinemate.domain\\rules\\updaterestauranttablevalidationrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\restauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\restauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\deleterestauranttableresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\deleterestauranttableresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\commands\\deleterestauranttablecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\commands\\deleterestauranttablecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\commands\\deleterestauranttablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\commands\\deleterestauranttablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\deleterestauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\deleterestauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\interfaces\\irestauranttableqrurlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\interfaces\\irestauranttableqrurlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\services\\restauranttableqrurlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\services\\restauranttableqrurlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\interfaces\\icreaterestauranttablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\interfaces\\icreaterestauranttablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.infrastructure\\repositories\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E730233-D4F6-5572-6D24-FCC88A0FD630}|DineMate.Infrastructure\\DineMate.Infrastructure.csproj|solutionrelative:dinemate.infrastructure\\repositories\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\queries\\getrestauranttablesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\queries\\getrestauranttablesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\restauranttables\\queries\\getrestauranttablesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\restauranttables\\queries\\getrestauranttablesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\auth\\commands\\registercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\auth\\commands\\registercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\features\\auth\\commands\\registercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\features\\auth\\commands\\registercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\restauranttablestatisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\restauranttablestatisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\restauranttableresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\restauranttableresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\restauranttablemanagementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\restauranttablemanagementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\restauranttablehistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\restauranttablehistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\restauranttabledetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\restauranttabledetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|g:\\d\u1EF1 \u00E1n qu\u1EA3n l\u00FD nh\u00E0 h\u00E0ng\\dinemate.server\\dinemate.application\\dtos\\restauranttables\\pagedrestauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740A82E8-75B5-463E-8C70-46A947C7A07D}|DineMate.Application\\DineMate.Application.csproj|solutionrelative:dinemate.application\\dtos\\restauranttables\\pagedrestauranttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "DineMate.Server\\Controllers\\CategoryController.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "DineMate.Server\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAHMBAAAAAAAAAAAAANMBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:20:24.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Interfaces\\ICategoryRepository.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\ICategoryRepository.cs",
+              "RelativeToolTip": "DineMate.Application\\Interfaces\\ICategoryRepository.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAowHMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:18:01.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryRules.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\CategoryRules.cs",
+              "RelativeDocumentMoniker": "DineMate.Domain\\Rules\\CategoryRules.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\CategoryRules.cs",
+              "RelativeToolTip": "DineMate.Domain\\Rules\\CategoryRules.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAQwCgBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:18:37.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DeleteCategoryHistoryCommand.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryHistoryCommand.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryHistoryCommand.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryHistoryCommand.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryHistoryCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T09:43:25.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductModel.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\ProductModel.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Entities\\ProductModel.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\ProductModel.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Entities\\ProductModel.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAxwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T17:09:39.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAABIHAAAAAAAAAAAQwDQHAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:19:11.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DeleteCategoryHistoryResponseDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\DeleteCategoryHistoryResponseDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\DeleteCategoryHistoryResponseDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\DeleteCategoryHistoryResponseDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\DeleteCategoryHistoryResponseDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T09:42:52.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DeletedCategoryHistoryDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\DeletedCategoryHistoryDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\DeletedCategoryHistoryDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\DeletedCategoryHistoryDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\DeletedCategoryHistoryDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T09:42:26.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DeleteRestaurantTableRules.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\DeleteRestaurantTableRules.cs",
+              "RelativeDocumentMoniker": "DineMate.Domain\\Rules\\DeleteRestaurantTableRules.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\DeleteRestaurantTableRules.cs",
+              "RelativeToolTip": "DineMate.Domain\\Rules\\DeleteRestaurantTableRules.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:08:11.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DeleteCategoryHistoryCommandHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryHistoryCommandHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryHistoryCommandHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryHistoryCommandHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryHistoryCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T09:44:00.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RestaurantTableRepository.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Repositories\\RestaurantTableRepository.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Repositories\\RestaurantTableRepository.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Repositories\\RestaurantTableRepository.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Repositories\\RestaurantTableRepository.cs",
+              "ViewState": "AgIAAP8EAAAAAAAAAAAAAHAFAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T06:50:53.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DeleteCategoryCommandHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryCommandHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryCommandHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryCommandHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T08:51:30.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DeleteCategoryCommand.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryCommand.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryCommand.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryCommand.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Commands\\DeleteCategoryCommand.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T08:50:54.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DeleteCategoryResponseDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\DeleteCategoryResponseDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\DeleteCategoryResponseDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\DeleteCategoryResponseDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\DeleteCategoryResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T08:50:17.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DeletedCategoryDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\DeletedCategoryDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\DeletedCategoryDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\DeletedCategoryDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\DeletedCategoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T08:49:51.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UpdateCategoryCommandHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\UpdateCategoryCommandHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Commands\\UpdateCategoryCommandHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\UpdateCategoryCommandHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Commands\\UpdateCategoryCommandHandler.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAAwEcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T07:37:54.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UpdateCategoryCommand.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\UpdateCategoryCommand.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Commands\\UpdateCategoryCommand.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\UpdateCategoryCommand.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Commands\\UpdateCategoryCommand.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T07:37:25.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UpdatedCategoryDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\UpdatedCategoryDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\UpdatedCategoryDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\UpdatedCategoryDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\UpdatedCategoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T07:36:35.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UpdateCategoryResponseDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\UpdateCategoryResponseDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\UpdateCategoryResponseDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\UpdateCategoryResponseDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\UpdateCategoryResponseDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T07:36:09.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CreateCategoryCommandHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\CreateCategoryCommandHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Commands\\CreateCategoryCommandHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\CreateCategoryCommandHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Commands\\CreateCategoryCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T03:50:49.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RestaurantTablesController.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Controllers\\RestaurantTablesController.cs",
+              "RelativeDocumentMoniker": "DineMate.Server\\Controllers\\RestaurantTablesController.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Controllers\\RestaurantTablesController.cs",
+              "RelativeToolTip": "DineMate.Server\\Controllers\\RestaurantTablesController.cs",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAAAIcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T06:48:48.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Result.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Common\\Result.cs",
+              "RelativeDocumentMoniker": "DineMate.Domain\\Common\\Result.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Common\\Result.cs",
+              "RelativeToolTip": "DineMate.Domain\\Common\\Result.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:47:39.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CreateCategoryCommand.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\CreateCategoryCommand.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Commands\\CreateCategoryCommand.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Commands\\CreateCategoryCommand.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Commands\\CreateCategoryCommand.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T03:50:03.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CreatedCategoryDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CreatedCategoryDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\CreatedCategoryDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CreatedCategoryDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\CreatedCategoryDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T03:49:05.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CreateCategoryResponseDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CreateCategoryResponseDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\CreateCategoryResponseDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CreateCategoryResponseDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\CreateCategoryResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T03:47:48.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CreateRestaurantTableRepository.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Repositories\\CreateRestaurantTableRepository.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Repositories\\CreateRestaurantTableRepository.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Repositories\\CreateRestaurantTableRepository.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Repositories\\CreateRestaurantTableRepository.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAAAB4BAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T03:33:24.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CategoryHistory.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\CategoryHistory.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Entities\\CategoryHistory.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\CategoryHistory.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Entities\\CategoryHistory.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwHAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T16:43:18.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Persistence\\AppDbContext.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Persistence\\AppDbContext.cs",
+              "ViewState": "AgIAAN4BAAAAAAAAAAAQwBsCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:48:03.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CategoryModel.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\CategoryModel.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Entities\\CategoryModel.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\CategoryModel.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Entities\\CategoryModel.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwFsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T14:53:23.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "GetCategoryManagementQueryHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Queries\\GetCategoryManagementQueryHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Queries\\GetCategoryManagementQueryHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Queries\\GetCategoryManagementQueryHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Queries\\GetCategoryManagementQueryHandler.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAQwGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:17:30.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "GetCategoryManagementQuery.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Queries\\GetCategoryManagementQuery.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Categories\\Queries\\GetCategoryManagementQuery.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Categories\\Queries\\GetCategoryManagementQuery.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Categories\\Queries\\GetCategoryManagementQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:17:10.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Program.cs",
+              "RelativeDocumentMoniker": "DineMate.Server\\Program.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Program.cs",
+              "RelativeToolTip": "DineMate.Server\\Program.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAAAA4BAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:50:09.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "RestaurantTableRules.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\RestaurantTableRules.cs",
+              "RelativeDocumentMoniker": "DineMate.Domain\\Rules\\RestaurantTableRules.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\RestaurantTableRules.cs",
+              "RelativeToolTip": "DineMate.Domain\\Rules\\RestaurantTableRules.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAgwDQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:47:42.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CategoryManagementDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryManagementDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\CategoryManagementDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryManagementDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\CategoryManagementDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:16:24.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AppUserModel.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Identity\\AppUserModel.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Identity\\AppUserModel.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Identity\\AppUserModel.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Identity\\AppUserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T16:17:54.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CategoryHistoryDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryHistoryDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\CategoryHistoryDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryHistoryDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\CategoryHistoryDto.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA5wCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:15:59.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "PagedCategoryDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\PagedCategoryDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\PagedCategoryDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\PagedCategoryDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\PagedCategoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:15:28.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CategoryStatisticsDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryStatisticsDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\CategoryStatisticsDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryStatisticsDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\CategoryStatisticsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:15:06.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "CategoryDetailDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryDetailDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\CategoryDetailDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryDetailDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\CategoryDetailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:14:38.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CategoryDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\Categories\\CategoryDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\Categories\\CategoryDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\Categories\\CategoryDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T02:14:08.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "RestaurantTable.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\RestaurantTable.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Entities\\RestaurantTable.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\RestaurantTable.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Entities\\RestaurantTable.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAYwHYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T14:52:10.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "RestaurantTableHistory.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\RestaurantTableHistory.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Entities\\RestaurantTableHistory.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\RestaurantTableHistory.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Entities\\RestaurantTableHistory.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwIUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T16:24:30.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "CreateRestaurantTableValidationRules.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\CreateRestaurantTableValidationRules.cs",
+              "RelativeDocumentMoniker": "DineMate.Domain\\Rules\\CreateRestaurantTableValidationRules.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\CreateRestaurantTableValidationRules.cs",
+              "RelativeToolTip": "DineMate.Domain\\Rules\\CreateRestaurantTableValidationRules.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAAANkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:37:56.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "IRestaurantTableRepository.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\IRestaurantTableRepository.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Interfaces\\IRestaurantTableRepository.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\IRestaurantTableRepository.cs",
+              "RelativeToolTip": "DineMate.Application\\Interfaces\\IRestaurantTableRepository.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAiwFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:46:26.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "CreateRestaurantTableResponseDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\CreateRestaurantTableResponseDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\CreateRestaurantTableResponseDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\CreateRestaurantTableResponseDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\CreateRestaurantTableResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:39:44.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "CreatedRestaurantTableDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\CreatedRestaurantTableDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\CreatedRestaurantTableDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\CreatedRestaurantTableDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\CreatedRestaurantTableDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:39:09.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "CreateRestaurantTableCommandHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\CreateRestaurantTableCommandHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Commands\\CreateRestaurantTableCommandHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\CreateRestaurantTableCommandHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Commands\\CreateRestaurantTableCommandHandler.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAQwKYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:41:45.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "CreateRestaurantTableCommand.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\CreateRestaurantTableCommand.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Commands\\CreateRestaurantTableCommand.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\CreateRestaurantTableCommand.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Commands\\CreateRestaurantTableCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:00:59.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\Reservation.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Entities\\Reservation.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\Reservation.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Entities\\Reservation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T17:14:09.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "20260716173253_AddCategoryHistory.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Migrations\\20260716173253_AddCategoryHistory.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Migrations\\20260716173253_AddCategoryHistory.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Migrations\\20260716173253_AddCategoryHistory.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Migrations\\20260716173253_AddCategoryHistory.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T17:32:53.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "20260716165950_AddCategoryHistory.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Migrations\\20260716165950_AddCategoryHistory.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Migrations\\20260716165950_AddCategoryHistory.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Migrations\\20260716165950_AddCategoryHistory.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Migrations\\20260716165950_AddCategoryHistory.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T16:59:50.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "DineMate.Server\\Controllers\\AuthController.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "DineMate.Server\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACIBAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T06:48:47.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "DeleteRestaurantTableHistoryCommandHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableHistoryCommandHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableHistoryCommandHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableHistoryCommandHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableHistoryCommandHandler.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwFIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T10:23:04.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "DeleteRestaurantTableHistoryRules.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\DeleteRestaurantTableHistoryRules.cs",
+              "RelativeDocumentMoniker": "DineMate.Domain\\Rules\\DeleteRestaurantTableHistoryRules.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\DeleteRestaurantTableHistoryRules.cs",
+              "RelativeToolTip": "DineMate.Domain\\Rules\\DeleteRestaurantTableHistoryRules.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T10:22:36.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "DeleteRestaurantTableHistoryCommand.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableHistoryCommand.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableHistoryCommand.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableHistoryCommand.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableHistoryCommand.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T10:22:03.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "DeleteRestaurantTableHistoryResponseDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableHistoryResponseDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableHistoryResponseDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableHistoryResponseDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableHistoryResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T10:21:36.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "DeletedRestaurantTableHistoryDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\DeletedRestaurantTableHistoryDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\DeletedRestaurantTableHistoryDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\DeletedRestaurantTableHistoryDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\DeletedRestaurantTableHistoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T10:21:09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "RestaurantTableQr.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\RestaurantTableQr.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Entities\\RestaurantTableQr.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Entities\\RestaurantTableQr.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Entities\\RestaurantTableQr.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T14:58:39.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "DineMate.Server\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "DineMate.Server\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T10:07:19.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Persistence\\SeedData.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Persistence\\SeedData.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Persistence\\SeedData.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Persistence\\SeedData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T16:04:09.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "UpdateRestaurantTableCommand.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\UpdateRestaurantTableCommand.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Commands\\UpdateRestaurantTableCommand.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\UpdateRestaurantTableCommand.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Commands\\UpdateRestaurantTableCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T16:42:11.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "UpdateRestaurantTableResponseDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\UpdateRestaurantTableResponseDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\UpdateRestaurantTableResponseDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\UpdateRestaurantTableResponseDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\UpdateRestaurantTableResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T16:41:43.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "UpdateRestaurantTableDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\UpdateRestaurantTableDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\UpdateRestaurantTableDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\UpdateRestaurantTableDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\UpdateRestaurantTableDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T16:41:23.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "UpdateRestaurantTableValidationRules.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\UpdateRestaurantTableValidationRules.cs",
+              "RelativeDocumentMoniker": "DineMate.Domain\\Rules\\UpdateRestaurantTableValidationRules.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Domain\\Rules\\UpdateRestaurantTableValidationRules.cs",
+              "RelativeToolTip": "DineMate.Domain\\Rules\\UpdateRestaurantTableValidationRules.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwNgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T16:40:47.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "UpdateRestaurantTableCommandHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\UpdateRestaurantTableCommandHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Commands\\UpdateRestaurantTableCommandHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\UpdateRestaurantTableCommandHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Commands\\UpdateRestaurantTableCommandHandler.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAQwIwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T16:42:43.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "RestaurantTableDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:01:21.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "DeleteRestaurantTableResponseDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableResponseDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableResponseDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableResponseDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:09:14.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "DeleteRestaurantTableCommandHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableCommandHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableCommandHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableCommandHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableCommandHandler.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwF4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:28:31.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "DeleteRestaurantTableCommand.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableCommand.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableCommand.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableCommand.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Commands\\DeleteRestaurantTableCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:27:54.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "DeleteRestaurantTableDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\DeleteRestaurantTableDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:08:49.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "IRestaurantTableQrUrlService.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\IRestaurantTableQrUrlService.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Interfaces\\IRestaurantTableQrUrlService.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\IRestaurantTableQrUrlService.cs",
+              "RelativeToolTip": "DineMate.Application\\Interfaces\\IRestaurantTableQrUrlService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:41:22.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Interfaces\\IAuthService.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "DineMate.Application\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:13:13.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "RestaurantTableQrUrlService.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Services\\RestaurantTableQrUrlService.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Services\\RestaurantTableQrUrlService.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Services\\RestaurantTableQrUrlService.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Services\\RestaurantTableQrUrlService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wBwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:45:36.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "ICreateRestaurantTableRepository.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\ICreateRestaurantTableRepository.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Interfaces\\ICreateRestaurantTableRepository.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Interfaces\\ICreateRestaurantTableRepository.cs",
+              "RelativeToolTip": "DineMate.Application\\Interfaces\\ICreateRestaurantTableRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T15:40:52.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "AuthRepository.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Repositories\\AuthRepository.cs",
+              "RelativeDocumentMoniker": "DineMate.Infrastructure\\Repositories\\AuthRepository.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Infrastructure\\Repositories\\AuthRepository.cs",
+              "RelativeToolTip": "DineMate.Infrastructure\\Repositories\\AuthRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:57:32.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "RegisterCommandHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Auth\\Commands\\RegisterCommandHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Auth\\Commands\\RegisterCommandHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Auth\\Commands\\RegisterCommandHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Auth\\Commands\\RegisterCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:43:45.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "GetRestaurantTablesQuery.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Queries\\GetRestaurantTablesQuery.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Queries\\GetRestaurantTablesQuery.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Queries\\GetRestaurantTablesQuery.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Queries\\GetRestaurantTablesQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T06:50:02.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "GetRestaurantTablesQueryHandler.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Queries\\GetRestaurantTablesQueryHandler.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\RestaurantTables\\Queries\\GetRestaurantTablesQueryHandler.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\RestaurantTables\\Queries\\GetRestaurantTablesQueryHandler.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\RestaurantTables\\Queries\\GetRestaurantTablesQueryHandler.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAQwHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T06:49:00.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "RegisterCommand.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Auth\\Commands\\RegisterCommand.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Features\\Auth\\Commands\\RegisterCommand.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Features\\Auth\\Commands\\RegisterCommand.cs",
+              "RelativeToolTip": "DineMate.Application\\Features\\Auth\\Commands\\RegisterCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:43:43.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "RestaurantTableResponseDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableResponseDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableResponseDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableResponseDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:00:57.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "RestaurantTableManagementDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableManagementDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableManagementDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableManagementDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableManagementDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:00:36.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "RestaurantTableStatisticsDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableStatisticsDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableStatisticsDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableStatisticsDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableStatisticsDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:00:33.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "RestaurantTableHistoryDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableHistoryDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableHistoryDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableHistoryDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableHistoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:01:44.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "RestaurantTableDetailDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableDetailDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableDetailDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableDetailDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\RestaurantTableDetailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:34:59.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "PagedRestaurantTableDto.cs",
+              "DocumentMoniker": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\PagedRestaurantTableDto.cs",
+              "RelativeDocumentMoniker": "DineMate.Application\\Dtos\\RestaurantTables\\PagedRestaurantTableDto.cs",
+              "ToolTip": "G:\\D\u1EF0 \u00C1N QU\u1EA2N L\u00DD NH\u00C0 H\u00C0NG\\DineMate.Server\\DineMate.Application\\Dtos\\RestaurantTables\\PagedRestaurantTableDto.cs",
+              "RelativeToolTip": "DineMate.Application\\Dtos\\RestaurantTables\\PagedRestaurantTableDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T07:00:59.935Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

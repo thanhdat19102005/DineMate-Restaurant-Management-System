@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DineMate.Application/DineMate.Application.csproj" />
+  <Project Path="DineMate.Domain/DineMate.Domain.csproj" />
+  <Project Path="DineMate.Infrastructure/DineMate.Infrastructure.csproj" />
+  <Project Path="DineMate.Server/DineMate.Server.csproj" />
+</Solution>
