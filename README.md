@@ -123,21 +123,21 @@ Develop a smart restaurant management system that enables customers to browse me
 ##  Edit Table
 
 <p align="center">
-  <img src="./docs/images/edit-table.png.png" width="100%">
+  <img src="./docs/images/edit-table.png" width="100%">
 </p>
 
 
 ##  Category Management
 
 <p align="center">
-  <img src="./docs/images/category-management.png.png" width="100%">
+  <img src="./docs/images/category-management.png" width="100%">
 </p>
 
 
 ## Add Category
 
 <p align="center">
-  <img src="./docs/images/add-category.png.png" width="100%">
+  <img src="./docs/images/add-category.png" width="100%">
 </p>
 
 
