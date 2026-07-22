@@ -95,69 +95,69 @@ Develop a smart restaurant management system that enables customers to browse me
 ##  Login
 
 <p align="center">
-  <img src="/docs/images/login.png" width="100%">
+  <img src="./docs/images/login.png" width="100%">
 </p>
 
 
 ## Register
 
 <p align="center">
-  <img src="/docs/images/register.png" width="100%">
+  <img src="./docs/images/register.png" width="100%">
 </p>
 
 
 ##  Table Management
 
 <p align="center">
-  <img src="/docs/images/table-management.png" width="100%">
+  <img src="./docs/images/table-management.png" width="100%">
 </p>
 
 
 ## Add Table
 
 <p align="center">
-  <img src="/docs/images/add-table.png" width="100%">
+  <img src="./docs/images/add-table.png" width="100%">
 </p>
 
 
 ##  Edit Table
 
 <p align="center">
-  <img src="/docs/images/edit-table.png" width="100%">
+  <img src="./docs/images/edit-table.png" width="100%">
 </p>
 
 
 ##  Category Management
 
 <p align="center">
-  <img src="/docs/images/category-management.png" width="100%">
+  <img src="./docs/images/category-management.png" width="100%">
 </p>
 
 
 ## Add Category
 
 <p align="center">
-  <img src="/docs/images/add-category.png" width="100%">
+  <img src="./docs/images/add-category.png" width="100%">
 </p>
 
 
 ##  Edit Category
 
 <p align="center">
-  <img src="/docs/images/edit-category.png" width="100%">
+  <img src="./docs/images/edit-category.png" width="100%">
 </p>
 
 ##  Delete Category
 
 <p align="center">
-  <img src="/docs/images/delete-category.png" width="100%">
+  <img src="./docs/images/delete-category.png" width="100%">
 </p>
 
 
 ##  Activity Log
 
 <p align="center">
-  <img src="/docs/images/delete-log.png" width="100%">
+  <img src="./docs/images/delete-log.png" width="100%">
 </p>
 
 
