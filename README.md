@@ -116,48 +116,48 @@ Develop a smart restaurant management system that enables customers to browse me
 ## Add Table
 
 <p align="center">
-  <img src="./docs/images/add-table.png" width="100%">
+  <img src="./docs/images/dinemate-add-table.png" width="100%">
 </p>
 
 
 ##  Edit Table
 
 <p align="center">
-  <img src="./docs/images/edit-table.png" width="100%">
+  <img src="./docs/images/dinemate-edit-table.png" width="100%">
 </p>
 
 
 ##  Category Management
 
 <p align="center">
-  <img src="./docs/images/category-management.png" width="100%">
+  <img src="./docs/images/dinemate-category-dashboard.png" width="100%">
 </p>
 
 
 ## Add Category
 
 <p align="center">
-  <img src="./docs/images/add-category.png" width="100%">
+  <img src="./docs/images/dinemate-add-category.png" width="100%">
 </p>
 
 
 ##  Edit Category
 
 <p align="center">
-  <img src="./docs/images/edit-category.png" width="100%">
+  <img src="./docs/images/dinemate-edit-category.png" width="100%">
 </p>
 
 ##  Delete Category
 
 <p align="center">
-  <img src="./docs/images/delete-category.png" width="100%">
+  <img src="./docs/images/dinemate-delete-category.png" width="100%">
 </p>
 
 
 ##  Activity Log
 
 <p align="center">
-  <img src="./docs/images/delete-log.png" width="100%">
+  <img src="./docs/images/dinemate-delete-log-modal.png" width="100%">
 </p>
 
 
