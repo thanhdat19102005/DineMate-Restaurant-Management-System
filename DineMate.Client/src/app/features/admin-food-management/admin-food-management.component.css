@@ -1,0 +1,2147 @@
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+
+  color: #30231c;
+
+  font-family:
+    "Be Vietnam Pro",
+    Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* ==================================================
+   TRANG QUẢN LÝ MÓN ĂN
+================================================== */
+
+.food-management-page {
+  width: 100%;
+  min-width: 0;
+
+  padding: 16px;
+
+  background: transparent;
+}
+
+/* ==================================================
+   THỐNG KÊ
+================================================== */
+
+.food-statistics-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+
+  margin-bottom: 14px;
+}
+
+.food-statistic-card {
+  min-width: 0;
+  min-height: 94px;
+
+  padding:
+    17px
+    20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fffdfb
+    );
+
+  border:
+    1px solid
+    #efe1d8;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 9px 24px
+    rgba(
+      77,
+      37,
+      15,
+      0.05
+    );
+}
+
+.food-statistic-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+}
+
+.food-statistic-icon
+.material-symbols-outlined {
+  font-size: 28px;
+}
+
+.food-statistic-card.total
+.food-statistic-icon {
+  color: #ff6500;
+  background: #fff0df;
+}
+
+.food-statistic-card.selling
+.food-statistic-icon {
+  color: #18a845;
+  background: #e7f8e9;
+}
+
+.food-statistic-card.out-of-stock
+.food-statistic-icon {
+  color: #ff3440;
+  background: #ffebec;
+}
+
+.food-statistic-card.featured
+.food-statistic-icon {
+  color: #2b78ff;
+  background: #eaf2ff;
+}
+
+.food-statistic-information {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.food-statistic-information >
+span {
+  color: #746760;
+
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.food-statistic-value-row {
+  margin-top: 3px;
+
+  display: flex;
+  align-items: baseline;
+
+  /*
+   * THAY ĐỔI:
+   * Thu khoảng cách để số và phần trăm liền mạch hơn.
+   */
+  gap: 9px;
+}
+
+.food-statistic-value-row strong {
+  color: #201711;
+
+  /*
+   * THAY ĐỔI:
+   * Dùng độ đậm chuẩn 800 thay vì 850 để tránh
+   * trình duyệt giả lập font làm con số bị thô.
+   */
+  font-family:
+    "Be Vietnam Pro",
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+
+  /*
+   * Làm các chữ số đều, thẳng hàng và dễ đọc hơn.
+   */
+  font-variant-numeric:
+    lining-nums
+    tabular-nums;
+
+  font-feature-settings:
+    "lnum" 1,
+    "tnum" 1;
+
+  letter-spacing: -0.7px;
+
+  text-rendering:
+    geometricPrecision;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+.food-statistic-value-row small {
+  /*
+   * THAY ĐỔI:
+   * Phần trăm nhẹ và cân đối hơn với số chính.
+   */
+  font-family:
+    "Be Vietnam Pro",
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1;
+
+  font-variant-numeric:
+    lining-nums
+    tabular-nums;
+
+  font-feature-settings:
+    "lnum" 1,
+    "tnum" 1;
+
+  letter-spacing: -0.15px;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+.food-statistic-card.total
+.food-statistic-value-row small,
+.food-statistic-card.featured
+.food-statistic-value-row small {
+  color: #2676ff;
+}
+
+.food-statistic-card.selling
+.food-statistic-value-row small {
+  color: #18a845;
+}
+
+.food-statistic-card.out-of-stock
+.food-statistic-value-row small {
+  color: #ff3040;
+}
+
+/* ==================================================
+   LAYOUT CHÍNH
+================================================== */
+
+.food-management-layout {
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(365px, 0.40fr);
+
+  gap: 14px;
+
+  align-items: start;
+}
+
+/* ==================================================
+   CARD CHUNG
+================================================== */
+
+.food-list-card,
+.food-detail-card,
+.food-history-card {
+  min-width: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fffdfb
+    );
+
+  border:
+    1px solid
+    #efded3;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 10px 28px
+    rgba(
+      82,
+      40,
+      18,
+      0.06
+    );
+}
+
+.food-list-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==================================================
+   TOOLBAR
+================================================== */
+
+.food-toolbar {
+  padding: 13px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 1fr)
+    minmax(230px, 0.42fr)
+    auto;
+
+  gap: 10px;
+
+  align-items: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffefd,
+      #fffaf6
+    );
+
+  border-bottom:
+    1px solid
+    #ede0d7;
+}
+
+.food-search-box,
+.food-filter-box {
+  position: relative;
+
+  min-width: 0;
+  height: 48px;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    #dce2e8;
+
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.food-search-box {
+  display: flex;
+  align-items: center;
+}
+
+.food-search-box >
+.material-symbols-outlined {
+  position: absolute;
+
+  left: 14px;
+
+  color: #8390a2;
+
+  font-size: 21px;
+
+  pointer-events: none;
+}
+
+.food-search-box input {
+  width: 100%;
+  height: 100%;
+
+  padding:
+    0
+    15px
+    0
+    44px;
+
+  color: #342820;
+
+  background: transparent;
+
+  border: 0;
+  outline: 0;
+
+  font-size: 11px;
+}
+
+.food-search-box input::placeholder {
+  color: #999da3;
+}
+
+.food-filter-box {
+  padding-top: 14px;
+}
+
+.food-filter-box label {
+  position: absolute;
+
+  top: 6px;
+  left: 13px;
+
+  color: #978a82;
+
+  font-size: 8px;
+
+  pointer-events: none;
+}
+
+.food-filter-box select {
+  width: 100%;
+  height: 32px;
+
+  padding:
+    3px
+    38px
+    0
+    13px;
+
+  appearance: none;
+
+  color: #2e231d;
+
+  background: transparent;
+
+  border: 0;
+  outline: 0;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.food-filter-box >
+.material-symbols-outlined {
+  position: absolute;
+
+  top: 15px;
+  right: 11px;
+
+  color: #3f3935;
+
+  font-size: 19px;
+
+  pointer-events: none;
+}
+
+.food-search-box:focus-within,
+.food-filter-box:focus-within {
+  border-color: #ff9b65;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      255,
+      98,
+      0,
+      0.09
+    );
+}
+
+.add-food-button {
+  min-width: 160px;
+  height: 48px;
+
+  padding:
+    0
+    19px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7000,
+      #ff4013
+    );
+
+  border: 0;
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 23px
+    rgba(
+      255,
+      74,
+      16,
+      0.23
+    );
+
+  font-size: 11px;
+  font-weight: 850;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-food-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 13px 28px
+    rgba(
+      255,
+      74,
+      16,
+      0.30
+    );
+}
+
+.add-food-button
+.material-symbols-outlined {
+  font-size: 20px;
+}
+
+/* ==================================================
+   THANH HIỆU ỨNG CHỌN DÒNG
+================================================== */
+
+.food-selection-loading-bar {
+  position: relative;
+  z-index: 8;
+
+  width: 100%;
+  height: 3px;
+
+  margin-bottom: -3px;
+
+  overflow: hidden;
+
+  background:
+    rgba(
+      255,
+      99,
+      0,
+      0.10
+    );
+}
+
+.food-selection-loading-bar span {
+  width: 35%;
+  height: 100%;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #ff6500,
+      transparent
+    );
+
+  animation:
+    foodSelectionLoadingBar
+    0.85s
+    linear
+    infinite;
+}
+
+@keyframes foodSelectionLoadingBar {
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(330%);
+  }
+}
+
+/* ==================================================
+   BẢNG MÓN ĂN
+================================================== */
+
+.food-table-wrapper {
+  min-width: 0;
+
+  overflow-x: auto;
+}
+
+.food-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+.food-table th {
+  height: 45px;
+
+  padding:
+    0
+    10px;
+
+  color: #6b5f58;
+
+  background: #fffdfb;
+
+  border-bottom:
+    1px solid
+    #ede0d8;
+
+  font-size: 9px;
+  font-weight: 850;
+  text-align: left;
+}
+
+.food-table th:nth-child(1) {
+  width: 48px;
+}
+
+.food-table th:nth-child(2) {
+  width: 105px;
+}
+
+.food-table th:nth-child(3) {
+  width: 150px;
+}
+
+.food-table th:nth-child(4) {
+  width: 205px;
+}
+
+.food-table th:nth-child(5) {
+  width: 90px;
+}
+
+.food-table th:nth-child(6) {
+  width: 70px;
+}
+
+.food-table th:nth-child(7) {
+  width: 98px;
+}
+
+.food-table th:nth-child(8) {
+  width: 105px;
+}
+
+.food-table th:nth-child(9) {
+  width: 190px;
+
+  text-align: center;
+}
+
+.food-table td {
+  height: 47px;
+
+  padding:
+    6px
+    10px;
+
+  color: #443931;
+
+  border-bottom:
+    1px solid
+    #eee1da;
+
+  font-size: 9px;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+.food-table tbody tr {
+  position: relative;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.24s ease,
+    box-shadow 0.24s ease,
+    transform 0.24s ease,
+    opacity 0.24s ease;
+}
+
+.food-table tbody tr:hover {
+  background: #fff8f3;
+}
+
+.food-table tbody tr.selected-row {
+  background:
+    linear-gradient(
+      90deg,
+      #fff0e4 0%,
+      #fff7f1 65%,
+      #fffdfb 100%
+    );
+
+  box-shadow:
+    inset 3px 0 0
+    #ff5d00;
+
+  animation:
+    foodSelectedRowSlide
+    320ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    )
+    both;
+}
+
+.food-table tbody
+tr.selection-loading-row {
+  opacity: 0.84;
+}
+
+@keyframes foodSelectedRowSlide {
+  from {
+    transform: translateX(-8px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.drag-number {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  color: #786c64;
+}
+
+.drag-number
+.material-symbols-outlined {
+  color: #aaa099;
+
+  font-size: 15px;
+}
+
+.food-code {
+  color: #433831;
+
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.food-description-cell {
+  overflow: hidden;
+
+  color: #645850;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.food-status-badge {
+  width: fit-content;
+
+  padding:
+    5px
+    10px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 850;
+
+  white-space: nowrap;
+}
+
+.food-status-badge >
+span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+}
+
+.food-status-badge.available {
+  color: #158e39;
+
+  background: #e6f7e9;
+
+  border:
+    1px solid
+    #c5e9cc;
+}
+
+.food-status-badge.available >
+span {
+  background: #20aa47;
+}
+
+.food-status-badge.out-of-stock {
+  color: #ef3e36;
+
+  background: #fff0ed;
+
+  border:
+    1px solid
+    #ffd0c9;
+}
+
+.food-status-badge.out-of-stock >
+span {
+  background: #ff4d42;
+}
+
+/* ==================================================
+   NÚT THAO TÁC
+================================================== */
+
+.food-table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+.food-action-button {
+  min-height: 29px;
+
+  padding:
+    0
+    9px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  color: #4d5966;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    #d7e0e8;
+
+  border-radius: 7px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.food-action-button
+.material-symbols-outlined {
+  font-size: 13px;
+}
+
+.food-action-button:hover {
+  transform: translateY(-1px);
+}
+
+.food-action-button.view:hover {
+  color: #2874bb;
+
+  border-color: #a9cce8;
+
+  background: #f5faff;
+}
+
+.food-action-button.edit:hover {
+  color: #ff6500;
+
+  border-color: #ffc39a;
+
+  background: #fff8f3;
+}
+
+.food-action-button.delete {
+  color: #ff3e48;
+
+  border-color: #ffadb3;
+}
+
+.food-action-button.delete:hover {
+  color: #ffffff;
+
+  background: #ff4b51;
+
+  border-color: #ff4b51;
+}
+
+.food-empty-state {
+  height: 230px !important;
+
+  text-align: center;
+}
+
+.food-empty-state
+.material-symbols-outlined {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #ff7532;
+
+  font-size: 38px;
+}
+
+.food-empty-state strong {
+  display: block;
+
+  color: #3d322b;
+
+  font-size: 13px;
+}
+
+.food-empty-state p {
+  margin:
+    5px
+    0
+    0;
+
+  color: #897c74;
+
+  font-size: 9px;
+}
+
+/* ==================================================
+   PHÂN TRANG
+================================================== */
+
+.food-pagination {
+  min-height: 59px;
+
+  padding:
+    10px
+    13px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(200px, 1fr)
+    auto
+    minmax(115px, 1fr);
+
+  gap: 12px;
+
+  align-items: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffefd,
+      #fffaf6
+    );
+
+  border-top:
+    1px solid
+    #ede0d8;
+}
+
+.food-pagination p {
+  margin: 0;
+
+  color: #80736b;
+
+  font-size: 9px;
+}
+
+.food-pagination-controls {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.food-pagination-controls button {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  color: #5d544e;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    #dce2e8;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.food-pagination-controls button.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6d00,
+      #ff3f14
+    );
+
+  border-color: transparent;
+
+  box-shadow:
+    0 7px 16px
+    rgba(
+      255,
+      71,
+      15,
+      0.22
+    );
+}
+
+.food-pagination-controls button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+.food-pagination-controls
+.material-symbols-outlined {
+  font-size: 18px;
+}
+
+.food-page-size {
+  position: relative;
+
+  width: 110px;
+
+  justify-self: end;
+}
+
+.food-page-size select {
+  width: 100%;
+  height: 36px;
+
+  padding:
+    0
+    32px
+    0
+    11px;
+
+  appearance: none;
+
+  color: #413832;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    #dfe3e8;
+
+  border-radius: 8px;
+
+  outline: 0;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.food-page-size
+.material-symbols-outlined {
+  position: absolute;
+
+  top: 9px;
+  right: 8px;
+
+  font-size: 17px;
+
+  pointer-events: none;
+}
+
+/* ==================================================
+   CỘT THÔNG TIN BÊN PHẢI
+================================================== */
+
+.food-information-column {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.food-information-column
+.food-detail-card,
+.food-information-column
+.food-history-card {
+  transform-origin: center top;
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.food-information-column.detail-refreshing
+.food-detail-card,
+.food-information-column.detail-refreshing
+.food-history-card {
+  animation:
+    foodDetailRefresh
+    320ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    )
+    both;
+}
+
+.food-information-column.detail-refreshing
+.food-history-card {
+  animation-delay: 30ms;
+}
+
+@keyframes foodDetailRefresh {
+  from {
+    opacity: 0.58;
+
+    transform:
+      translateY(6px)
+      scale(0.993);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.food-detail-card,
+.food-history-card {
+  padding: 15px;
+}
+
+.food-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.food-card-title-row h2 {
+  margin: 0;
+
+  color: #2c231e;
+
+  font-size: 18px;
+  font-weight: 850;
+}
+
+/* ==================================================
+   CHI TIẾT MÓN ĂN
+================================================== */
+
+.food-detail-main {
+  margin-top: 15px;
+
+  display: grid;
+
+  grid-template-columns:
+    122px
+    minmax(0, 1fr);
+
+  gap: 17px;
+
+  align-items: start;
+}
+
+.food-detail-image {
+  width: 122px;
+  height: 122px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  color: #ff5b00;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff4eb,
+      #ffe3cf
+    );
+
+  border:
+    1px solid
+    #efd4c1;
+
+  border-radius: 50%;
+}
+
+.food-detail-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.food-detail-image
+.material-symbols-outlined {
+  font-size: 48px;
+}
+
+.food-detail-list {
+  min-width: 0;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.food-detail-list div {
+  display: grid;
+
+  grid-template-columns:
+    78px
+    minmax(0, 1fr);
+
+  gap: 8px;
+}
+
+.food-detail-list dt {
+  color: #877a72;
+
+  font-size: 9px;
+}
+
+.food-detail-list dd {
+  min-width: 0;
+
+  margin: 0;
+
+  color: #342a24;
+
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1.45;
+
+  overflow-wrap: anywhere;
+}
+
+.food-status-badge.detail-status {
+  padding:
+    3px
+    8px;
+}
+
+.detail-boolean-badge {
+  min-width: 35px;
+
+  padding:
+    3px
+    8px;
+
+  display: inline-flex;
+  justify-content: center;
+
+  color: #8a6a3b;
+
+  background: #fff3dc;
+
+  border:
+    1px solid
+    #ffd69b;
+
+  border-radius: 6px;
+
+  font-size: 8px;
+  font-weight: 850;
+}
+
+.detail-boolean-badge.enabled {
+  color: #ef7800;
+}
+
+.food-no-selection {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #897c74;
+
+  text-align: center;
+}
+
+.food-no-selection
+.material-symbols-outlined {
+  color: #ff7532;
+
+  font-size: 46px;
+}
+
+.food-no-selection strong {
+  margin-top: 8px;
+
+  color: #433831;
+
+  font-size: 13px;
+}
+
+.food-no-selection p {
+  margin:
+    5px
+    0
+    0;
+
+  font-size: 9px;
+}
+
+/* ==================================================
+   LỊCH SỬ HOẠT ĐỘNG
+================================================== */
+
+.food-history-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-title-row {
+  margin-bottom: 13px;
+}
+
+.food-history-container {
+  overflow: hidden;
+
+  border:
+    1px solid
+    #ebddd4;
+
+  border-radius: 10px;
+}
+
+.food-history-header,
+.food-history-row {
+  display: grid;
+
+  /*
+   * THAY ĐỔI:
+   * Nới nhẹ hai cột đầu để chữ lớn hơn
+   * nhưng vẫn không bị xuống dòng khó đọc.
+   */
+  grid-template-columns:
+    88px
+    108px
+    minmax(0, 1fr)
+    55px;
+
+  gap: 8px;
+}
+
+.food-history-header {
+  min-height: 41px;
+
+  padding:
+    0
+    9px;
+
+  align-items: center;
+
+  color: #746860;
+
+  background: #fffaf7;
+
+  border-bottom:
+    1px solid
+    #e9ddd5;
+
+  /*
+   * THAY ĐỔI:
+   * Tiêu đề cột lớn và rõ hơn,
+   * gần với bảng lịch sử trang Category.
+   */
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1.3;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+.food-history-body {
+  max-height: 385px;
+
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    #ad9b90
+    #fff8f3;
+}
+
+.food-history-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.food-history-body::-webkit-scrollbar-track {
+  background: #fff8f3;
+}
+
+.food-history-body::-webkit-scrollbar-thumb {
+  background: #ad9b90;
+
+  border:
+    1px solid
+    #fff8f3;
+
+  border-radius: 999px;
+}
+
+.food-history-row {
+  min-height: 74px;
+
+  padding:
+    10px
+    9px;
+
+  align-items: start;
+
+  border-bottom:
+    1px solid
+    #eee1da;
+}
+
+.food-history-row:last-child {
+  border-bottom: 0;
+}
+
+.food-history-time {
+  position: relative;
+
+  padding-left: 13px;
+
+  display: flex;
+
+  color: #70645d;
+
+  /*
+   * THAY ĐỔI:
+   * Ngày và giờ lớn hơn để dễ quan sát.
+   */
+  font-size: 8px;
+  line-height: 1.42;
+
+  font-variant-numeric:
+    lining-nums
+    tabular-nums;
+
+  font-feature-settings:
+    "lnum" 1,
+    "tnum" 1;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+.food-history-time >
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+.food-history-dot {
+  position: absolute;
+
+  top: 3px;
+  left: 0;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+.food-history-dot.create {
+  background: #23a94a;
+}
+
+.food-history-dot.update {
+  background: #f09a14;
+}
+
+.food-history-dot.status {
+  background: #2898c9;
+}
+
+.food-history-dot.delete {
+  background: #ef4852;
+}
+
+.food-history-time strong {
+  color: #342922;
+
+  /*
+   * THAY ĐỔI:
+   * Giờ được nhấn rõ nhưng không quá đậm.
+   */
+  font-size: 8px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.food-history-user,
+.food-history-description {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.food-history-user strong,
+.food-history-description strong {
+  color: #392f29;
+
+  /*
+   * THAY ĐỔI:
+   * Người thực hiện và nội dung lớn hơn,
+   * đồng bộ với bảng lịch sử trang Category.
+   */
+  font-size: 8px;
+  font-weight: 750;
+  line-height: 1.45;
+
+  overflow-wrap: anywhere;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+.food-history-user span {
+  margin-top: 2px;
+
+  color: #94877f;
+
+  /*
+   * THAY ĐỔI:
+   * Vai trò dưới tên nhân viên dễ đọc hơn.
+   */
+  font-size: 7px;
+  line-height: 1.35;
+}
+
+.food-history-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.food-history-action button {
+  min-width: 49px;
+  height: 30px;
+
+  padding:
+    0
+    7px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  color: #ff3d48;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    #ffadb3;
+
+  border-radius: 7px;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.food-history-action button:hover {
+  color: #ffffff;
+
+  background: #ff4a51;
+}
+
+.food-history-action
+.material-symbols-outlined {
+  font-size: 12px;
+}
+
+.food-history-empty {
+  min-height: 210px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #897c74;
+
+  text-align: center;
+}
+
+.food-history-empty
+.material-symbols-outlined {
+  color: #ff7532;
+
+  font-size: 38px;
+}
+
+.food-history-empty strong {
+  margin-top: 6px;
+
+  color: #443831;
+
+  font-size: 11px;
+}
+
+.food-history-empty p {
+  margin:
+    4px
+    0
+    0;
+
+  font-size: 8px;
+}
+
+/* ==================================================
+   NÚT XEM TẤT CẢ LỊCH SỬ
+================================================== */
+
+.view-all-food-history {
+  min-height: 44px;
+
+  margin-top: 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #231b16;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fffdfb
+    );
+
+  border:
+    1px solid
+    #eadbd1;
+
+  border-radius: 8px;
+
+  font-size: 9px;
+  font-weight: 850;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.view-all-food-history:hover:not(:disabled) {
+  color: #ff5b00;
+
+  background: #fff6ef;
+
+  border-color: #ffb88c;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 17px
+    rgba(
+      255,
+      90,
+      0,
+      0.10
+    );
+}
+
+.view-all-food-history:disabled {
+  opacity: 0.46;
+
+  cursor: not-allowed;
+}
+
+.view-all-food-history
+.material-symbols-outlined {
+  font-size: 16px;
+}
+
+/* ==================================================
+   SCROLLBAR NGANG BẢNG
+================================================== */
+
+.food-table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.food-table-wrapper::-webkit-scrollbar-track {
+  background: #fff7f1;
+}
+
+.food-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbbcb2;
+
+  border:
+    2px solid
+    #fff7f1;
+
+  border-radius: 999px;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 1500px) {
+
+  .food-management-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      350px;
+  }
+
+  .food-toolbar {
+    grid-template-columns:
+      minmax(230px, 1fr)
+      210px
+      auto;
+  }
+
+  .food-detail-main {
+    grid-template-columns:
+      105px
+      minmax(0, 1fr);
+  }
+
+  .food-detail-image {
+    width: 105px;
+    height: 105px;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .food-statistics-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .food-management-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .food-information-column {
+    display: grid;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+}
+
+@media (max-width: 900px) {
+
+  .food-toolbar {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .food-search-box {
+    grid-column: 1 / -1;
+  }
+
+  .add-food-button {
+    width: 100%;
+  }
+
+  .food-information-column {
+    grid-template-columns: 1fr;
+  }
+
+  .food-pagination {
+    grid-template-columns:
+      1fr
+      auto;
+
+    grid-template-areas:
+      "information size"
+      "controls controls";
+  }
+
+  .food-pagination p {
+    grid-area: information;
+  }
+
+  .food-pagination-controls {
+    grid-area: controls;
+
+    justify-content: center;
+  }
+
+  .food-page-size {
+    grid-area: size;
+  }
+}
+
+@media (max-width: 720px) {
+
+  .food-management-page {
+    padding: 10px;
+  }
+
+  .food-statistics-grid {
+    gap: 9px;
+  }
+
+  .food-statistic-card {
+    min-height: 82px;
+
+    padding:
+      12px
+      14px;
+  }
+
+  .food-statistic-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .food-statistic-value-row strong {
+    font-size: 22px;
+  }
+
+  .food-toolbar {
+    grid-template-columns: 1fr;
+
+    padding: 10px;
+  }
+
+  .food-search-box {
+    grid-column: auto;
+  }
+
+  .food-table-wrapper {
+    padding: 9px;
+  }
+
+  .food-table {
+    min-width: 0;
+
+    display: block;
+  }
+
+  .food-table thead {
+    display: none;
+  }
+
+  .food-table tbody {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .food-table tbody tr {
+    display: grid;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 7px;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    border:
+      1px solid
+      #eadfd8;
+
+    border-radius: 11px;
+
+    box-shadow:
+      0 5px 14px
+      rgba(
+        80,
+        46,
+        28,
+        0.05
+      );
+  }
+
+  .food-table tbody tr.selected-row {
+    background:
+      linear-gradient(
+        135deg,
+        #fff1e6,
+        #fffaf6
+      );
+
+    box-shadow:
+      inset 3px 0 0
+      #ff5a00,
+      0 5px 14px
+      rgba(
+        80,
+        46,
+        28,
+        0.05
+      );
+  }
+
+  .food-table td {
+    height: auto;
+
+    padding:
+      4px
+      0;
+
+    display: grid;
+
+    grid-template-columns:
+      78px
+      minmax(0, 1fr);
+
+    gap: 7px;
+
+    align-items: center;
+
+    border: 0;
+
+    font-size: 9px;
+  }
+
+  .food-table td::before {
+    content: attr(data-label);
+
+    color: #95877f;
+
+    font-size: 8px;
+    font-weight: 700;
+  }
+
+  .food-table-actions {
+    grid-column: 1 / -1;
+
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      ) !important;
+
+    padding-top: 8px !important;
+
+    border-top:
+      1px solid
+      #eee1d9 !important;
+  }
+
+  .food-table-actions::before {
+    display: none;
+  }
+
+  .food-action-button {
+    width: 100%;
+  }
+
+  .food-empty-state {
+    display: flex !important;
+
+    min-height: 210px;
+
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .food-statistics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-pagination {
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "information"
+      "controls"
+      "size";
+
+    justify-items: center;
+  }
+
+  .food-pagination p {
+    text-align: center;
+  }
+
+  .food-page-size {
+    justify-self: center;
+  }
+
+  .food-detail-main {
+    grid-template-columns: 1fr;
+  }
+
+  .food-detail-image {
+    width: 112px;
+    height: 112px;
+
+    margin: 0 auto;
+  }
+
+  .food-detail-list div {
+    grid-template-columns:
+      90px
+      minmax(0, 1fr);
+  }
+
+  .food-history-header {
+    display: none;
+  }
+
+  .food-history-row {
+    grid-template-columns:
+      1fr
+      53px;
+
+    gap: 7px;
+  }
+
+  .food-history-time,
+  .food-history-user,
+  .food-history-description {
+    grid-column: 1;
+  }
+
+  .food-history-action {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+}
+
+/* ==================================================
+   GIẢM CHUYỂN ĐỘNG
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .food-selection-loading-bar span,
+  .food-table tbody tr.selected-row,
+  .food-information-column.detail-refreshing
+  .food-detail-card,
+  .food-information-column.detail-refreshing
+  .food-history-card {
+    animation-duration:
+      1ms !important;
+
+    animation-iteration-count:
+      1 !important;
+  }
+
+  .food-table tbody tr,
+  .food-information-column
+  .food-detail-card,
+  .food-information-column
+  .food-history-card {
+    transition-duration:
+      1ms !important;
+  }
+}

@@ -1,0 +1,1534 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #101828;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ==================================================
+   TOÀN BỘ TRANG
+================================================== */
+
+.login-page {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 48px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(255, 122, 26, 0.23) 0%,
+      rgba(255, 122, 26, 0.1) 18%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 92% 82%,
+      rgba(255, 100, 0, 0.29) 0%,
+      rgba(255, 100, 0, 0.12) 20%,
+      transparent 39%
+    ),
+    linear-gradient(
+      135deg,
+      #fff8f2 0%,
+      #fffdfb 45%,
+      #fff2e6 100%
+    );
+}
+
+.login-page::before {
+  content: "";
+
+  position: absolute;
+  top: -145px;
+  left: -110px;
+  z-index: -1;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 50%;
+
+  background:
+    repeating-radial-gradient(
+      circle at center,
+      transparent 0 30px,
+      rgba(255, 132, 48, 0.15) 31px 33px
+    );
+
+  opacity: 0.9;
+
+  animation: rotate-background 28s linear infinite;
+}
+
+.login-page::after {
+  content: "";
+
+  position: absolute;
+  right: -90px;
+  bottom: -110px;
+  z-index: -1;
+
+  width: 520px;
+  height: 520px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 128, 45, 0.2) 2px,
+      transparent 2.5px
+    );
+
+  background-size: 14px 14px;
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle at center,
+      #000 0 48%,
+      transparent 76%
+    );
+
+  mask-image:
+    radial-gradient(
+      circle at center,
+      #000 0 48%,
+      transparent 76%
+    );
+
+  opacity: 0.8;
+
+  animation: floating-dots 7s ease-in-out infinite;
+}
+
+@keyframes rotate-background {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floating-dots {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-18px) scale(1.04);
+  }
+}
+
+/* ==================================================
+   KHUNG ĐĂNG NHẬP
+================================================== */
+
+.login-card {
+  position: relative;
+  z-index: 1;
+
+  width: min(1160px, calc(100% - 24px));
+  min-height: 760px;
+
+  display: grid;
+  grid-template-columns: 47% 53%;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(234, 236, 240, 0.9);
+  border-radius: 24px;
+
+  box-shadow:
+    0 35px 85px rgba(71, 48, 32, 0.16),
+    0 12px 32px rgba(16, 24, 40, 0.08);
+
+  animation: card-appear 0.7s ease-out;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 45px 100px rgba(71, 48, 32, 0.2),
+    0 18px 42px rgba(16, 24, 40, 0.1);
+}
+
+@keyframes card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==================================================
+   PHẦN BÊN TRÁI
+================================================== */
+
+.login-banner {
+  position: relative;
+
+  min-height: 760px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24, 10, 3, 0.08) 0%,
+      rgba(32, 13, 4, 0.34) 42%,
+      rgba(18, 7, 2, 0.9) 100%
+    ),
+    url("/images/login-restaurant.jpg"),
+    linear-gradient(
+      145deg,
+      #4a1d09 0%,
+      #7b3008 36%,
+      #3b1708 68%,
+      #160905 100%
+    );
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition:
+    background-size 0.7s ease,
+    background-position 0.7s ease;
+}
+
+.login-card:hover .login-banner {
+  background-size: 108%;
+  background-position: center;
+}
+
+.login-banner::before {
+  content: "";
+
+  position: absolute;
+  top: -120px;
+  right: -120px;
+
+  width: 390px;
+  height: 390px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 115, 0, 0.32) 0%,
+      rgba(255, 115, 0, 0.12) 36%,
+      transparent 72%
+    );
+
+  pointer-events: none;
+
+  animation: banner-light 5s ease-in-out infinite;
+}
+
+.login-banner::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 48%;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 4, 1, 0.78) 0%,
+      rgba(10, 4, 1, 0.24) 58%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+}
+
+@keyframes banner-light {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 760px;
+
+  padding: 48px;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #ffffff;
+}
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.restaurant-logo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  width: fit-content;
+
+  transition: transform 0.3s ease;
+}
+
+.restaurant-logo:hover {
+  transform: translateX(6px);
+}
+
+.logo-icon {
+  color: #ff6500;
+  font-size: 58px;
+
+  filter:
+    drop-shadow(0 5px 12px rgba(255, 101, 0, 0.25));
+
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 48;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.restaurant-logo:hover .logo-icon {
+  transform: rotate(-8deg) scale(1.08);
+
+  filter:
+    drop-shadow(0 7px 16px rgba(255, 101, 0, 0.45));
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text strong {
+  color: #ff6500;
+
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: 0.4px;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.restaurant-logo:hover .logo-text strong {
+  color: #ff7a1a;
+
+  text-shadow:
+    0 4px 14px rgba(255, 101, 0, 0.3);
+}
+
+.logo-text span {
+  margin-top: 7px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  letter-spacing: 1.2px;
+}
+
+/* ==================================================
+   NỘI DUNG CHÀO MỪNG
+================================================== */
+
+.welcome-content {
+  margin-top: auto;
+  margin-bottom: auto;
+
+  max-width: 390px;
+}
+
+.welcome-content h1 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 4vw, 57px);
+  font-weight: 800;
+  line-height: 1.12;
+
+  letter-spacing: -1.6px;
+
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.28);
+
+  animation: content-slide-up 0.85s ease-out 0.15s both;
+}
+
+.welcome-content p {
+  margin: 0;
+
+  max-width: 370px;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.25);
+
+  animation: content-slide-up 0.85s ease-out 0.28s both;
+}
+
+@keyframes content-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================================================
+   BẢO MẬT
+================================================== */
+
+.security-content {
+  max-width: 350px;
+
+  animation: content-slide-up 0.85s ease-out 0.4s both;
+}
+
+.security-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.security-heading .material-symbols-outlined {
+  color: #ff7200;
+  font-size: 38px;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.security-content:hover
+.security-heading
+.material-symbols-outlined {
+  transform: scale(1.1) rotate(-6deg);
+
+  filter:
+    drop-shadow(0 6px 12px rgba(255, 114, 0, 0.35));
+}
+
+.security-heading strong {
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.security-content p {
+  margin: 14px 0 0 50px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ==================================================
+   FORM BÊN PHẢI
+================================================== */
+
+.login-form-section {
+  min-height: 760px;
+
+  padding: 70px 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fffefd 100%
+    );
+}
+
+.login-form {
+  width: min(100%, 480px);
+
+  animation: form-slide-in 0.8s ease-out 0.1s both;
+}
+
+@keyframes form-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-logo {
+  display: none;
+}
+
+/* ==================================================
+   TIÊU ĐỀ FORM
+================================================== */
+
+.form-header {
+  margin-bottom: 38px;
+}
+
+.form-header h2 {
+  margin: 0;
+
+  color: #101828;
+
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+
+  letter-spacing: -1.2px;
+}
+
+.form-header p {
+  margin: 10px 0 0;
+
+  color: #667085;
+
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* ==================================================
+   THÔNG BÁO LỖI
+================================================== */
+
+.alert-error {
+  margin-bottom: 22px;
+  padding: 12px 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #b42318;
+  background: #fef3f2;
+
+  border: 1px solid #fecdca;
+  border-radius: 10px;
+
+  font-size: 13px;
+
+  animation: error-shake 0.35s ease;
+}
+
+.alert-error .material-symbols-outlined {
+  font-size: 20px;
+}
+
+@keyframes error-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* ==================================================
+   FORM GROUP
+================================================== */
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #1d2939;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ==================================================
+   INPUT
+================================================== */
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  width: 100%;
+  height: 58px;
+
+  padding: 0 52px;
+
+  color: #101828;
+  background: #ffffff;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.input-container input::placeholder {
+  color: #98a2b3;
+}
+
+.input-container input:hover:not(:disabled) {
+  border-color: #ff9b63;
+  background: #fffaf7;
+}
+
+.input-container input:focus {
+  border-color: #ff5a00;
+  background: #ffffff;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 0 0 4px rgba(255, 90, 0, 0.12),
+    0 8px 18px rgba(255, 90, 0, 0.08);
+}
+
+.input-container input:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.input-container.input-invalid input {
+  border-color: #f04438;
+
+  box-shadow:
+    0 0 0 3px rgba(240, 68, 56, 0.07);
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  z-index: 2;
+
+  transform: translateY(-50%);
+
+  color: #667085;
+  font-size: 21px;
+
+  pointer-events: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.input-container:focus-within .input-icon {
+  color: #ff5a00;
+
+  transform:
+    translateY(-50%)
+    scale(1.1);
+}
+
+/* ==================================================
+   LỖI DƯỚI INPUT
+================================================== */
+
+.field-error {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #d92d20;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* ==================================================
+   HIỆN / ẨN MẬT KHẨU
+================================================== */
+
+.show-password-button {
+  position: absolute;
+  top: 50%;
+  right: 11px;
+
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  color: #667085;
+  background: transparent;
+
+  border: 0;
+  border-radius: 50%;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.show-password-button:hover:not(:disabled) {
+  color: #ff5a00;
+  background: #fff4ed;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.show-password-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.show-password-button .material-symbols-outlined {
+  font-size: 21px;
+}
+
+/* ==================================================
+   GHI NHỚ VÀ QUÊN MẬT KHẨU
+================================================== */
+
+.form-options {
+  margin: 3px 0 29px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.remember-checkbox {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #667085;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-checkbox input {
+  position: absolute;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-design {
+  width: 20px;
+  height: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 5px;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.remember-checkbox:hover .checkbox-design {
+  border-color: #ff7c3b;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 90, 0, 0.08);
+}
+
+.checkbox-design .material-symbols-outlined {
+  display: none;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.remember-checkbox
+input:checked
++ .checkbox-design {
+  background: #ff5a00;
+  border-color: #ff5a00;
+
+  transform: scale(1.05);
+}
+
+.remember-checkbox
+input:checked
++ .checkbox-design
+.material-symbols-outlined {
+  display: block;
+}
+
+/* ==================================================
+   LINK
+================================================== */
+
+.text-link {
+  position: relative;
+
+  padding: 0;
+
+  color: #ff4d00;
+  background: transparent;
+
+  border: 0;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.text-link::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+
+  width: 0;
+  height: 1px;
+
+  background: #ff4d00;
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
+}
+
+.text-link:hover:not(:disabled) {
+  color: #d94000;
+
+  transform: translateY(-1px);
+}
+
+.text-link:hover:not(:disabled)::after {
+  width: 100%;
+}
+
+.text-link:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* ==================================================
+   NÚT ĐĂNG NHẬP
+================================================== */
+
+.login-button {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff6a00 0%,
+      #ff3d00 100%
+    );
+
+  border: 0;
+  border-radius: 9px;
+
+  box-shadow:
+    0 14px 28px rgba(255, 77, 0, 0.22);
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.login-button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+  z-index: -1;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.65s ease;
+}
+
+.login-button:hover:not(:disabled)::before {
+  left: 145%;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 34px rgba(255, 77, 0, 0.34);
+}
+
+.login-button:active:not(:disabled) {
+  transform:
+    translateY(0)
+    scale(0.99);
+}
+
+.login-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.login-button .material-symbols-outlined {
+  font-size: 21px;
+}
+
+/* ==================================================
+   LOADING
+================================================== */
+
+.spinner {
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+
+  animation: spinner-rotate 0.75s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================================================
+   DIVIDER
+================================================== */
+
+.divider {
+  margin: 34px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.divider span {
+  height: 1px;
+  flex: 1;
+
+  background: #eaecf0;
+}
+
+.divider p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+/* ==================================================
+   GOOGLE
+================================================== */
+
+.google-button {
+  width: 100%;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  color: #1d2939;
+  background: #ffffff;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.google-button:hover:not(:disabled) {
+  color: #ff5100;
+  background: #fffaf7;
+
+  border-color: #ff9a62;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(255, 90, 0, 0.1);
+}
+
+.google-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.google-logo {
+  color: #4285f4;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  text-shadow:
+    1px 0 #34a853,
+    0 1px #fbbc05,
+    -1px 0 #ea4335;
+
+  transition: transform 0.3s ease;
+}
+
+.google-button:hover:not(:disabled)
+.google-logo {
+  transform:
+    rotate(8deg)
+    scale(1.12);
+}
+
+/* ==================================================
+   ĐĂNG KÝ
+================================================== */
+
+.register-message {
+  margin-top: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1024px) {
+  .login-page {
+    padding: 28px 20px;
+  }
+
+  .login-card {
+    width: 100%;
+
+    grid-template-columns: 42% 58%;
+
+    min-height: 690px;
+  }
+
+  .login-banner,
+  .banner-content,
+  .login-form-section {
+    min-height: 690px;
+  }
+
+  .banner-content {
+    padding: 38px 30px;
+  }
+
+  .logo-icon {
+    font-size: 49px;
+  }
+
+  .logo-text strong {
+    font-size: 24px;
+  }
+
+  .welcome-content h1 {
+    font-size: 41px;
+  }
+
+  .welcome-content p {
+    font-size: 15px;
+  }
+
+  .security-content p {
+    margin-left: 0;
+  }
+
+  .login-form-section {
+    padding: 54px 42px;
+  }
+
+  .form-header h2 {
+    font-size: 36px;
+  }
+}
+
+/* ==================================================
+   ĐIỆN THOẠI
+================================================== */
+
+@media (max-width: 767px) {
+  .login-page {
+    min-height: 100dvh;
+
+    padding: 16px;
+
+    align-items: stretch;
+  }
+
+  .login-card {
+    width: 100%;
+    min-height: calc(100dvh - 32px);
+
+    display: block;
+
+    border-radius: 20px;
+  }
+
+  .login-card:hover {
+    transform: none;
+  }
+
+  .login-banner {
+    display: none;
+  }
+
+  .login-form-section {
+    min-height: calc(100dvh - 32px);
+
+    padding:
+      max(30px, env(safe-area-inset-top))
+      22px
+      max(30px, env(safe-area-inset-bottom));
+
+    align-items: flex-start;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 470px;
+
+    margin: 0 auto;
+  }
+
+  .mobile-logo {
+    margin-bottom: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+  }
+
+  .mobile-logo >
+  .material-symbols-outlined {
+    color: #ff5a00;
+    font-size: 48px;
+  }
+
+  .mobile-logo > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-logo strong {
+    color: #ff5a00;
+
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .mobile-logo small {
+    margin-top: 5px;
+
+    color: #475467;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+  }
+
+  .form-header {
+    text-align: center;
+  }
+
+  .form-header h2 {
+    font-size: 34px;
+  }
+
+  .input-container input,
+  .login-button,
+  .google-button {
+    height: 55px;
+  }
+}
+
+/* ==================================================
+   MOBILE NHỎ
+================================================== */
+
+@media (max-width: 430px) {
+  .login-page {
+    padding: 0;
+  }
+
+  .login-card {
+    min-height: 100dvh;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+  .login-form-section {
+    min-height: 100dvh;
+
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .mobile-logo {
+    margin-bottom: 36px;
+  }
+
+  .form-header {
+    text-align: left;
+  }
+
+  .form-header h2 {
+    font-size: 31px;
+  }
+
+  .form-options {
+    align-items: flex-start;
+  }
+
+  .remember-checkbox,
+  .text-link {
+    font-size: 12px;
+  }
+
+  .register-message {
+    flex-wrap: wrap;
+  }
+}
+
+/* ==================================================
+   ĐIỆN THOẠI RẤT NHỎ
+================================================== */
+
+@media (max-width: 360px) {
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  .form-options >
+  .text-link {
+    align-self: flex-end;
+  }
+
+  .google-button {
+    font-size: 13px;
+  }
+}
+
+/* ==================================================
+   GIẢM CHUYỂN ĐỘNG
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+
+/* ==================================================
+   GOOGLE LOGIN
+================================================== */
+
+.google-login-wrapper {
+  position: relative;
+
+  width: 100%;
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.google-login-wrapper:hover:not(.google-disabled) {
+  border-color: #ff9a62;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px
+    rgba(255, 90, 0, 0.1);
+}
+
+.google-login-wrapper > div {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-login-wrapper iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.google-disabled {
+  pointer-events: none;
+
+  cursor: not-allowed;
+
+  opacity: 0.6;
+}
+
+/*
+ * Giữ lại style nút Google cũ,
+ * phòng trường hợp cần dùng lại.
+ */
+
+.google-button {
+  width: 100%;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  color: #1d2939;
+  background: #ffffff;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.google-button:hover:not(:disabled) {
+  color: #ff5100;
+  background: #fffaf7;
+
+  border-color: #ff9a62;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px
+    rgba(255, 90, 0, 0.1);
+}
+
+.google-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.google-logo {
+  color: #4285f4;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  text-shadow:
+    1px 0 #34a853,
+    0 1px #fbbc05,
+    -1px 0 #ea4335;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.google-button:hover:not(:disabled)
+.google-logo {
+  transform:
+    rotate(8deg)
+    scale(1.12);
+}

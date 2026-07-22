@@ -1,0 +1,974 @@
+<section class="category-management-page">
+
+  <!-- ==================================================
+       THÔNG BÁO LỖI
+  ================================================== -->
+
+  <div
+    class="api-error-alert"
+    *ngIf="errorMessage"
+  >
+    <span class="material-symbols-outlined">
+      error
+    </span>
+
+    <span class="api-error-message">
+      {{ errorMessage }}
+    </span>
+
+    <button
+      type="button"
+      class="retry-button"
+      (click)="retryLoad()"
+    >
+      Thử lại
+    </button>
+  </div>
+
+  <!-- ==================================================
+       THỐNG KÊ
+  ================================================== -->
+
+  <div class="statistics-layout">
+
+    <div class="statistics-grid">
+
+      <article
+        *ngFor="let statistic of statistics"
+        class="statistic-card"
+        [ngClass]="statistic.cssClass"
+      >
+        <div class="statistic-icon">
+          <span class="material-symbols-outlined">
+            {{ statistic.icon }}
+          </span>
+        </div>
+
+        <div class="statistic-information">
+          <span>
+            {{ statistic.label }}
+          </span>
+
+          <strong>
+            {{ statistic.value }}
+          </strong>
+
+          <small>
+            {{ statistic.percentage }}%
+          </small>
+        </div>
+      </article>
+
+    </div>
+
+    <article class="quick-filter-card">
+
+      <span class="quick-filter-icon">
+        <span class="material-symbols-outlined">
+          filter_alt
+        </span>
+      </span>
+
+      <div>
+        <span>
+          Lọc nhanh
+        </span>
+
+        <strong>
+          {{
+            selectedStatus === null
+              ? 'Tất cả trạng thái'
+              : selectedStatus === 1
+                ? 'Đang sử dụng'
+                : 'Đã ẩn'
+          }}
+        </strong>
+
+        <small>
+          {{
+            selectedStatus === null
+              ? 'Xem toàn bộ dữ liệu'
+              : 'Đang áp dụng bộ lọc'
+          }}
+        </small>
+      </div>
+
+    </article>
+
+  </div>
+
+  <!-- ==================================================
+       LAYOUT QUẢN LÝ
+  ================================================== -->
+
+  <div class="management-layout">
+
+    <!-- ==================================================
+         DANH SÁCH CATEGORY
+    ================================================== -->
+
+    <section class="category-list-card">
+
+      <!-- TOOLBAR -->
+
+      <div class="toolbar">
+
+        <div class="search-box">
+          <span class="material-symbols-outlined">
+            search
+          </span>
+
+          <input
+            type="text"
+            [(ngModel)]="searchKeyword"
+            (ngModelChange)="onSearchKeywordChange()"
+            placeholder="Tìm kiếm mã loại, tên loại, mô tả..."
+          />
+        </div>
+
+        <div class="filter-box">
+
+          <label for="categoryStatus">
+            Trạng thái
+          </label>
+
+          <select
+            id="categoryStatus"
+            [(ngModel)]="selectedStatus"
+            (ngModelChange)="onStatusChange()"
+            [disabled]="isLoading"
+          >
+            <option
+              *ngFor="let status of statusOptions"
+              [ngValue]="status.value"
+            >
+              {{ status.label }}
+            </option>
+          </select>
+
+        </div>
+
+        <button
+          type="button"
+          class="add-category-button"
+          (click)="addCategory()"
+        >
+          <span class="material-symbols-outlined">
+            add
+          </span>
+
+          <span>
+            Thêm loại mới
+          </span>
+        </button>
+
+      </div>
+
+      <!-- LOADING BAR -->
+
+      <div
+        class="loading-bar"
+        *ngIf="isLoading"
+      >
+        <span></span>
+      </div>
+
+      <!-- BẢNG CATEGORY -->
+
+      <div class="category-table-wrapper">
+
+        <table class="category-table">
+
+          <thead>
+            <tr>
+              <th class="drag-column">
+                #
+              </th>
+
+              <th>
+                Mã loại
+              </th>
+
+              <th>
+                Tên loại
+              </th>
+
+              <th>
+                Mô tả
+              </th>
+
+              <th>
+                Số món
+              </th>
+
+              <th>
+                Trạng thái
+              </th>
+
+              <th class="action-column">
+                Thao tác
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <!-- ĐANG LOAD -->
+
+            <tr
+              *ngIf="
+                isLoading &&
+                categories.length === 0
+              "
+            >
+              <td
+                colspan="7"
+                class="empty-state"
+              >
+                <div class="table-loading-content">
+
+                  <span
+                    class="
+                      material-symbols-outlined
+                      loading-icon
+                    "
+                  >
+                    progress_activity
+                  </span>
+
+                  <span>
+                    Đang tải dữ liệu loại món...
+                  </span>
+
+                </div>
+              </td>
+            </tr>
+
+            <!-- DANH SÁCH CATEGORY -->
+
+            <tr
+              *ngFor="
+                let category of categories;
+                let index = index;
+                trackBy: trackByCategoryId
+              "
+              [class.selected-row]="
+                isSelectedCategory(category)
+              "
+              [class.loading-row]="isLoading"
+              (click)="selectCategory(category)"
+            >
+
+              <td class="drag-column">
+                <span
+                  class="
+                    material-symbols-outlined
+                    drag-icon
+                  "
+                >
+                  drag_indicator
+                </span>
+
+                <span>
+                  {{
+                    (currentPage - 1) *
+                    pageSize +
+                    index +
+                    1
+                  }}
+                </span>
+              </td>
+
+              <td>
+                <strong>
+                  {{ category.id }}
+                </strong>
+              </td>
+
+              <td>
+                {{ category.name }}
+              </td>
+
+              <td class="description-cell">
+                {{
+                  category.description ||
+                  'Chưa có mô tả'
+                }}
+              </td>
+
+              <td>
+                <strong>
+                  {{ category.productCount }}
+                </strong>
+              </td>
+
+              <td>
+                <span
+                  class="status-badge"
+                  [ngClass]="
+                    getStatusClass(
+                      category.status
+                    )
+                  "
+                >
+                  <span class="status-dot"></span>
+
+                  {{
+                    getStatusLabel(
+                      category.status
+                    )
+                  }}
+                </span>
+              </td>
+
+              <td class="table-actions">
+
+                <button
+                  type="button"
+                  class="action-button view"
+                  title="Xem chi tiết"
+                  (click)="
+                    $event.stopPropagation();
+                    selectCategory(category)
+                  "
+                >
+                  <span class="material-symbols-outlined">
+                    visibility
+                  </span>
+
+                  <span class="action-button-text">
+                    Xem
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  class="action-button edit"
+                  title="Chỉnh sửa"
+                  (click)="
+                    editCategory(
+                      category,
+                      $event
+                    )
+                  "
+                >
+                  <span class="material-symbols-outlined">
+                    edit
+                  </span>
+
+                  <span class="action-button-text">
+                    Sửa
+                  </span>
+                </button>
+
+                <!-- ==================================================
+                     THÊM MỚI DELETE API:
+                     NÚT XÓA GỌI ALERT XÁC NHẬN VÀ API DELETE
+                ================================================== -->
+
+                <button
+                  type="button"
+                  class="action-button delete"
+                  [title]="
+                    deletingCategoryId === category.id
+                      ? 'Đang xóa loại món'
+                      : 'Xóa loại món'
+                  "
+                  [disabled]="
+                    isLoading ||
+                    deletingCategoryId === category.id
+                  "
+                  (click)="
+                    deleteCategory(
+                      category,
+                      $event
+                    )
+                  "
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    [class.loading-icon]="
+                      deletingCategoryId === category.id
+                    "
+                  >
+                    {{
+                      deletingCategoryId === category.id
+                        ? 'progress_activity'
+                        : 'delete'
+                    }}
+                  </span>
+
+                  <span class="action-button-text">
+                    {{
+                      deletingCategoryId === category.id
+                        ? 'Đang xóa'
+                        : 'Xóa'
+                    }}
+                  </span>
+                </button>
+
+              </td>
+
+            </tr>
+
+            <!-- KHÔNG CÓ DỮ LIỆU -->
+
+            <tr
+              *ngIf="
+                !isLoading &&
+                categories.length === 0
+              "
+            >
+              <td
+                colspan="7"
+                class="empty-state"
+              >
+                <div class="empty-category-content">
+
+                  <span class="material-symbols-outlined">
+                    category
+                  </span>
+
+                  <strong>
+                    Không tìm thấy loại món
+                  </strong>
+
+                  <p>
+                    Không có loại món nào phù hợp với điều kiện tìm kiếm.
+                  </p>
+
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <!-- PHÂN TRANG -->
+
+      <footer class="category-pagination">
+
+        <p>
+          Hiển thị
+          {{ startItem }}
+          -
+          {{ endItem }}
+          trong tổng số
+          {{ totalItems }}
+          loại
+        </p>
+
+        <div class="pagination-controls">
+
+          <button
+            type="button"
+            [disabled]="
+              !hasPreviousPage ||
+              isLoading
+            "
+            (click)="changePage(currentPage - 1)"
+          >
+            <span class="material-symbols-outlined">
+              chevron_left
+            </span>
+          </button>
+
+          <button
+            *ngFor="
+              let page of visiblePageNumbers;
+              trackBy: trackByPageNumber
+            "
+            type="button"
+            [class.active]="
+              page === currentPage
+            "
+            [disabled]="isLoading"
+            (click)="changePage(page)"
+          >
+            {{ page }}
+          </button>
+
+          <button
+            type="button"
+            [disabled]="
+              !hasNextPage ||
+              isLoading
+            "
+            (click)="changePage(currentPage + 1)"
+          >
+            <span class="material-symbols-outlined">
+              chevron_right
+            </span>
+          </button>
+
+        </div>
+
+        <select
+          [(ngModel)]="pageSize"
+          (ngModelChange)="onPageSizeChange()"
+          [disabled]="isLoading"
+        >
+          <option [ngValue]="10">
+            10 / trang
+          </option>
+
+          <option [ngValue]="20">
+            20 / trang
+          </option>
+
+          <option [ngValue]="50">
+            50 / trang
+          </option>
+        </select>
+
+      </footer>
+
+    </section>
+
+    <!-- ==================================================
+         CỘT BÊN PHẢI
+    ================================================== -->
+
+    <aside class="information-column">
+
+      <!-- CHI TIẾT CATEGORY -->
+
+      <section class="detail-card">
+
+        <ng-container
+          *ngIf="
+            selectedCategory;
+            else noSelectedCategory
+          "
+        >
+
+          <div class="card-title-row">
+
+            <h2>
+              Chi tiết loại
+            </h2>
+
+            <span
+              class="status-badge"
+              [ngClass]="
+                getStatusClass(
+                  selectedCategory.status
+                )
+              "
+            >
+              <span class="status-dot"></span>
+
+              {{
+                getStatusLabel(
+                  selectedCategory.status
+                )
+              }}
+            </span>
+
+          </div>
+
+          <div class="detail-content">
+
+            <div class="detail-icon">
+
+              <img
+                *ngIf="
+                  getCategoryImageUrl(
+                    selectedCategory.imageUrl
+                  ) as categoryImageUrl
+                "
+                [src]="categoryImageUrl"
+                [alt]="selectedCategory.name"
+                class="category-image"
+                (error)="onCategoryImageError($event)"
+              />
+
+              <span
+                class="
+                  material-symbols-outlined
+                  fallback-category-icon
+                "
+                [style.display]="
+                  selectedCategory.imageUrl
+                    ? 'none'
+                    : 'inline-block'
+                "
+              >
+                ramen_dining
+              </span>
+
+            </div>
+
+            <dl class="detail-list">
+
+              <div>
+                <dt>
+                  Mã loại:
+                </dt>
+
+                <dd>
+                  {{ selectedCategory.id }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>
+                  Tên loại:
+                </dt>
+
+                <dd>
+                  {{ selectedCategory.name }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>
+                  Mô tả:
+                </dt>
+
+                <dd>
+                  {{
+                    selectedCategory.description ||
+                    'Chưa có mô tả'
+                  }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>
+                  Số món:
+                </dt>
+
+                <dd>
+                  {{ selectedCategory.productCount }}
+                  món
+                </dd>
+              </div>
+
+              <div>
+                <dt>
+                  Trạng thái:
+                </dt>
+
+                <dd>
+                  <span
+                    class="inline-status-dot"
+                    [ngClass]="
+                      getStatusClass(
+                        selectedCategory.status
+                      )
+                    "
+                  ></span>
+
+                  {{
+                    getStatusLabel(
+                      selectedCategory.status
+                    )
+                  }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>
+                  Ngày tạo:
+                </dt>
+
+                <dd>
+                  {{
+                    selectedCategory.createdAt
+                      | date:'dd/MM/yyyy HH:mm:ss'
+                  }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>
+                  Cập nhật:
+                </dt>
+
+                <dd>
+                  {{
+                    selectedCategory.updatedAt
+                      ? (
+                          selectedCategory.updatedAt
+                            | date:'dd/MM/yyyy HH:mm:ss'
+                        )
+                      : 'Chưa cập nhật'
+                  }}
+                </dd>
+              </div>
+
+            </dl>
+
+          </div>
+
+        </ng-container>
+
+        <ng-template #noSelectedCategory>
+
+          <div class="no-selected-category">
+
+            <span class="material-symbols-outlined">
+              category
+            </span>
+
+            <strong>
+              Chưa chọn loại món
+            </strong>
+
+            <p>
+              Chọn một loại món để xem thông tin.
+            </p>
+
+          </div>
+
+        </ng-template>
+
+      </section>
+
+      <!-- LỊCH SỬ -->
+
+      <section class="history-card category-history-card">
+
+        <div class="card-title-row history-title-row">
+
+          <h2>
+            Lịch sử hoạt động
+          </h2>
+
+        </div>
+
+        <div class="category-history-container">
+
+          <div class="category-history-header">
+
+            <div>
+              Thời gian
+            </div>
+
+            <div>
+              Người thực hiện
+            </div>
+
+            <div>
+              Nội dung
+            </div>
+
+            <div class="category-history-action-title">
+              Thao tác
+            </div>
+
+          </div>
+
+          <div class="category-history-body">
+
+            <!-- ĐANG LOAD LỊCH SỬ -->
+
+            <div
+              class="category-history-state"
+              *ngIf="
+                isLoading &&
+                histories.length === 0
+              "
+            >
+              <span
+                class="
+                  material-symbols-outlined
+                  loading-icon
+                "
+              >
+                progress_activity
+              </span>
+
+              <span>
+                Đang tải lịch sử hoạt động...
+              </span>
+            </div>
+
+            <!-- DANH SÁCH LỊCH SỬ -->
+
+            <article
+              class="category-history-row"
+              *ngFor="
+                let history of histories;
+                trackBy: trackByHistoryId
+              "
+            >
+
+              <div class="category-history-time">
+
+                <span
+                  class="history-dot"
+                  [ngClass]="history.cssClass"
+                ></span>
+
+                <div class="category-history-date">
+
+                  <span>
+                    {{
+                      history.createdAt
+                        | date:'dd/MM/yyyy'
+                    }}
+                  </span>
+
+                  <strong>
+                    {{
+                      history.createdAt
+                        | date:'HH:mm:ss'
+                    }}
+                  </strong>
+
+                </div>
+
+              </div>
+
+              <div class="category-history-user">
+
+                <strong>
+                  {{
+                    history.userName ||
+                    'Không xác định'
+                  }}
+                </strong>
+
+                <span>
+                  ({{ history.roleName }})
+                </span>
+
+              </div>
+
+              <div class="category-history-description">
+
+                <strong>
+                  {{ history.description }}
+                </strong>
+
+                <span *ngIf="history.categoryId">
+                  Mã loại:
+                  {{ history.categoryId }}
+                </span>
+
+              </div>
+
+              <div class="category-history-action">
+
+                <button
+                  type="button"
+                  class="history-delete-button"
+                  title="Xóa lịch sử"
+                  (click)="
+                    deleteHistory(
+                      history,
+                      $event
+                    )
+                  "
+                >
+                  <span class="material-symbols-outlined">
+                    delete
+                  </span>
+
+                  <span class="history-delete-text">
+                    Xóa
+                  </span>
+                </button>
+
+              </div>
+
+            </article>
+
+            <!-- KHÔNG CÓ LỊCH SỬ -->
+
+            <div
+              class="category-history-state"
+              *ngIf="
+                !isLoading &&
+                histories.length === 0
+              "
+            >
+              <span class="material-symbols-outlined">
+                history
+              </span>
+
+              <strong>
+                Chưa có lịch sử hoạt động
+              </strong>
+
+              <p>
+                Loại món này chưa phát sinh thao tác nào.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="view-all-history-button"
+          [disabled]="
+            histories.length === 0
+          "
+          (click)="viewAllHistory()"
+        >
+          <span>
+            Xem tất cả lịch sử
+          </span>
+
+          <span class="material-symbols-outlined">
+            chevron_right
+          </span>
+        </button>
+
+      </section>
+
+    </aside>
+
+  </div>
+
+</section>
+
+<!-- ==================================================
+     COMPONENT CON TẠO CATEGORY
+
+     closed:
+     Đóng form khi bấm X, Hủy hoặc click bên ngoài.
+
+     created:
+     Nhận Category thật do API vừa tạo và load lại
+     danh sách, thống kê, chi tiết và lịch sử.
+================================================== -->
+
+<app-create-restaurant-category
+  *ngIf="isCreateCategoryFormOpen"
+  [isOpen]="isCreateCategoryFormOpen"
+  (closed)="closeCreateCategoryForm()"
+  (created)="handleCategoryCreated($event)"
+></app-create-restaurant-category>
+
+<!-- ==================================================
+     COMPONENT CON CẬP NHẬT CATEGORY
+
+     closed:
+     Đóng form Update.
+
+     updated:
+     Nhận UpdatedCategoryData thật do API PUT trả về.
+
+     Tên hàm handleFakeCategoryUpdated được giữ nguyên
+     để không thay đổi binding và logic hiện tại
+     trong component cha.
+================================================== -->
+
+<app-update-restaurant-category
+  *ngIf="
+    isUpdateCategoryFormOpen &&
+    categoryBeingUpdated
+  "
+  [isOpen]="isUpdateCategoryFormOpen"
+  [category]="categoryBeingUpdated"
+  (closed)="closeUpdateCategoryForm()"
+  (updated)="handleFakeCategoryUpdated($event)"
+></app-update-restaurant-category>

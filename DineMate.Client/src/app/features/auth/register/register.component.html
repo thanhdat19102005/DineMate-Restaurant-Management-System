@@ -1,0 +1,516 @@
+<div class="register-page">
+  <main class="register-card">
+    <!-- Phần bên trái -->
+    <section class="register-banner">
+      <div class="banner-content">
+        <div class="restaurant-logo">
+          <span class="material-symbols-outlined logo-icon">
+            room_service
+          </span>
+
+          <div class="logo-text">
+            <strong>DC3MS</strong>
+            <span>RESTAURANT</span>
+          </div>
+        </div>
+
+        <div class="welcome-content">
+          <h1>
+            Tạo tài khoản
+            <br />
+            cùng <span>DC3MS!</span>
+          </h1>
+
+          <p>
+            Đăng ký để trải nghiệm hệ thống quản lý nhà hàng
+            hiện đại, tiện lợi và hiệu quả.
+          </p>
+        </div>
+
+        <div class="security-card">
+          <div class="security-icon">
+            <span class="material-symbols-outlined">
+              verified_user
+            </span>
+          </div>
+
+          <div>
+            <strong>Bảo mật &amp; An toàn</strong>
+
+            <p>
+              Thông tin của bạn được bảo vệ tuyệt đối
+              với công nghệ bảo mật tiên tiến.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <span class="material-symbols-outlined">
+              dashboard_customize
+            </span>
+
+            <small>Quản lý dễ dàng</small>
+          </div>
+
+          <div class="feature-item">
+            <span class="material-symbols-outlined">
+              groups
+            </span>
+
+            <small>Đội ngũ hỗ trợ</small>
+          </div>
+
+          <div class="feature-item">
+            <span class="material-symbols-outlined">
+              shield
+            </span>
+
+            <small>Bảo mật tuyệt đối</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form đăng ký -->
+    <section class="register-form-section">
+      <form
+        class="register-form"
+        #registerForm="ngForm"
+        (ngSubmit)="register(registerForm)"
+        novalidate
+      >
+        <!-- Logo trên điện thoại -->
+        <div class="mobile-logo">
+          <span class="material-symbols-outlined">
+            room_service
+          </span>
+
+          <div>
+            <strong>DC3MS</strong>
+            <small>RESTAURANT</small>
+          </div>
+        </div>
+
+        <header class="form-header">
+          <h2>Đăng ký tài khoản</h2>
+
+          <p>
+            Vui lòng điền đầy đủ thông tin để tạo tài khoản
+          </p>
+        </header>
+
+        <!-- Thông báo lỗi trong form -->
+        <div
+          class="alert-message alert-error"
+          *ngIf="errorMessage"
+        >
+          <span class="material-symbols-outlined">
+            error
+          </span>
+
+          <span>{{ errorMessage }}</span>
+        </div>
+
+        <div class="form-grid">
+          <!-- Họ và tên -->
+          <div class="form-group">
+            <label for="fullName">
+              Họ và tên
+            </label>
+
+            <div
+              class="input-container"
+              [class.input-invalid]="
+                fullName.invalid &&
+                (
+                  fullName.touched ||
+                  registerForm.submitted
+                )
+              "
+            >
+              <span class="material-symbols-outlined input-icon">
+                person
+              </span>
+
+              <input
+                id="fullName"
+                type="text"
+                name="fullName"
+                #fullName="ngModel"
+                [(ngModel)]="registerData.fullName"
+                placeholder="Nhập họ và tên"
+                autocomplete="name"
+                minlength="2"
+                [disabled]="isLoading"
+                required
+              />
+            </div>
+
+            <small
+              class="field-error"
+              *ngIf="
+                fullName.invalid &&
+                (
+                  fullName.touched ||
+                  registerForm.submitted
+                )
+              "
+            >
+              Vui lòng nhập họ và tên.
+            </small>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">
+              Email
+            </label>
+
+            <div
+              class="input-container"
+              [class.input-invalid]="
+                email.invalid &&
+                (
+                  email.touched ||
+                  registerForm.submitted
+                )
+              "
+            >
+              <span class="material-symbols-outlined input-icon">
+                mail
+              </span>
+
+              <input
+                id="email"
+                type="email"
+                name="email"
+                #email="ngModel"
+                [(ngModel)]="registerData.email"
+                placeholder="Nhập email của bạn"
+                autocomplete="email"
+                [disabled]="isLoading"
+                required
+                email
+              />
+            </div>
+
+            <small
+              class="field-error"
+              *ngIf="
+                email.invalid &&
+                (
+                  email.touched ||
+                  registerForm.submitted
+                )
+              "
+            >
+              Email không hợp lệ.
+            </small>
+          </div>
+
+          <!-- Số điện thoại -->
+          <div class="form-group form-group-full">
+            <label for="phoneNumber">
+              Số điện thoại
+            </label>
+
+            <div
+              class="input-container"
+              [class.input-invalid]="
+                phoneNumber.invalid &&
+                (
+                  phoneNumber.touched ||
+                  registerForm.submitted
+                )
+              "
+            >
+              <span class="material-symbols-outlined input-icon">
+                phone
+              </span>
+
+              <input
+                id="phoneNumber"
+                type="tel"
+                name="phoneNumber"
+                #phoneNumber="ngModel"
+                [(ngModel)]="registerData.phoneNumber"
+                placeholder="Nhập số điện thoại"
+                autocomplete="tel"
+                inputmode="numeric"
+                pattern="0[0-9]{9}"
+                maxlength="10"
+                [disabled]="isLoading"
+                required
+              />
+            </div>
+
+            <small
+              class="field-error"
+              *ngIf="
+                phoneNumber.invalid &&
+                (
+                  phoneNumber.touched ||
+                  registerForm.submitted
+                )
+              "
+            >
+              Số điện thoại phải gồm 10 chữ số và bắt đầu bằng 0.
+            </small>
+          </div>
+
+          <!-- Mật khẩu -->
+          <div class="form-group">
+            <label for="password">
+              Mật khẩu
+            </label>
+
+            <div
+              class="input-container"
+              [class.input-invalid]="
+                (
+                  password.touched ||
+                  registerForm.submitted
+                ) &&
+                !isValidPassword()
+              "
+            >
+              <span class="material-symbols-outlined input-icon">
+                lock
+              </span>
+
+              <input
+                id="password"
+                [type]="showPassword ? 'text' : 'password'"
+                name="password"
+                #password="ngModel"
+                [(ngModel)]="registerData.password"
+                placeholder="Tạo mật khẩu"
+                autocomplete="new-password"
+                minlength="8"
+                [disabled]="isLoading"
+                required
+              />
+
+              <button
+                type="button"
+                class="show-password-button"
+                (click)="togglePassword()"
+                [disabled]="isLoading"
+                [attr.aria-label]="
+                  showPassword
+                    ? 'Ẩn mật khẩu'
+                    : 'Hiện mật khẩu'
+                "
+              >
+                <span class="material-symbols-outlined">
+                  {{
+                    showPassword
+                      ? 'visibility_off'
+                      : 'visibility'
+                  }}
+                </span>
+              </button>
+            </div>
+
+            <small
+              class="field-hint"
+              *ngIf="
+                !password.touched &&
+                !registerForm.submitted
+              "
+            >
+              Ít nhất 8 ký tự, gồm chữ hoa, chữ thường và số.
+            </small>
+
+            <small
+              class="field-error"
+              *ngIf="
+                (
+                  password.touched ||
+                  registerForm.submitted
+                ) &&
+                !isValidPassword()
+              "
+            >
+              Mật khẩu chưa đủ mạnh.
+            </small>
+          </div>
+
+          <!-- Xác nhận mật khẩu -->
+          <div class="form-group">
+            <label for="confirmPassword">
+              Xác nhận mật khẩu
+            </label>
+
+            <div
+              class="input-container"
+              [class.input-invalid]="
+                (
+                  confirmPassword.touched ||
+                  registerForm.submitted
+                ) &&
+                !passwordsMatch()
+              "
+            >
+              <span class="material-symbols-outlined input-icon">
+                lock
+              </span>
+
+              <input
+                id="confirmPassword"
+                [type]="
+                  showConfirmPassword
+                    ? 'text'
+                    : 'password'
+                "
+                name="confirmPassword"
+                #confirmPassword="ngModel"
+                [(ngModel)]="
+                  registerData.confirmPassword
+                "
+                placeholder="Nhập lại mật khẩu"
+                autocomplete="new-password"
+                [disabled]="isLoading"
+                required
+              />
+
+              <button
+                type="button"
+                class="show-password-button"
+                (click)="toggleConfirmPassword()"
+                [disabled]="isLoading"
+                [attr.aria-label]="
+                  showConfirmPassword
+                    ? 'Ẩn mật khẩu'
+                    : 'Hiện mật khẩu'
+                "
+              >
+                <span class="material-symbols-outlined">
+                  {{
+                    showConfirmPassword
+                      ? 'visibility_off'
+                      : 'visibility'
+                  }}
+                </span>
+              </button>
+            </div>
+
+            <small
+              class="field-error"
+              *ngIf="
+                (
+                  confirmPassword.touched ||
+                  registerForm.submitted
+                ) &&
+                !passwordsMatch()
+              "
+            >
+              Mật khẩu xác nhận không khớp.
+            </small>
+          </div>
+        </div>
+
+        <!-- Điều khoản -->
+        <label class="terms-checkbox">
+          <input
+            type="checkbox"
+            name="agreeToTerms"
+            [(ngModel)]="registerData.agreeToTerms"
+            [disabled]="isLoading"
+            required
+          />
+
+          <span class="checkbox-design">
+            <span class="material-symbols-outlined">
+              check
+            </span>
+          </span>
+
+          <span class="terms-text">
+            Tôi đồng ý với
+
+            <button
+              type="button"
+              class="text-link"
+              (click)="openTerms()"
+              [disabled]="isLoading"
+            >
+              Điều khoản sử dụng
+            </button>
+
+            và
+
+            <button
+              type="button"
+              class="text-link"
+              (click)="openPrivacyPolicy()"
+              [disabled]="isLoading"
+            >
+              Chính sách bảo mật
+            </button>
+          </span>
+        </label>
+
+        <!-- Nút đăng ký -->
+        <button
+          type="submit"
+          class="register-button"
+          [disabled]="isLoading"
+        >
+          <span
+            class="spinner"
+            *ngIf="isLoading"
+          ></span>
+
+          <span
+            class="material-symbols-outlined"
+            *ngIf="!isLoading"
+          >
+            person_add
+          </span>
+
+          <span>
+            {{
+              isLoading
+                ? 'Đang tạo tài khoản...'
+                : 'Tạo tài khoản'
+            }}
+          </span>
+        </button>
+
+        <!-- Phân cách -->
+        <div class="divider">
+          <span></span>
+          <p>hoặc</p>
+          <span></span>
+        </div>
+
+        <!-- Đăng ký Google -->
+        <button
+          type="button"
+          class="google-button"
+          [disabled]="isLoading"
+          (click)="registerWithGoogle()"
+        >
+          <span class="google-logo">G</span>
+          <span>Đăng ký với Google</span>
+        </button>
+
+        <!-- Chuyển về đăng nhập -->
+        <div class="login-message">
+          <span>Đã có tài khoản?</span>
+
+          <button
+            type="button"
+            class="text-link login-link"
+            [disabled]="isLoading"
+            (click)="goToLogin()"
+          >
+            Đăng nhập ngay
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+</div>

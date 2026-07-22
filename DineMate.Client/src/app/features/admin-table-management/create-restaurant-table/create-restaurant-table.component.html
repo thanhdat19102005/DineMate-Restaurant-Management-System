@@ -1,0 +1,604 @@
+<div
+  class="create-table-backdrop"
+  *ngIf="isOpen"
+  [class.closing]="isClosing"
+  (click)="onBackdropClick($event)"
+>
+  <section
+    class="create-table-modal"
+    [class.closing]="isClosing"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="createTableTitle"
+  >
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="modal-header">
+      <div class="modal-heading">
+        <span class="heading-icon">
+          <span
+            class="material-symbols-outlined"
+          >
+            table_restaurant
+          </span>
+        </span>
+
+        <div>
+          <h2 id="createTableTitle">
+            Thêm bàn mới
+          </h2>
+
+          <p>
+            Nhập thông tin để tạo bàn mới
+            trong nhà hàng
+          </p>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="close-button"
+        aria-label="Đóng form"
+        [disabled]="
+          isSubmitting ||
+          isClosing
+        "
+        (click)="closeModal()"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          close
+        </span>
+      </button>
+    </header>
+
+    <!-- ==================================================
+         BODY
+    ================================================== -->
+
+    <div class="modal-body">
+      <!-- ==================================================
+           FORM BÊN TRÁI
+      ================================================== -->
+
+      <section class="form-panel">
+        <div class="section-heading">
+          <span class="section-dot"></span>
+
+          <h3>
+            Thông tin cơ bản
+          </h3>
+        </div>
+
+        <div class="form-grid">
+          <!-- MÃ BÀN -->
+
+          <div class="form-field">
+            <label for="createTableId">
+              Mã bàn
+              <em>*</em>
+            </label>
+
+            <div class="control">
+              <span
+                class="material-symbols-outlined"
+              >
+                sell
+              </span>
+
+              <input
+                id="createTableId"
+                type="text"
+                maxlength="50"
+                placeholder="VD: A01"
+                [disabled]="
+                  isSubmitting ||
+                  isClosing
+                "
+                [(ngModel)]="form.id"
+                (ngModelChange)="
+                  qrGenerated = false
+                "
+              />
+            </div>
+
+            <small>
+              Mã bàn phải là duy nhất
+            </small>
+          </div>
+
+          <!-- TÊN BÀN -->
+
+          <div class="form-field">
+            <label for="createTableName">
+              Tên bàn
+              <em>*</em>
+            </label>
+
+            <div class="control">
+              <span
+                class="material-symbols-outlined"
+              >
+                table_restaurant
+              </span>
+
+              <input
+                id="createTableName"
+                type="text"
+                maxlength="200"
+                placeholder="VD: Bàn A01"
+                [disabled]="
+                  isSubmitting ||
+                  isClosing
+                "
+                [(ngModel)]="form.tableName"
+              />
+            </div>
+          </div>
+
+          <!-- SỨC CHỨA -->
+
+          <div class="form-field">
+            <label for="createCapacity">
+              Sức chứa
+              <em>*</em>
+            </label>
+
+            <div class="control">
+              <span
+                class="material-symbols-outlined"
+              >
+                groups
+              </span>
+
+              <input
+                id="createCapacity"
+                type="number"
+                min="1"
+                max="100"
+                placeholder="Nhập số lượng người"
+                [disabled]="
+                  isSubmitting ||
+                  isClosing
+                "
+                [(ngModel)]="form.capacity"
+              />
+            </div>
+          </div>
+
+          <!-- LOẠI BÀN -->
+
+          <div class="form-field">
+            <label for="createTableType">
+              Loại bàn
+              <em>*</em>
+            </label>
+
+            <div class="control">
+              <span
+                class="material-symbols-outlined"
+              >
+                table_restaurant
+              </span>
+
+              <select
+                id="createTableType"
+                [disabled]="
+                  isSubmitting ||
+                  isClosing
+                "
+                [(ngModel)]="form.tableType"
+              >
+                <option value="">
+                  Chọn loại bàn
+                </option>
+
+                <option value="Thường">
+                  Thường
+                </option>
+
+                <option value="VIP">
+                  VIP
+                </option>
+
+                <option value="Ngoài trời">
+                  Ngoài trời
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- KHU VỰC -->
+
+          <div class="form-field">
+            <label for="createAreaName">
+              Khu vực
+            </label>
+
+            <div class="control">
+              <span
+                class="material-symbols-outlined"
+              >
+                location_on
+              </span>
+
+              <input
+                id="createAreaName"
+                type="text"
+                maxlength="200"
+                placeholder="VD: Tầng 1 - Khu A"
+                [disabled]="
+                  isSubmitting ||
+                  isClosing
+                "
+                [(ngModel)]="form.areaName"
+              />
+            </div>
+          </div>
+
+          <!-- GHI CHÚ -->
+
+          <div class="form-field">
+            <label for="createNote">
+              Ghi chú
+            </label>
+
+            <div class="control">
+              <span
+                class="material-symbols-outlined"
+              >
+                note_alt
+              </span>
+
+              <input
+                id="createNote"
+                type="text"
+                maxlength="1000"
+                placeholder="VD: Gần cửa sổ..."
+                [disabled]="
+                  isSubmitting ||
+                  isClosing
+                "
+                [(ngModel)]="form.note"
+              />
+            </div>
+
+            <small class="count-text">
+              {{ noteLength }}/1000
+            </small>
+          </div>
+        </div>
+
+        <!-- ==================================================
+             QR CODE
+        ================================================== -->
+
+        <div class="qr-section">
+          <div class="section-heading">
+            <span
+              class="
+                material-symbols-outlined
+                qr-heading-icon
+              "
+            >
+              qr_code_2
+            </span>
+
+            <h3>
+              QR Code
+            </h3>
+          </div>
+
+          <div class="qr-notice">
+            <span
+              class="material-symbols-outlined"
+            >
+              shopping_bag
+            </span>
+
+            <div>
+              <strong>
+                Hệ thống sẽ tự động tạo
+                QR Code cho bàn
+              </strong>
+
+              <p>
+                QR Code chứa đường dẫn để khách
+                quét và gọi món trực tiếp tại bàn.
+              </p>
+            </div>
+          </div>
+
+          <div class="qr-generator">
+            <ng-container
+              *ngIf="
+                !qrGenerated;
+                else generatedQrTemplate
+              "
+            >
+              <span class="qr-round-icon">
+                <span
+                  class="material-symbols-outlined"
+                >
+                  qr_code_2
+                </span>
+              </span>
+
+              <strong>
+                Chưa có mã QR
+              </strong>
+
+              <p>
+                Nhấn nút bên dưới để tạo
+                mã QR xem trước
+              </p>
+
+              <button
+                type="button"
+                class="generate-button"
+                [disabled]="
+                  isSubmitting ||
+                  isClosing
+                "
+                (click)="generateQr()"
+              >
+                <span
+                  class="material-symbols-outlined"
+                >
+                  qr_code_2
+                </span>
+
+                Tạo mã QR
+              </button>
+            </ng-container>
+
+            <ng-template
+              #generatedQrTemplate
+            >
+              <div class="generated-qr">
+                <qrcode
+                  [qrdata]="previewQrUrl"
+                  [width]="155"
+                  [margin]="1"
+                  [errorCorrectionLevel]="'M'"
+                ></qrcode>
+
+                <strong>
+                  Đã tạo mã QR xem trước
+                </strong>
+
+                <p>
+                  {{ previewQrUrl }}
+                </p>
+
+                <button
+                  type="button"
+                  class="generate-button"
+                  [disabled]="
+                    isSubmitting ||
+                    isClosing
+                  "
+                  (click)="generateQr()"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                  >
+                    refresh
+                  </span>
+
+                  Tạo lại QR
+                </button>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- ==================================================
+             ERROR
+        ================================================== -->
+
+        <div
+          class="error-message"
+          *ngIf="errorMessage"
+        >
+          <span
+            class="material-symbols-outlined"
+          >
+            error
+          </span>
+
+          <span>
+            {{ errorMessage }}
+          </span>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           XEM TRƯỚC BÊN PHẢI
+      ================================================== -->
+
+      <aside class="preview-panel">
+        <div class="preview-heading">
+          <span
+            class="material-symbols-outlined"
+          >
+            visibility
+          </span>
+
+          <h3>
+            Xem trước
+          </h3>
+        </div>
+
+        <div class="preview-card">
+          <span class="preview-table-icon">
+            <span
+              class="material-symbols-outlined"
+            >
+              table_restaurant
+            </span>
+          </span>
+
+          <h4>
+            {{ previewName }}
+          </h4>
+
+          <span class="status-chip">
+            <span></span>
+
+            Trống
+          </span>
+
+          <p class="preview-meta">
+            {{ previewArea }}
+
+            <i></i>
+
+            {{ previewCapacity }}
+            người
+          </p>
+
+          <div
+            class="preview-separator"
+          ></div>
+
+          <div
+            class="preview-qr"
+            *ngIf="qrGenerated"
+          >
+            <qrcode
+              [qrdata]="previewQrUrl"
+              [width]="145"
+              [margin]="1"
+              [errorCorrectionLevel]="'M'"
+            ></qrcode>
+          </div>
+
+          <div
+            class="preview-qr-empty"
+            *ngIf="!qrGenerated"
+          >
+            <span
+              class="material-symbols-outlined"
+            >
+              qr_code_2
+            </span>
+          </div>
+
+          <p class="preview-code">
+            Mã bàn:
+
+            <strong>
+              {{ previewCode }}
+            </strong>
+          </p>
+
+          <p
+            class="preview-url"
+            *ngIf="qrGenerated"
+          >
+            {{ previewQrUrl }}
+          </p>
+
+          <div class="preview-info">
+            <span
+              class="material-symbols-outlined"
+            >
+              info
+            </span>
+
+            <span>
+              QR chính thức được backend
+              tạo khi lưu bàn
+            </span>
+          </div>
+        </div>
+
+        <div class="note-card">
+          <div class="note-title">
+            <span
+              class="material-symbols-outlined"
+            >
+              stars
+            </span>
+
+            <strong>
+              Lưu ý
+            </strong>
+          </div>
+
+          <ul>
+            <li>
+              Mã bàn không được trùng.
+            </li>
+
+            <li>
+              QR Code dùng để khách
+              quét và gọi món.
+            </li>
+
+            <li>
+              Bạn có thể in QR Code
+              và đặt trực tiếp tại bàn.
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="modal-footer">
+      <button
+        type="button"
+        class="cancel-button"
+        [disabled]="
+          isSubmitting ||
+          isClosing
+        "
+        (click)="closeModal()"
+      >
+        <span
+          class="material-symbols-outlined"
+        >
+          close
+        </span>
+
+        Hủy
+      </button>
+
+      <button
+        type="button"
+        class="submit-button"
+        [disabled]="
+          isSubmitting ||
+          isClosing
+        "
+        (click)="createTable()"
+      >
+        <span
+          class="material-symbols-outlined"
+          *ngIf="!isSubmitting"
+        >
+          add
+        </span>
+
+        <span
+          class="button-spinner"
+          *ngIf="isSubmitting"
+        ></span>
+
+        {{
+          isSubmitting
+            ? 'Đang tạo bàn...'
+            : 'Tạo bàn mới'
+        }}
+      </button>
+    </footer>
+  </section>
+</div>

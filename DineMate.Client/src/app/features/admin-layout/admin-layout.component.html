@@ -1,0 +1,396 @@
+<div
+  class="admin-layout"
+  [class.sidebar-is-expanded]="sidebarExpanded"
+  [class.sidebar-is-collapsed]="!sidebarExpanded"
+>
+  <!-- Overlay khi mở sidebar trên mobile -->
+  <div
+    class="sidebar-overlay"
+    *ngIf="sidebarOpen"
+    (click)="closeSidebar()"
+  ></div>
+
+  <!-- Sidebar -->
+  <aside
+    class="admin-sidebar"
+    [class.sidebar-open]="sidebarOpen"
+    [class.sidebar-expanded]="sidebarExpanded"
+    [class.sidebar-collapsed]="!sidebarExpanded"
+    (mouseenter)="onSidebarMouseEnter()"
+    (mouseleave)="onSidebarMouseLeave()"
+  >
+    <!-- Header sidebar -->
+    <div class="sidebar-header">
+      <a
+        class="brand"
+        routerLink="/admin/dashboard"
+        (click)="closeSidebar()"
+      >
+        <span class="brand-icon">
+          <span class="material-symbols-outlined">
+            room_service
+          </span>
+        </span>
+
+        <span class="brand-text">
+          <strong>
+            Restaurant
+          </strong>
+
+          <small>
+            Management
+          </small>
+        </span>
+      </a>
+
+      <!-- Nút ghim sidebar -->
+      <button
+        type="button"
+        class="sidebar-pin-button"
+        [class.pinned]="sidebarPinned"
+        [attr.aria-label]="
+          sidebarPinned
+            ? 'Bỏ ghim thanh bên'
+            : 'Ghim thanh bên'
+        "
+        [attr.title]="
+          sidebarPinned
+            ? 'Bỏ ghim thanh bên'
+            : 'Ghim thanh bên'
+        "
+        (click)="toggleSidebarPin()"
+      >
+        <span class="material-symbols-outlined">
+          {{
+            sidebarPinned
+              ? 'keep'
+              : 'keep_off'
+          }}
+        </span>
+      </button>
+
+      <!-- Nút đóng sidebar trên mobile -->
+      <button
+        type="button"
+        class="sidebar-close-button"
+        aria-label="Đóng menu"
+        (click)="closeSidebar()"
+      >
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </button>
+    </div>
+
+    <!-- Danh sách menu -->
+    <nav class="sidebar-navigation">
+      <a
+        *ngFor="let menu of menuItems"
+        class="sidebar-menu-item"
+        [routerLink]="menu.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{
+          exact: true
+        }"
+        [attr.title]="
+          sidebarExpanded
+            ? null
+            : menu.label
+        "
+        (click)="closeSidebar()"
+      >
+        <span
+          class="material-symbols-outlined menu-icon"
+        >
+          {{ menu.icon }}
+        </span>
+
+        <span class="menu-label">
+          {{ menu.label }}
+        </span>
+
+        <span
+          class="material-symbols-outlined menu-arrow"
+        >
+          chevron_right
+        </span>
+      </a>
+    </nav>
+
+    <!-- Đồng hồ -->
+    <div class="sidebar-clock">
+      <div class="clock-visual">
+        <!-- Các điểm trên mặt đồng hồ -->
+        <span
+          class="clock-dot dot-one"
+        ></span>
+
+        <span
+          class="clock-dot dot-two"
+        ></span>
+
+        <span
+          class="clock-dot dot-three"
+        ></span>
+
+        <span
+          class="clock-dot dot-four"
+        ></span>
+
+        <!-- Kim giờ -->
+        <span
+          class="clock-hand clock-hour"
+          [style.transform]="
+            'translateX(-50%) rotate(' +
+            clockHourRotation +
+            'deg)'
+          "
+        ></span>
+
+        <!-- Kim phút -->
+        <span
+          class="clock-hand clock-minute"
+          [style.transform]="
+            'translateX(-50%) rotate(' +
+            clockMinuteRotation +
+            'deg)'
+          "
+        ></span>
+
+        <!-- Kim giây -->
+        <span
+          class="clock-hand clock-second"
+          [style.transform]="
+            'translateX(-50%) rotate(' +
+            clockSecondRotation +
+            'deg)'
+          "
+        ></span>
+
+        <!-- Tâm đồng hồ -->
+        <span class="clock-center"></span>
+      </div>
+
+      <div class="clock-information">
+        <strong>
+          {{ currentTime }}
+        </strong>
+
+        <span>
+          {{ currentDate }}
+        </span>
+
+        <small>
+          {{ currentWeekday }}
+        </small>
+      </div>
+    </div>
+
+    <!-- Tài khoản cuối sidebar -->
+    <div class="sidebar-account">
+      <div class="sidebar-avatar-wrapper">
+        <img
+          class="sidebar-avatar"
+          src="assets/images/admin-avatar.jpg"
+          alt="Ảnh quản trị viên"
+        />
+
+        <span class="online-status"></span>
+      </div>
+
+      <div class="sidebar-account-information">
+        <strong>
+          {{ adminName }}
+        </strong>
+
+        <span>
+          {{ adminRole }}
+        </span>
+      </div>
+
+      <span
+        class="material-symbols-outlined account-expand-icon"
+      >
+        expand_more
+      </span>
+    </div>
+  </aside>
+
+  <!-- Nội dung bên phải -->
+  <section class="admin-main">
+    <!-- Topbar -->
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <!-- Menu mobile -->
+        <button
+          type="button"
+          class="mobile-menu-button"
+          aria-label="Mở menu"
+          (click)="toggleSidebar()"
+        >
+          <span class="material-symbols-outlined">
+            menu
+          </span>
+        </button>
+
+        <!-- Số trang -->
+        <span class="page-number">
+          {{ pageNumber }}
+        </span>
+
+        <!-- Tiêu đề trang -->
+        <div class="page-title-wrapper">
+          <h1>
+            {{ pageTitle }}
+          </h1>
+
+          <span class="page-subtitle">
+            Hệ thống quản lý nhà hàng
+          </span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Thông báo -->
+        <button
+          type="button"
+          class="notification-button"
+          aria-label="Thông báo"
+        >
+          <span class="material-symbols-outlined">
+            notifications
+          </span>
+
+          <span
+            class="notification-count"
+            *ngIf="notificationCount > 0"
+          >
+            {{ notificationCount }}
+          </span>
+        </button>
+
+        <!-- Tài khoản -->
+        <div class="account-menu-wrapper">
+          <button
+            type="button"
+            class="topbar-account-button"
+            (click)="toggleAccountMenu()"
+          >
+            <div class="topbar-avatar-wrapper">
+              <img
+                src="assets/images/admin-avatar.jpg"
+                alt="Ảnh quản trị viên"
+              />
+
+              <span class="online-status"></span>
+            </div>
+
+            <div class="topbar-account-information">
+              <span class="topbar-account-name">
+                {{ adminName }}
+              </span>
+
+              <small>
+                {{ adminRole }}
+              </small>
+            </div>
+
+            <span class="material-symbols-outlined">
+              {{
+                accountMenuOpen
+                  ? 'expand_less'
+                  : 'expand_more'
+              }}
+            </span>
+          </button>
+
+          <!-- Dropdown tài khoản -->
+          <div
+            class="account-dropdown"
+            *ngIf="accountMenuOpen"
+          >
+            <div class="dropdown-account-header">
+              <img
+                src="assets/images/admin-avatar.jpg"
+                alt="Ảnh quản trị viên"
+              />
+
+              <div>
+                <strong>
+                  {{ adminName }}
+                </strong>
+
+                <span>
+                  {{ adminRole }}
+                </span>
+              </div>
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <button
+              type="button"
+              (click)="goToProfile()"
+            >
+              <span class="material-symbols-outlined">
+                account_circle
+              </span>
+
+              <span>
+                Thông tin cá nhân
+              </span>
+            </button>
+
+            <button
+              type="button"
+              (click)="goToSettings()"
+            >
+              <span class="material-symbols-outlined">
+                settings
+              </span>
+
+              <span>
+                Cài đặt
+              </span>
+            </button>
+
+            <div class="dropdown-divider"></div>
+
+            <button
+              type="button"
+              class="logout-button"
+              (click)="logout()"
+            >
+              <span class="material-symbols-outlined">
+                logout
+              </span>
+
+              <span>
+                Đăng xuất
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Nội dung component con -->
+    <main class="admin-content">
+      <div
+        class="
+          content-decoration
+          content-decoration-top
+        "
+      ></div>
+
+      <div
+        class="
+          content-decoration
+          content-decoration-bottom
+        "
+      ></div>
+
+      <router-outlet></router-outlet>
+    </main>
+  </section>
+</div>

@@ -1,0 +1,676 @@
+<section class="food-management-page">
+
+  <!-- ==================================================
+       THỐNG KÊ
+  ================================================== -->
+
+  <div class="food-statistics-grid">
+
+    <article
+      *ngFor="let statistic of statistics"
+      class="food-statistic-card"
+      [ngClass]="statistic.cssClass"
+    >
+
+      <span class="food-statistic-icon">
+        <span class="material-symbols-outlined">
+          {{ statistic.icon }}
+        </span>
+      </span>
+
+      <div class="food-statistic-information">
+
+        <span>
+          {{ statistic.label }}
+        </span>
+
+        <div class="food-statistic-value-row">
+          <strong>
+            {{ statistic.value | number:'1.0-0' }}
+          </strong>
+
+          <small>
+            {{ statistic.percentage }}%
+          </small>
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+  <!-- ==================================================
+       LAYOUT QUẢN LÝ
+  ================================================== -->
+
+  <div class="food-management-layout">
+
+    <!-- ==================================================
+         DANH SÁCH MÓN ĂN
+    ================================================== -->
+
+    <section class="food-list-card">
+
+      <!-- TOOLBAR -->
+
+      <div class="food-toolbar">
+
+        <div class="food-search-box">
+          <span class="material-symbols-outlined">
+            search
+          </span>
+
+          <input
+            type="text"
+            [(ngModel)]="searchKeyword"
+            (ngModelChange)="onSearchChange()"
+            placeholder="Tìm kiếm mã món, tên món, mô tả..."
+          />
+        </div>
+
+        <div class="food-filter-box">
+          <label for="foodStatusFilter">
+            Trạng thái
+          </label>
+
+          <select
+            id="foodStatusFilter"
+            [(ngModel)]="selectedStatus"
+            (ngModelChange)="onStatusChange()"
+          >
+            <option
+              *ngFor="let status of statusOptions"
+              [ngValue]="status.value"
+            >
+              {{ status.label }}
+            </option>
+          </select>
+
+          <span class="material-symbols-outlined">
+            expand_more
+          </span>
+        </div>
+
+        <button
+          type="button"
+          class="add-food-button"
+          (click)="addProduct()"
+        >
+          <span class="material-symbols-outlined">
+            add
+          </span>
+
+          <span>
+            Thêm món mới
+          </span>
+        </button>
+
+      </div>
+
+      <!-- THANH HIỆU ỨNG CHỌN DÒNG -->
+
+      <div
+        class="food-selection-loading-bar"
+        *ngIf="isSelectionLoading"
+        aria-hidden="true"
+      >
+        <span></span>
+      </div>
+
+      <!-- BẢNG MÓN ĂN -->
+
+      <div class="food-table-wrapper">
+
+        <table class="food-table">
+
+          <thead>
+            <tr>
+              <th class="number-column">
+                #
+              </th>
+
+              <th>
+                Mã món
+              </th>
+
+              <th>
+                Tên món
+              </th>
+
+              <th>
+                Mô tả
+              </th>
+
+              <th>
+                Giá
+              </th>
+
+              <th>
+                Đơn vị
+              </th>
+
+              <th>
+                Danh mục
+              </th>
+
+              <th>
+                Trạng thái
+              </th>
+
+              <th class="action-column">
+                Thao tác
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr
+              *ngFor="
+                let product of displayedProducts;
+                let index = index;
+                trackBy: trackByProductId
+              "
+              [class.selected-row]="isSelectedProduct(product)"
+              [class.selection-loading-row]="isProductSelectionLoading(product)"
+              (click)="selectProduct(product)"
+            >
+
+              <td
+                class="number-column"
+                data-label="#"
+              >
+                <span class="drag-number">
+                  <span class="material-symbols-outlined">
+                    drag_indicator
+                  </span>
+
+                  <span>
+                    {{
+                      (currentPage - 1) *
+                      pageSize +
+                      index +
+                      1
+                    }}
+                  </span>
+                </span>
+              </td>
+
+              <td data-label="Mã món">
+                <strong class="food-code">
+                  {{ product.id }}
+                </strong>
+              </td>
+
+              <td data-label="Tên món">
+                {{ product.name }}
+              </td>
+
+              <td
+                class="food-description-cell"
+                data-label="Mô tả"
+              >
+                {{ product.description }}
+              </td>
+
+              <td data-label="Giá">
+                <strong>
+                  {{ formatPrice(product.price) }}
+                </strong>
+              </td>
+
+              <td data-label="Đơn vị">
+                {{ product.unit }}
+              </td>
+
+              <td data-label="Danh mục">
+                {{ product.categoryName }}
+              </td>
+
+              <td data-label="Trạng thái">
+                <span
+                  class="food-status-badge"
+                  [ngClass]="getStatusClass(product.status)"
+                >
+                  <span></span>
+
+                  {{ getStatusLabel(product.status) }}
+                </span>
+              </td>
+
+              <td
+                class="food-table-actions"
+                data-label="Thao tác"
+              >
+
+                <button
+                  type="button"
+                  class="food-action-button view"
+                  title="Xem chi tiết"
+                  (click)="viewProduct(product, $event)"
+                >
+                  <span class="material-symbols-outlined">
+                    visibility
+                  </span>
+
+                  <span>
+                    Xem
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  class="food-action-button edit"
+                  title="Chỉnh sửa món"
+                  (click)="editProduct(product, $event)"
+                >
+                  <span class="material-symbols-outlined">
+                    edit
+                  </span>
+
+                  <span>
+                    Sửa
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  class="food-action-button delete"
+                  title="Xóa món"
+                  (click)="deleteProduct(product, $event)"
+                >
+                  <span class="material-symbols-outlined">
+                    delete
+                  </span>
+
+                  <span>
+                    Xóa
+                  </span>
+                </button>
+
+              </td>
+
+            </tr>
+
+            <tr
+              *ngIf="displayedProducts.length === 0"
+            >
+              <td
+                colspan="9"
+                class="food-empty-state"
+              >
+                <span class="material-symbols-outlined">
+                  search_off
+                </span>
+
+                <strong>
+                  Không tìm thấy món ăn
+                </strong>
+
+                <p>
+                  Không có món nào phù hợp với điều kiện tìm kiếm.
+                </p>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <!-- PHÂN TRANG -->
+
+      <footer class="food-pagination">
+
+        <p>
+          Hiển thị
+          {{ startItem }}
+          -
+          {{ endItem }}
+          trong tổng số
+          {{ totalItems }}
+          món
+        </p>
+
+        <div class="food-pagination-controls">
+
+          <button
+            type="button"
+            [disabled]="currentPage <= 1"
+            (click)="changePage(currentPage - 1)"
+          >
+            <span class="material-symbols-outlined">
+              chevron_left
+            </span>
+          </button>
+
+          <button
+            *ngFor="
+              let page of visiblePageNumbers;
+              trackBy: trackByPageNumber
+            "
+            type="button"
+            [class.active]="page === currentPage"
+            (click)="changePage(page)"
+          >
+            {{ page }}
+          </button>
+
+          <button
+            type="button"
+            [disabled]="currentPage >= totalPages"
+            (click)="changePage(currentPage + 1)"
+          >
+            <span class="material-symbols-outlined">
+              chevron_right
+            </span>
+          </button>
+
+        </div>
+
+        <div class="food-page-size">
+          <select
+            [(ngModel)]="pageSize"
+            (ngModelChange)="onPageSizeChange()"
+          >
+            <option [ngValue]="11">
+              11 / trang
+            </option>
+
+            <option [ngValue]="20">
+              20 / trang
+            </option>
+
+            <option [ngValue]="50">
+              50 / trang
+            </option>
+          </select>
+
+          <span class="material-symbols-outlined">
+            expand_more
+          </span>
+        </div>
+
+      </footer>
+
+    </section>
+
+    <!-- ==================================================
+         CỘT THÔNG TIN BÊN PHẢI
+    ================================================== -->
+
+    <aside
+      class="food-information-column"
+      [class.detail-refreshing]="isSelectionLoading"
+      [attr.aria-busy]="isSelectionLoading"
+    >
+
+      <!-- CHI TIẾT MÓN ĂN -->
+
+      <section class="food-detail-card">
+
+        <ng-container
+          *ngIf="selectedProduct; else noSelectedProduct"
+        >
+
+          <div class="food-card-title-row">
+            <h2>
+              Chi tiết món ăn
+            </h2>
+
+          </div>
+
+          <div class="food-detail-main">
+
+            <div class="food-detail-image">
+              <img
+                *ngIf="canShowProductImage(selectedProduct)"
+                [src]="selectedProduct.imageUrl"
+                [alt]="selectedProduct.name"
+                (error)="onProductImageError(selectedProduct.id)"
+              />
+
+              <span
+                class="material-symbols-outlined"
+                *ngIf="!canShowProductImage(selectedProduct)"
+              >
+                lunch_dining
+              </span>
+            </div>
+
+            <dl class="food-detail-list">
+
+              <div>
+                <dt>Mã món:</dt>
+                <dd>{{ selectedProduct.id }}</dd>
+              </div>
+
+              <div>
+                <dt>Tên món:</dt>
+                <dd>{{ selectedProduct.name }}</dd>
+              </div>
+
+              <div>
+                <dt>Mô tả:</dt>
+                <dd>{{ selectedProduct.description }}</dd>
+              </div>
+
+              <div>
+                <dt>Giá:</dt>
+                <dd>{{ formatPrice(selectedProduct.price) }}</dd>
+              </div>
+
+              <div>
+                <dt>Đơn vị:</dt>
+                <dd>{{ selectedProduct.unit }}</dd>
+              </div>
+
+              <div>
+                <dt>Danh mục:</dt>
+                <dd>{{ selectedProduct.categoryName }}</dd>
+              </div>
+
+              <div>
+                <dt>Trạng thái:</dt>
+                <dd>
+                  <span
+                    class="food-status-badge detail-status"
+                    [ngClass]="getStatusClass(selectedProduct.status)"
+                  >
+                    <span></span>
+                    {{ getStatusLabel(selectedProduct.status) }}
+                  </span>
+                </dd>
+              </div>
+
+              <div>
+                <dt>Nổi bật:</dt>
+                <dd>
+                  <span
+                    class="detail-boolean-badge"
+                    [class.enabled]="selectedProduct.isFeatured"
+                  >
+                    {{ selectedProduct.isFeatured ? 'Có' : 'Không' }}
+                  </span>
+                </dd>
+              </div>
+
+              <div>
+                <dt>Bán chạy:</dt>
+                <dd>
+                  <span
+                    class="detail-boolean-badge"
+                    [class.enabled]="selectedProduct.isBestSeller"
+                  >
+                    {{ selectedProduct.isBestSeller ? 'Có' : 'Không' }}
+                  </span>
+                </dd>
+              </div>
+
+              <div>
+                <dt>Ngày tạo:</dt>
+                <dd>
+                  {{ selectedProduct.createdAt | date:'dd/MM/yyyy HH:mm:ss' }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>Cập nhật:</dt>
+                <dd>
+                  {{
+                    selectedProduct.updatedAt
+                      ? (selectedProduct.updatedAt | date:'dd/MM/yyyy HH:mm:ss')
+                      : 'Chưa cập nhật'
+                  }}
+                </dd>
+              </div>
+
+            </dl>
+
+          </div>
+
+        </ng-container>
+
+        <ng-template #noSelectedProduct>
+          <div class="food-no-selection">
+            <span class="material-symbols-outlined">
+              lunch_dining
+            </span>
+
+            <strong>
+              Chưa chọn món ăn
+            </strong>
+
+            <p>
+              Chọn một món trong danh sách để xem chi tiết.
+            </p>
+          </div>
+        </ng-template>
+
+      </section>
+
+      <!-- LỊCH SỬ HOẠT ĐỘNG -->
+
+      <section class="food-history-card">
+
+        <div class="food-card-title-row history-title-row">
+          <h2>
+            Lịch sử hoạt động
+          </h2>
+        </div>
+
+        <div class="food-history-container">
+
+          <div class="food-history-header">
+            <div>Thời gian</div>
+            <div>Người thực hiện</div>
+            <div>Nội dung</div>
+            <div>Thao tác</div>
+          </div>
+
+          <div class="food-history-body">
+
+            <article
+              class="food-history-row"
+              *ngFor="
+                let history of selectedProductHistories;
+                trackBy: trackByHistoryId
+              "
+            >
+
+              <div class="food-history-time">
+                <span
+                  class="food-history-dot"
+                  [ngClass]="getHistoryClass(history.actionType)"
+                ></span>
+
+                <div>
+                  <span>
+                    {{ history.createdAt | date:'dd/MM/yyyy' }}
+                  </span>
+
+                  <strong>
+                    {{ history.createdAt | date:'HH:mm:ss' }}
+                  </strong>
+                </div>
+              </div>
+
+              <div class="food-history-user">
+                <strong>
+                  {{ history.userName }}
+                </strong>
+
+                <span>
+                  ({{ history.roleName }})
+                </span>
+              </div>
+
+              <div class="food-history-description">
+                <strong>
+                  {{ history.description }}
+                </strong>
+              </div>
+
+              <div class="food-history-action">
+                <button
+                  type="button"
+                  title="Xóa lịch sử"
+                  (click)="deleteHistory(history, $event)"
+                >
+                  <span class="material-symbols-outlined">
+                    delete
+                  </span>
+
+                  <span>
+                    Xóa
+                  </span>
+                </button>
+              </div>
+
+            </article>
+
+            <div
+              class="food-history-empty"
+              *ngIf="selectedProductHistories.length === 0"
+            >
+              <span class="material-symbols-outlined">
+                history
+              </span>
+
+              <strong>
+                Chưa có lịch sử hoạt động
+              </strong>
+
+              <p>
+                Món ăn này chưa phát sinh thao tác nào.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="view-all-food-history"
+          [disabled]="selectedProductHistories.length === 0"
+          (click)="viewAllHistory()"
+        >
+          <span>
+            Xem tất cả lịch sử
+          </span>
+
+          <span class="material-symbols-outlined">
+            chevron_right
+          </span>
+        </button>
+
+      </section>
+
+    </aside>
+
+  </div>
+
+</section>

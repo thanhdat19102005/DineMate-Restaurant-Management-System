@@ -1,0 +1,860 @@
+<section class="table-management-page">
+  <div
+    class="api-error-alert"
+    *ngIf="errorMessage"
+  >
+    <span class="material-symbols-outlined">
+      error
+    </span>
+
+    <span>
+      {{ errorMessage }}
+    </span>
+
+    <button
+      type="button"
+      (click)="retryLoad()"
+    >
+      Thử lại
+    </button>
+  </div>
+
+  <div class="statistics-grid">
+    <article
+      *ngFor="let statistic of statistics"
+      class="statistic-card"
+      [ngClass]="statistic.cssClass"
+    >
+      <div class="statistic-icon">
+        <span class="material-symbols-outlined">
+          {{ statistic.icon }}
+        </span>
+      </div>
+
+      <div class="statistic-information">
+        <span class="statistic-label">
+          {{ statistic.label }}
+        </span>
+
+        <strong>
+          {{ statistic.value }}
+        </strong>
+
+        <small>
+          {{ statistic.percentage }}%
+        </small>
+      </div>
+    </article>
+  </div>
+
+  <div class="management-layout">
+    <section class="table-list-card">
+      <div class="toolbar">
+        <div class="search-box">
+          <span class="material-symbols-outlined">
+            search
+          </span>
+
+          <input
+            type="text"
+            [(ngModel)]="searchKeyword"
+            (ngModelChange)="onSearchChange($event)"
+            placeholder="Tìm kiếm mã bàn, tên bàn..."
+          />
+        </div>
+
+        <div class="filter-box">
+          <label for="areaFilter">
+            Khu vực
+          </label>
+
+          <select
+            id="areaFilter"
+            [(ngModel)]="selectedArea"
+            (ngModelChange)="onFilterChange()"
+          >
+            <option value="">
+              Tất cả khu vực
+            </option>
+
+            <option
+              *ngFor="let area of areas"
+              [value]="area"
+            >
+              {{ area }}
+            </option>
+          </select>
+        </div>
+
+        <div class="filter-box">
+          <label for="statusFilter">
+            Trạng thái
+          </label>
+
+          <select
+            id="statusFilter"
+            [(ngModel)]="selectedStatus"
+            (ngModelChange)="onFilterChange()"
+          >
+            <option [ngValue]="null">
+              Tất cả trạng thái
+            </option>
+
+            <option [ngValue]="0">
+              Trống
+            </option>
+
+            <option [ngValue]="1">
+              Đang phục vụ
+            </option>
+
+            <option [ngValue]="2">
+              Đang bảo trì
+            </option>
+
+            <option [ngValue]="3">
+              Đã đặt trước
+            </option>
+
+            <option [ngValue]="4">
+              Tạm khóa
+            </option>
+          </select>
+        </div>
+
+        <div class="filter-box">
+          <label for="capacityFilter">
+            Sức chứa
+          </label>
+
+          <select
+            id="capacityFilter"
+            [(ngModel)]="selectedCapacity"
+            (ngModelChange)="onFilterChange()"
+          >
+            <option [ngValue]="null">
+              Tất cả sức chứa
+            </option>
+
+            <option
+              *ngFor="let capacity of capacities"
+              [ngValue]="capacity"
+            >
+              {{ capacity }} người
+            </option>
+          </select>
+        </div>
+
+        <button
+          type="button"
+          class="add-table-button"
+          (click)="addTable()"
+        >
+          <span class="material-symbols-outlined">
+            add
+          </span>
+
+          <span>
+            Thêm bàn mới
+          </span>
+        </button>
+      </div>
+
+      <div
+        class="loading-state"
+        *ngIf="isLoading"
+      >
+        <span class="loading-spinner"></span>
+
+        <span>
+          Đang tải dữ liệu bàn...
+        </span>
+      </div>
+
+      <div
+        class="table-wrapper"
+        [class.content-loading]="isLoading"
+      >
+        <table>
+          <thead>
+            <tr>
+              <th class="selection-column"></th>
+              <th>Mã bàn</th>
+              <th>Tên bàn</th>
+              <th>Khu vực</th>
+              <th>Sức chứa</th>
+              <th>Trạng thái</th>
+              <th class="action-column">Thao tác</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr
+              *ngFor="
+                let table of tables;
+                trackBy: trackByTableId
+              "
+              [class.selected-row]="
+                isSelectedTable(table)
+              "
+              (click)="selectTable(table)"
+            >
+              <td class="selection-column">
+                <span
+                  class="selection-radio"
+                  [class.checked]="
+                    isSelectedTable(table)
+                  "
+                ></span>
+              </td>
+
+              <td>
+                <strong>
+                  {{ table.id }}
+                </strong>
+              </td>
+
+              <td>
+                {{ table.tableName }}
+              </td>
+
+              <td>
+                {{
+                  table.areaName ||
+                  'Chưa phân khu'
+                }}
+              </td>
+
+              <td>
+                {{ table.capacity }}
+                người
+              </td>
+
+              <td>
+                <span
+                  class="status-badge"
+                  [ngClass]="
+                    getStatusClass(
+                      table.status
+                    )
+                  "
+                >
+                  <span class="status-dot"></span>
+                  {{ table.statusName }}
+                </span>
+              </td>
+
+              <td class="table-actions">
+                <button
+                  type="button"
+                  class="action-button view"
+                  (click)="
+                    viewTable(
+                      table,
+                      $event
+                    )
+                  "
+                >
+                  <span class="material-symbols-outlined">
+                    visibility
+                  </span>
+
+                  <span>Xem</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="action-button edit"
+                  (click)="
+                    editTable(
+                      table,
+                      $event
+                    )
+                  "
+                >
+                  <span class="material-symbols-outlined">
+                    edit
+                  </span>
+
+                  <span>Sửa</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="action-button delete"
+                  [attr.aria-label]="
+                    'Xóa bàn ' + table.id
+                  "
+                  [attr.title]="
+                    table.status === 1
+                      ? 'Bàn đang phục vụ không thể xóa'
+                      : 'Xóa bàn ' + table.id
+                  "
+                  (click)="
+                    deleteTable(
+                      table,
+                      $event
+                    )
+                  "
+                >
+                  <span class="material-symbols-outlined">
+                    delete
+                  </span>
+
+                  <span>Xóa</span>
+                </button>
+              </td>
+            </tr>
+
+            <tr
+              *ngIf="
+                !isLoading &&
+                tables.length === 0
+              "
+            >
+              <td
+                colspan="7"
+                class="empty-state"
+              >
+                <span class="material-symbols-outlined">
+                  table_restaurant
+                </span>
+
+                <strong>
+                  Không tìm thấy bàn
+                </strong>
+
+                <p>
+                  Hãy thay đổi điều kiện tìm kiếm
+                  hoặc bộ lọc.
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        class="mobile-table-list"
+        [class.content-loading]="isLoading"
+      >
+        <article
+          *ngFor="
+            let table of tables;
+            trackBy: trackByTableId
+          "
+          class="mobile-table-card"
+          [class.selected]="
+            isSelectedTable(table)
+          "
+          (click)="selectTable(table)"
+        >
+          <div class="mobile-card-header">
+            <div>
+              <strong>
+                {{ table.id }}
+              </strong>
+
+              <span>
+                {{ table.tableName }}
+              </span>
+            </div>
+
+            <span
+              class="status-badge"
+              [ngClass]="
+                getStatusClass(
+                  table.status
+                )
+              "
+            >
+              <span class="status-dot"></span>
+              {{ table.statusName }}
+            </span>
+          </div>
+
+          <div class="mobile-card-information">
+            <div>
+              <span>Khu vực</span>
+
+              <strong>
+                {{
+                  table.areaName ||
+                  'Chưa phân khu'
+                }}
+              </strong>
+            </div>
+
+            <div>
+              <span>Sức chứa</span>
+
+              <strong>
+                {{ table.capacity }}
+                người
+              </strong>
+            </div>
+          </div>
+
+          <div class="mobile-card-actions">
+            <button
+              type="button"
+              (click)="
+                viewTable(
+                  table,
+                  $event
+                )
+              "
+            >
+              <span class="material-symbols-outlined">
+                visibility
+              </span>
+              Xem
+            </button>
+
+            <button
+              type="button"
+              (click)="
+                editTable(
+                  table,
+                  $event
+                )
+              "
+            >
+              <span class="material-symbols-outlined">
+                edit
+              </span>
+              Sửa
+            </button>
+
+            <button
+              type="button"
+              class="mobile-delete-button"
+              [attr.aria-label]="
+                'Xóa bàn ' + table.id
+              "
+              [attr.title]="
+                table.status === 1
+                  ? 'Bàn đang phục vụ không thể xóa'
+                  : 'Xóa bàn ' + table.id
+              "
+              (click)="
+                deleteTable(
+                  table,
+                  $event
+                )
+              "
+            >
+              <span class="material-symbols-outlined">
+                delete
+              </span>
+              Xóa
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <footer class="table-pagination">
+        <p>
+          Hiển thị
+          {{ firstDisplayedItem }}
+          -
+          {{ lastDisplayedItem }}
+          trong tổng số
+          {{ totalItems }}
+          bàn
+        </p>
+
+        <div class="pagination-controls">
+          <button
+            type="button"
+            [disabled]="
+              !hasPreviousPage ||
+              isLoading
+            "
+            (click)="
+              changePage(
+                currentPage - 1
+              )
+            "
+          >
+            <span class="material-symbols-outlined">
+              chevron_left
+            </span>
+          </button>
+
+          <button
+            *ngFor="let page of visiblePages"
+            type="button"
+            [class.active]="
+              page === currentPage
+            "
+            [disabled]="isLoading"
+            (click)="changePage(page)"
+          >
+            {{ page }}
+          </button>
+
+          <button
+            type="button"
+            [disabled]="
+              !hasNextPage ||
+              isLoading
+            "
+            (click)="
+              changePage(
+                currentPage + 1
+              )
+            "
+          >
+            <span class="material-symbols-outlined">
+              chevron_right
+            </span>
+          </button>
+        </div>
+
+        <select
+          [(ngModel)]="pageSize"
+          [disabled]="isLoading"
+          (ngModelChange)="
+            onPageSizeChange()
+          "
+        >
+          <option
+            *ngFor="
+              let option of pageSizeOptions
+            "
+            [ngValue]="option"
+          >
+            {{ option }} / trang
+          </option>
+        </select>
+      </footer>
+    </section>
+
+    <aside class="information-column">
+      <section class="detail-card">
+        <ng-container
+          *ngIf="
+            selectedTable;
+            else noSelectedTable
+          "
+        >
+          <div class="card-title-row">
+            <h2>
+              Chi tiết bàn
+            </h2>
+
+            <span
+              class="status-badge"
+              [ngClass]="
+                getStatusClass(
+                  selectedTable.status
+                )
+              "
+            >
+              <span class="status-dot"></span>
+              {{ selectedTable.statusName }}
+            </span>
+          </div>
+
+          <div class="detail-content">
+            <div
+              class="detail-table-icon"
+              [ngClass]="
+                getStatusClass(
+                  selectedTable.status
+                )
+              "
+            >
+              <span class="material-symbols-outlined">
+                table_restaurant
+              </span>
+            </div>
+
+            <dl class="detail-list">
+              <div>
+                <dt>Mã bàn:</dt>
+                <dd>{{ selectedTable.id }}</dd>
+              </div>
+
+              <div>
+                <dt>Tên bàn:</dt>
+                <dd>{{ selectedTable.tableName }}</dd>
+              </div>
+
+              <div>
+                <dt>Khu vực:</dt>
+                <dd>
+                  {{
+                    selectedTable.areaName ||
+                    'Chưa phân khu'
+                  }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>Sức chứa:</dt>
+                <dd>
+                  {{ selectedTable.capacity }}
+                  người
+                </dd>
+              </div>
+
+              <div>
+                <dt>Loại bàn:</dt>
+                <dd>{{ selectedTable.tableType }}</dd>
+              </div>
+
+              <div>
+                <dt>Trạng thái:</dt>
+                <dd>
+                  <span
+                    class="inline-status-dot"
+                    [ngClass]="
+                      getStatusClass(
+                        selectedTable.status
+                      )
+                    "
+                  ></span>
+
+                  {{ selectedTable.statusName }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>Ghi chú:</dt>
+                <dd>
+                  {{
+                    selectedTable.note ||
+                    'Không có ghi chú'
+                  }}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </ng-container>
+
+        <ng-template #noSelectedTable>
+          <div class="no-selected-table">
+            <span class="material-symbols-outlined">
+              table_restaurant
+            </span>
+
+            <strong>
+              Chưa chọn bàn
+            </strong>
+
+            <p>
+              Chọn một bàn để xem thông tin
+              chi tiết.
+            </p>
+          </div>
+        </ng-template>
+      </section>
+
+      <section class="history-card">
+        <div class="card-title-row">
+          <h2>
+            Lịch sử hoạt động
+          </h2>
+        </div>
+
+        <div class="history-table-wrapper">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th class="history-date-column">
+                  Thời gian
+                </th>
+
+                <th class="history-user-column">
+                  Nhân viên
+                </th>
+
+                <th class="history-content-column">
+                  Nội dung
+                </th>
+
+                <th class="history-action-column">
+                  Thao tác
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr
+                *ngFor="
+                  let history of histories;
+                  trackBy: trackByHistoryId
+                "
+                [class.history-row-deleting]="
+                  isDeletingHistory(history)
+                "
+              >
+                <td class="history-time">
+                  <span
+                    class="history-dot"
+                    [ngClass]="
+                      getHistoryClass(
+                        history.actionType
+                      )
+                    "
+                  ></span>
+
+                  <div>
+                    <span>
+                      {{
+                        history.createdAt |
+                        date:'dd/MM/yyyy'
+                      }}
+                    </span>
+
+                    <strong>
+                      {{
+                        history.createdAt |
+                        date:'HH:mm:ss'
+                      }}
+                    </strong>
+                  </div>
+                </td>
+
+                <td>
+                  {{
+                    history.userName ||
+                    'Hệ thống'
+                  }}
+                </td>
+
+                <td class="history-content-cell">
+                  <strong
+                    [class.delete-history]="
+                      getHistoryClass(
+                        history.actionType
+                      ) === 'delete'
+                    "
+                  >
+                    {{ history.description }}
+                  </strong>
+
+                  <span>
+                    {{
+                      getHistoryChangeSummary(
+                        history
+                      )
+                    }}
+                  </span>
+                </td>
+
+                <td class="history-action-cell">
+                  <button
+                    type="button"
+                    class="
+                      action-button
+                      delete
+                      history-delete-button
+                    "
+                    [class.deleting]="
+                      isDeletingHistory(history)
+                    "
+                    [disabled]="
+                      deletingHistoryId !== null
+                    "
+                    [attr.aria-label]="
+                      'Xóa lịch sử số ' +
+                      history.id
+                    "
+                    [attr.title]="
+                      isDeletingHistory(history)
+                        ? 'Đang xóa lịch sử'
+                        : 'Xóa lịch sử hoạt động'
+                    "
+                    (click)="
+                      deleteHistory(
+                        history,
+                        $event
+                      )
+                    "
+                  >
+                    <span
+                      class="history-delete-spinner"
+                      *ngIf="
+                        isDeletingHistory(history)
+                      "
+                    ></span>
+
+                    <span
+                      class="material-symbols-outlined"
+                      *ngIf="
+                        !isDeletingHistory(history)
+                      "
+                    >
+                      delete
+                    </span>
+
+                    <span>
+                      {{
+                        isDeletingHistory(history)
+                          ? 'Đang xóa'
+                          : 'Xóa'
+                      }}
+                    </span>
+                  </button>
+                </td>
+              </tr>
+
+              <tr
+                *ngIf="
+                  !isLoading &&
+                  histories.length === 0
+                "
+              >
+                <td
+                  colspan="4"
+                  class="history-empty"
+                >
+                  Chưa có lịch sử hoạt động.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button
+          type="button"
+          class="view-all-history-button"
+          (click)="viewAllHistory()"
+        >
+          <span>
+            Xem tất cả lịch sử
+          </span>
+
+          <span class="material-symbols-outlined">
+            chevron_right
+          </span>
+        </button>
+      </section>
+    </aside>
+  </div>
+</section>
+
+<app-create-restaurant-table
+  [isOpen]="isCreateTableOpen"
+  (closed)="closeCreateTable()"
+  (created)="onTableCreated($event)"
+></app-create-restaurant-table>
+
+<app-delete-restaurant-table
+  [isOpen]="isDeleteTableOpen"
+  [table]="tableWaitingDelete"
+  (closed)="closeDeleteTable()"
+  (deleted)="onTableDeleted($event)"
+></app-delete-restaurant-table>
+
+<app-update-restaurant-table
+  [isOpen]="isUpdateTableOpen"
+  [table]="tableBeingUpdated"
+  [areas]="areas"
+  [capacities]="capacities"
+  (closed)="closeUpdateTable()"
+  (updated)="onTableUpdated($event)"
+></app-update-restaurant-table>

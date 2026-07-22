@@ -1,0 +1,398 @@
+<div
+  class="category-create-overlay"
+  *ngIf="isOpen"
+  [class.closing]="isClosing"
+  (click)="closeForm()"
+>
+  <section
+    class="category-create-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="createCategoryTitle"
+    [attr.aria-busy]="isSubmitting"
+    [class.closing]="isClosing"
+    (click)="stopModalClick($event)"
+  >
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="category-create-header">
+
+      <div class="header-icon">
+        <span class="material-symbols-outlined">
+          category
+        </span>
+      </div>
+
+      <div class="header-content">
+        <h2 id="createCategoryTitle">
+          Thêm loại món
+        </h2>
+
+        <p>
+          Nhập thông tin để tạo loại món mới trong hệ thống
+        </p>
+      </div>
+
+      <button
+        type="button"
+        class="close-button"
+        title="Đóng"
+        [disabled]="
+          isSubmitting ||
+          isClosing
+        "
+        (click)="closeForm()"
+      >
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </button>
+
+    </header>
+
+    <!-- ==================================================
+         FORM
+    ================================================== -->
+
+    <form
+      class="category-create-form"
+      #createCategoryForm="ngForm"
+      (ngSubmit)="submitCategory()"
+    >
+      <div class="category-create-body">
+
+        <!-- ==================================================
+             BÊN TRÁI
+        ================================================== -->
+
+        <section class="category-form-panel">
+
+          <div class="section-title">
+            <span class="section-title-icon">
+              <span class="material-symbols-outlined">
+                radio_button_checked
+              </span>
+            </span>
+
+            <h3>
+              Thông tin cơ bản
+            </h3>
+          </div>
+
+          <!-- THÔNG BÁO LỖI TỪ FRONTEND HOẶC BACKEND -->
+
+          <div
+            class="form-error"
+            *ngIf="errorMessage"
+          >
+            <span class="material-symbols-outlined">
+              error
+            </span>
+
+            <span>
+              {{ errorMessage }}
+            </span>
+          </div>
+
+          <div class="form-grid">
+
+            <!-- ==================================================
+                 MÃ LOẠI
+            ================================================== -->
+
+            <div class="form-field">
+              <label for="categoryId">
+                Mã loại
+                <span>*</span>
+              </label>
+
+              <div class="input-shell">
+                <span class="material-symbols-outlined">
+                  sell
+                </span>
+
+                <input
+                  id="categoryId"
+                  name="categoryId"
+                  type="text"
+                  required
+                  minlength="2"
+                  maxlength="50"
+                  autocomplete="off"
+                  placeholder="Nhập mã loại, VD: LAU"
+                  [disabled]="isSubmitting"
+                  [ngModel]="form.id"
+                  (ngModelChange)="onCategoryIdChange($event)"
+                />
+              </div>
+
+              <small>
+                Mã loại phải là duy nhất, không thể thay đổi.
+              </small>
+            </div>
+
+            <!-- ==================================================
+                 TÊN LOẠI
+            ================================================== -->
+
+            <div class="form-field">
+              <label for="categoryName">
+                Tên loại
+                <span>*</span>
+              </label>
+
+              <div class="input-shell">
+                <span class="material-symbols-outlined">
+                  title
+                </span>
+
+                <input
+                  id="categoryName"
+                  name="categoryName"
+                  type="text"
+                  required
+                  minlength="2"
+                  maxlength="100"
+                  autocomplete="off"
+                  placeholder="Nhập tên loại, VD: Lẩu"
+                  [disabled]="isSubmitting"
+                  [(ngModel)]="form.name"
+                  (ngModelChange)="errorMessage = ''"
+                />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ==================================================
+               MÔ TẢ
+          ================================================== -->
+
+          <div class="form-field description-field">
+            <label for="categoryDescription">
+              Mô tả
+            </label>
+
+            <div class="textarea-shell">
+              <span class="material-symbols-outlined">
+                description
+              </span>
+
+              <textarea
+                id="categoryDescription"
+                name="categoryDescription"
+                rows="6"
+                [maxlength]="descriptionMaxLength"
+                [disabled]="isSubmitting"
+                placeholder="Nhập mô tả cho loại món..."
+                [(ngModel)]="form.description"
+                (ngModelChange)="errorMessage = ''"
+              ></textarea>
+            </div>
+
+            <div class="character-counter">
+              {{
+                form.description.length
+              }}/{{ descriptionMaxLength }}
+            </div>
+          </div>
+
+          <!-- ==================================================
+               TRẠNG THÁI
+          ================================================== -->
+
+          <div class="form-field status-field">
+            <label for="categoryStatusCreate">
+              Trạng thái
+              <span>*</span>
+            </label>
+
+            <div
+              class="status-select-shell"
+              [ngClass]="statusClass"
+            >
+              <span class="status-indicator"></span>
+
+              <select
+                id="categoryStatusCreate"
+                name="categoryStatusCreate"
+                required
+                [disabled]="isSubmitting"
+                [(ngModel)]="form.status"
+              >
+                <option
+                  *ngFor="let status of statusOptions"
+                  [ngValue]="status.value"
+                >
+                  {{ status.label }}
+                </option>
+              </select>
+
+              <span class="material-symbols-outlined select-arrow">
+                expand_more
+              </span>
+            </div>
+
+            <small>
+              Chỉ những loại đang hoạt động mới hiển thị khi chọn món.
+            </small>
+          </div>
+
+        </section>
+
+        <!-- ==================================================
+             BÊN PHẢI - XEM TRƯỚC
+        ================================================== -->
+
+        <aside class="category-preview-panel">
+
+          <div class="preview-title">
+            <span class="material-symbols-outlined">
+              visibility
+            </span>
+
+            <h3>
+              Xem trước
+            </h3>
+          </div>
+
+          <article class="preview-card">
+
+            <span class="preview-dot-pattern"></span>
+
+            <div class="preview-category-icon">
+              <span class="material-symbols-outlined">
+                category
+              </span>
+            </div>
+
+            <h4>
+              {{ previewName }}
+            </h4>
+
+            <span
+              class="preview-status"
+              [ngClass]="statusClass"
+            >
+              <span></span>
+
+              {{ statusLabel }}
+            </span>
+
+            <div class="preview-divider"></div>
+
+            <dl class="preview-detail-list">
+
+              <div>
+                <dt>
+                  <span class="material-symbols-outlined">
+                    sell
+                  </span>
+
+                  Mã loại:
+                </dt>
+
+                <dd>
+                  {{ previewId }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>
+                  <span class="material-symbols-outlined">
+                    title
+                  </span>
+
+                  Tên loại:
+                </dt>
+
+                <dd>
+                  {{ previewName }}
+                </dd>
+              </div>
+
+              <div>
+                <dt>
+                  <span class="material-symbols-outlined">
+                    description
+                  </span>
+
+                  Mô tả:
+                </dt>
+
+                <dd>
+                  {{ previewDescription }}
+                </dd>
+              </div>
+
+            </dl>
+
+            <span class="preview-ring"></span>
+
+          </article>
+
+        </aside>
+
+      </div>
+
+      <!-- ==================================================
+           FOOTER
+      ================================================== -->
+
+      <footer class="category-create-footer">
+
+        <button
+          type="button"
+          class="cancel-button"
+          [disabled]="
+            isSubmitting ||
+            isClosing
+          "
+          (click)="closeForm()"
+        >
+          <span class="material-symbols-outlined">
+            close
+          </span>
+
+          <span>
+            Hủy bỏ
+          </span>
+        </button>
+
+        <button
+          type="submit"
+          class="submit-button"
+          [disabled]="
+            isSubmitting ||
+            isClosing ||
+            createCategoryForm.invalid
+          "
+        >
+          <span
+            class="material-symbols-outlined"
+            [class.spinning]="isSubmitting"
+          >
+            {{
+              isSubmitting
+                ? 'progress_activity'
+                : 'add'
+            }}
+          </span>
+
+          <span>
+            {{
+              isSubmitting
+                ? 'Đang tạo...'
+                : 'Tạo loại món mới'
+            }}
+          </span>
+        </button>
+
+      </footer>
+
+    </form>
+
+  </section>
+</div>

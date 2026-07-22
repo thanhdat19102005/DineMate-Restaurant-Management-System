@@ -1,0 +1,2700 @@
+:host {
+  display: block;
+  width: 100%;
+
+  font-family:
+    "Be Vietnam Pro",
+    Arial,
+    sans-serif;
+
+  color: #241b17;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.table-management-page {
+  width: 100%;
+}
+
+/* ==================================================
+   THỐNG KÊ
+================================================== */
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.statistic-card {
+  min-height: 112px;
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  border:
+    1px solid #f1e6de;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 10px 28px
+    rgba(85, 39, 15, 0.07);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.statistic-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 34px
+    rgba(85, 39, 15, 0.11);
+}
+
+.statistic-icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+}
+
+.statistic-icon
+.material-symbols-outlined {
+  font-size: 29px;
+}
+
+.statistic-information {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.statistic-label {
+  overflow: hidden;
+
+  color: #7c706b;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.statistic-information strong {
+  margin-top: 4px;
+
+  color: #201a17;
+
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.statistic-information small {
+  margin-top: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.statistic-card.total
+.statistic-icon {
+  color: #ff5b00;
+  background: #fff0e6;
+}
+
+.statistic-card.total small {
+  color: #44505f;
+}
+
+.statistic-card.available
+.statistic-icon {
+  color: #28973a;
+  background: #edf8ec;
+}
+
+.statistic-card.available small {
+  color: #28973a;
+}
+
+.statistic-card.serving
+.statistic-icon {
+  color: #ff5b00;
+  background: #fff1e8;
+}
+
+.statistic-card.serving small {
+  color: #ff5b00;
+}
+
+.statistic-card.reserved
+.statistic-icon {
+  color: #f29a00;
+  background: #fff7e8;
+}
+
+.statistic-card.reserved small {
+  color: #f29a00;
+}
+
+.statistic-card.locked
+.statistic-icon {
+  color: #667085;
+  background: #f2f4f7;
+}
+
+.statistic-card.locked small {
+  color: #ef3b2d;
+}
+
+/* ==================================================
+   LAYOUT NỘI DUNG
+================================================== */
+
+.management-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 2.15fr)
+    minmax(320px, 0.85fr);
+  gap: 18px;
+
+  align-items: start;
+}
+
+.table-list-card,
+.detail-card,
+.history-card {
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  border:
+    1px solid #f1e4da;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 32px
+    rgba(82, 34, 9, 0.07);
+}
+
+/* ==================================================
+   THANH CÔNG CỤ
+================================================== */
+
+.table-list-card {
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+.toolbar {
+  padding: 18px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(190px, 1.4fr)
+    minmax(130px, 0.8fr)
+    minmax(140px, 0.8fr)
+    minmax(130px, 0.75fr)
+    auto;
+  gap: 12px;
+
+  align-items: end;
+
+  border-bottom:
+    1px solid #f1e7df;
+}
+
+.search-box {
+  height: 48px;
+
+  position: relative;
+}
+
+.search-box
+.material-symbols-outlined {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+
+  transform: translateY(-50%);
+
+  color: #667085;
+  font-size: 21px;
+
+  pointer-events: none;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+
+  padding:
+    0
+    14px
+    0
+    43px;
+
+  color: #2e2723;
+  background: #ffffff;
+
+  border: 1px solid #e3e5e8;
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-box input:focus {
+  border-color: #ff7a32;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 90, 0, 0.1);
+}
+
+.filter-box {
+  height: 48px;
+  padding: 6px 11px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e5e8;
+  border-radius: 10px;
+}
+
+.filter-box:focus-within {
+  border-color: #ff7a32;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 90, 0, 0.08);
+}
+
+.filter-box label {
+  color: #8a7d76;
+
+  font-size: 10px;
+  line-height: 1;
+}
+
+.filter-box select {
+  min-width: 0;
+  flex: 1;
+
+  color: #28211d;
+  background: transparent;
+
+  border: 0;
+  outline: none;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.add-table-button {
+  height: 48px;
+  padding: 0 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6800,
+      #ff3f00
+    );
+
+  border: 0;
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 22px
+    rgba(255, 75, 0, 0.22);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-table-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 26px
+    rgba(255, 75, 0, 0.3);
+}
+
+.add-table-button
+.material-symbols-outlined {
+  font-size: 20px;
+}
+
+/* ==================================================
+   BẢNG
+================================================== */
+
+.table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.table-wrapper table {
+  width: 100%;
+  min-width: 820px;
+
+  border-collapse: collapse;
+}
+
+.table-wrapper th {
+  height: 50px;
+  padding: 0 14px;
+
+  color: #544b46;
+  background: #fffdfa;
+
+  border-bottom:
+    1px solid #ece6e2;
+
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.table-wrapper td {
+  height: 55px;
+  padding: 0 14px;
+
+  color: #322b27;
+
+  border-bottom:
+    1px solid #f0ece9;
+
+  font-size: 12px;
+}
+
+.table-wrapper tbody tr {
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease;
+}
+
+.table-wrapper tbody tr:hover {
+  background: #fffaf6;
+}
+
+.table-wrapper tbody
+tr.selected-row {
+  background:
+    linear-gradient(
+      90deg,
+      #fff2e8,
+      #fff9f5
+    );
+
+  box-shadow:
+    inset 3px 0 0 #ff5b00;
+}
+
+.selection-column {
+  width: 38px;
+
+  text-align: center;
+}
+
+.selection-radio {
+  width: 15px;
+  height: 15px;
+
+  display: inline-block;
+
+  background: #ffffff;
+
+  border: 1px solid #d8dce1;
+  border-radius: 50%;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.selection-radio.checked {
+  border: 4px solid #ff5b00;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(255, 91, 0, 0.12);
+}
+
+.action-column {
+  width: 210px;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.action-button,
+.more-button {
+  height: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #344054;
+  background: #ffffff;
+
+  border: 1px solid #dde1e6;
+  border-radius: 8px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.action-button {
+  min-width: 58px;
+  padding: 0 9px;
+  gap: 5px;
+}
+
+.more-button {
+  width: 34px;
+  min-width: 34px;
+}
+
+.action-button
+.material-symbols-outlined,
+.more-button
+.material-symbols-outlined {
+  font-size: 17px;
+}
+
+.action-button.view:hover {
+  color: #0969da;
+  background: #f5f9ff;
+  border-color: #9cc4ff;
+}
+
+.action-button.edit:hover {
+  color: #e65000;
+  background: #fff6ef;
+  border-color: #ffba8d;
+}
+
+.more-button:hover {
+  color: #ff5b00;
+  background: #fff6ef;
+  border-color: #ffc39c;
+}
+
+/* ==================================================
+   TRẠNG THÁI
+================================================== */
+
+.status-badge {
+  min-height: 25px;
+  padding: 4px 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.status-dot,
+.inline-status-dot {
+  width: 7px;
+  height: 7px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+}
+
+.status-badge.available {
+  color: #288d37;
+  background: #edf9ee;
+  border: 1px solid #d5efd8;
+}
+
+.status-badge.available
+.status-dot,
+.inline-status-dot.available {
+  background: #2e9b3f;
+}
+
+.status-badge.serving {
+  color: #f05b00;
+  background: #fff2e8;
+  border: 1px solid #ffdfc7;
+}
+
+.status-badge.serving
+.status-dot,
+.inline-status-dot.serving {
+  background: #ff6500;
+}
+
+.status-badge.reserved {
+  color: #e78900;
+  background: #fff8e9;
+  border: 1px solid #ffe6b8;
+}
+
+.status-badge.reserved
+.status-dot,
+.inline-status-dot.reserved {
+  background: #f6a000;
+}
+
+.status-badge.locked {
+  color: #667085;
+  background: #f2f4f7;
+  border: 1px solid #e4e7ec;
+}
+
+.status-badge.locked
+.status-dot,
+.inline-status-dot.locked {
+  background: #7d8999;
+}
+
+/* ==================================================
+   TRẠNG THÁI RỖNG
+================================================== */
+
+.empty-state {
+  height: 240px !important;
+
+  text-align: center !important;
+}
+
+.empty-state
+.material-symbols-outlined {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #ffad78;
+
+  font-size: 46px;
+}
+
+.empty-state strong {
+  display: block;
+
+  color: #483a32;
+
+  font-size: 14px;
+}
+
+.empty-state p {
+  margin: 7px 0 0;
+
+  color: #8a7c74;
+
+  font-size: 12px;
+}
+
+/* ==================================================
+   MOBILE TABLE CARDS
+================================================== */
+
+.mobile-table-list {
+  display: none;
+}
+
+/* ==================================================
+   PHÂN TRANG
+================================================== */
+
+.table-pagination {
+  min-height: 62px;
+  padding: 10px 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  background: #fffdfa;
+
+  border-top:
+    1px solid #f0e9e4;
+}
+
+.table-pagination p {
+  margin: 0;
+
+  color: #77706b;
+
+  font-size: 11px;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pagination-controls button {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  color: #4d4642;
+  background: #ffffff;
+
+  border: 1px solid #e2e5e9;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.pagination-controls button:hover:not(
+  :disabled
+) {
+  color: #ff5b00;
+  border-color: #ff9b64;
+}
+
+.pagination-controls button.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6c00,
+      #ff4300
+    );
+
+  border-color: #ff5000;
+
+  box-shadow:
+    0 7px 16px
+    rgba(255, 75, 0, 0.22);
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.pagination-controls
+.material-symbols-outlined {
+  font-size: 19px;
+}
+
+.table-pagination select {
+  height: 36px;
+  padding: 0 11px;
+
+  color: #413a36;
+  background: #ffffff;
+
+  border: 1px solid #e0e4e9;
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ==================================================
+   CỘT THÔNG TIN
+================================================== */
+
+.information-column {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-card,
+.history-card {
+  padding: 18px;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-title-row h2 {
+  margin: 0;
+
+  color: #241b17;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/* ==================================================
+   CHI TIẾT BÀN
+================================================== */
+
+.detail-content {
+  margin-top: 17px;
+
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 16px;
+
+  align-items: center;
+}
+
+.detail-table-icon {
+  width: 90px;
+  height: 90px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+}
+
+.detail-table-icon
+.material-symbols-outlined {
+  font-size: 52px;
+}
+
+.detail-table-icon.available {
+  color: #2d9a3d;
+  background: #eef9ed;
+}
+
+.detail-table-icon.serving {
+  color: #ff6200;
+  background: #fff0e6;
+}
+
+.detail-table-icon.reserved {
+  color: #f19a00;
+  background: #fff7e8;
+}
+
+.detail-table-icon.locked {
+  color: #6b7687;
+  background: #f1f3f5;
+}
+
+.detail-list {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.detail-list > div {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 10px;
+}
+
+.detail-list dt {
+  color: #81756f;
+
+  font-size: 11px;
+}
+
+.detail-list dd {
+  margin: 0;
+
+  color: #2f2824;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.detail-list dd
+.inline-status-dot {
+  margin-right: 5px;
+}
+
+.no-selected-table {
+  min-height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.no-selected-table
+.material-symbols-outlined {
+  color: #ffae79;
+
+  font-size: 50px;
+}
+
+.no-selected-table strong {
+  margin-top: 10px;
+
+  color: #40352f;
+
+  font-size: 14px;
+}
+
+.no-selected-table p {
+  margin: 7px 0 0;
+
+  color: #8b7e77;
+
+  font-size: 11px;
+}
+
+/* ==================================================
+   LỊCH SỬ HOẠT ĐỘNG
+================================================== */
+
+.history-card {
+  padding-bottom: 12px;
+}
+
+.history-table-wrapper {
+  margin-top: 14px;
+
+  overflow-x: auto;
+
+  border: 1px solid #eee8e3;
+  border-radius: 10px;
+}
+
+.history-table {
+  width: 100%;
+  min-width: 500px;
+
+  border-collapse: collapse;
+}
+
+.history-table th {
+  height: 38px;
+  padding: 0 10px;
+
+  color: #716660;
+  background: #fafafa;
+
+  border-bottom:
+    1px solid #ece8e5;
+
+  font-size: 9px;
+  text-align: left;
+}
+
+.history-table td {
+  padding: 10px;
+
+  border-bottom:
+    1px solid #f0ece9;
+
+  color: #3a322e;
+
+  font-size: 9px;
+
+  vertical-align: top;
+}
+
+.history-table tbody
+tr:last-child td {
+  border-bottom: 0;
+}
+
+.history-time {
+  display: flex;
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+.history-time > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-time span {
+  color: #5f5753;
+
+  font-size: 9px;
+}
+
+.history-time strong {
+  margin-top: 2px;
+
+  font-size: 9px;
+}
+
+.history-dot {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+
+  margin-top: 4px;
+
+  border-radius: 50%;
+}
+
+.history-dot.create {
+  background: #1b9bd7;
+}
+
+.history-dot.update {
+  background: #2cab45;
+}
+
+.history-dot.status {
+  background: #f6a000;
+}
+
+.history-dot.delete {
+  background: #f04438;
+}
+
+.history-table td:last-child {
+  min-width: 220px;
+}
+
+.history-table td:last-child
+strong {
+  display: block;
+
+  color: #2c2521;
+
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.history-table td:last-child
+strong.delete-history {
+  color: #ed2d20;
+}
+
+.history-table td:last-child
+span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #80746e;
+
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.view-all-history-button {
+  width: 100%;
+  height: 42px;
+  margin-top: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  color: #ff5400;
+  background: #fffaf6;
+
+  border: 1px solid #f2e2d6;
+  border-radius: 9px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.view-all-history-button:hover {
+  background: #fff2e8;
+  border-color: #ffc49d;
+}
+
+.view-all-history-button
+.material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* ==================================================
+   RESPONSIVE LAPTOP NHỎ
+================================================== */
+
+@media (max-width: 1350px) {
+  .statistics-grid {
+    grid-template-columns:
+      repeat(5, minmax(150px, 1fr));
+
+    overflow-x: auto;
+
+    padding-bottom: 4px;
+  }
+
+  .statistic-card {
+    min-width: 170px;
+  }
+
+  .management-layout {
+    grid-template-columns:
+      minmax(0, 1.75fr)
+      minmax(300px, 0.8fr);
+  }
+
+  .toolbar {
+    grid-template-columns:
+      minmax(180px, 1fr)
+      repeat(
+        3,
+        minmax(125px, 0.7fr)
+      );
+  }
+
+  .add-table-button {
+    grid-column:
+      1 / -1;
+
+    justify-self: end;
+  }
+}
+
+/* ==================================================
+   RESPONSIVE TABLET
+================================================== */
+
+@media (max-width: 1100px) {
+  .management-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .information-column {
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .toolbar {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .search-box {
+    grid-column: 1 / -1;
+  }
+
+  .add-table-button {
+    width: 100%;
+
+    grid-column: 1 / -1;
+  }
+
+  .information-column {
+    display: flex;
+  }
+}
+
+/* ==================================================
+   RESPONSIVE MOBILE
+================================================== */
+
+@media (max-width: 680px) {
+  .statistics-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    overflow: visible;
+  }
+
+  .statistic-card {
+    min-width: 0;
+    min-height: 96px;
+    padding: 14px;
+  }
+
+  .statistic-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+  }
+
+  .statistic-icon
+  .material-symbols-outlined {
+    font-size: 25px;
+  }
+
+  .statistic-information strong {
+    font-size: 20px;
+  }
+
+  .toolbar {
+    padding: 14px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .search-box,
+  .add-table-button {
+    grid-column: auto;
+  }
+
+  .table-wrapper {
+    display: none;
+  }
+
+  .mobile-table-list {
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-table-card {
+    padding: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #eee7e2;
+    border-radius: 13px;
+
+    box-shadow:
+      0 7px 18px
+      rgba(65, 31, 15, 0.05);
+  }
+
+  .mobile-table-card.selected {
+    background: #fff8f3;
+
+    border-color: #ffad79;
+
+    box-shadow:
+      inset 3px 0 0 #ff5b00;
+  }
+
+  .mobile-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .mobile-card-header > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-card-header strong {
+    color: #2c241f;
+
+    font-size: 14px;
+  }
+
+  .mobile-card-header > div span {
+    margin-top: 3px;
+
+    color: #84766f;
+
+    font-size: 11px;
+  }
+
+  .mobile-card-information {
+    margin-top: 14px;
+
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .mobile-card-information div {
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #fffaf6;
+
+    border-radius: 9px;
+  }
+
+  .mobile-card-information span {
+    color: #93847c;
+
+    font-size: 9px;
+  }
+
+  .mobile-card-information strong {
+    margin-top: 4px;
+
+    color: #413630;
+
+    font-size: 11px;
+  }
+
+  .mobile-card-actions {
+    margin-top: 13px;
+
+    display: grid;
+    grid-template-columns:
+      1fr
+      1fr
+      42px;
+    gap: 8px;
+  }
+
+  .mobile-card-actions button {
+    min-height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    color: #514740;
+    background: #ffffff;
+
+    border: 1px solid #e2dedb;
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .mobile-card-actions
+  .material-symbols-outlined {
+    font-size: 17px;
+  }
+
+  .table-pagination {
+    padding: 13px;
+
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .table-pagination p {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .detail-card,
+  .history-card {
+    padding: 15px;
+  }
+
+  .detail-content {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .detail-table-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .detail-table-icon
+  .material-symbols-outlined {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 430px) {
+  .statistics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .statistic-card {
+    min-height: 85px;
+  }
+
+  .pagination-controls button {
+    width: 31px;
+    height: 31px;
+  }
+
+  .detail-content {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .detail-table-icon {
+    margin: 0 auto;
+  }
+
+  .detail-list > div {
+    grid-template-columns: 90px 1fr;
+
+    text-align: left;
+  }
+}
+
+/* ==================================================
+   GIẢM CHUYỂN ĐỘNG
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}
+
+
+/* ==================================================
+   GIỮ NGUYÊN TOÀN BỘ CSS HIỆN TẠI CỦA BẠN
+   VÀ DÁN PHẦN BỔ SUNG NÀY Ở CUỐI FILE
+================================================== */
+
+.api-error-alert {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  border-radius: 11px;
+  font-size: 12px;
+}
+
+.api-error-alert .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.api-error-alert > span:nth-child(2) {
+  flex: 1;
+}
+
+.api-error-alert button {
+  padding: 6px 10px;
+  color: #b42318;
+  background: #ffffff;
+  border: 1px solid #fda29b;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.loading-state {
+  min-height: 54px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #7c706b;
+  background: #fffaf6;
+  border-bottom: 1px solid #f1e7df;
+  font-size: 12px;
+}
+
+.loading-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ffd4b8;
+  border-top-color: #ff5b00;
+  border-radius: 50%;
+  animation: table-loading-spin 0.75s linear infinite;
+}
+
+@keyframes table-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.content-loading {
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.status-badge.maintenance {
+  color: #b54708;
+  background: #fff4e5;
+  border: 1px solid #fedf89;
+}
+
+.status-badge.maintenance .status-dot,
+.inline-status-dot.maintenance {
+  background: #f79009;
+}
+
+.detail-table-icon.maintenance {
+  color: #f79009;
+  background: #fff4e5;
+}
+
+.status-badge.unknown {
+  color: #667085;
+  background: #f2f4f7;
+  border: 1px solid #e4e7ec;
+}
+
+.history-empty {
+  padding: 28px 12px !important;
+  color: #8b7e77 !important;
+  text-align: center;
+}
+
+
+
+
+
+/* ==================================================
+   THÊM MỚI:
+   NÚT XÓA BÀN
+================================================== */
+
+/*
+ * Tăng chiều rộng cột thao tác vì hiện có:
+ *
+ * - Xem
+ * - Sửa
+ * - Xóa
+ */
+.action-column {
+  width: 250px;
+}
+
+/*
+ * Nút xóa dùng chung kích thước với
+ * action-button hiện tại.
+ */
+.action-button.delete {
+  min-width: 60px;
+
+  color: #e5484d;
+
+  background: #ffffff;
+
+  border-color: #f3c1c3;
+}
+
+.action-button.delete:hover:not(
+  :disabled
+) {
+  color: #d92d20;
+
+  background: #fff1f1;
+
+  border-color: #f97066;
+
+  box-shadow:
+    0 5px 13px
+    rgba(
+      217,
+      45,
+      32,
+      0.1
+    );
+}
+
+/*
+ * Khi đang gửi API xóa.
+ */
+.action-button.delete.deleting {
+  color: #b42318;
+
+  background: #fef3f2;
+
+  border-color: #fda29b;
+}
+
+/*
+ * Trạng thái chung khi nút bị vô hiệu hóa.
+ */
+.action-button:disabled,
+.mobile-card-actions button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.58;
+}
+
+/* ==================================================
+   SPINNER TRONG NÚT XÓA
+================================================== */
+
+.delete-button-spinner {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+
+  display: inline-block;
+
+  border:
+    2px solid
+    rgba(
+      217,
+      45,
+      32,
+      0.25
+    );
+
+  border-top-color:
+    #d92d20;
+
+  border-radius: 50%;
+
+  animation:
+    delete-button-spin
+    0.7s linear infinite;
+}
+
+@keyframes delete-button-spin {
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+/* ==================================================
+   HÀNG ĐANG XÓA
+================================================== */
+
+.table-wrapper tbody
+tr.deleting-row {
+  pointer-events: none;
+
+  opacity: 0.65;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff3f2,
+      #fffafa
+    );
+}
+
+/*
+ * Cho riêng nút Xóa vẫn giữ giao diện loading.
+ */
+.table-wrapper tbody
+tr.deleting-row
+.action-button.delete {
+  opacity: 1;
+}
+
+/* ==================================================
+   MOBILE: NÚT XÓA
+================================================== */
+
+.mobile-card-actions {
+  /*
+   * Trước đây cột cuối chỉ rộng 42px
+   * dành cho nút ba chấm.
+   *
+   * Bây giờ đổi thành 3 cột bằng nhau
+   * để nút Xóa có đủ chỗ hiển thị chữ.
+   */
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+}
+
+.mobile-delete-button {
+  color: #d92d20 !important;
+
+  background: #fff5f5 !important;
+
+  border-color: #fda29b !important;
+}
+
+.mobile-delete-button:hover:not(
+  :disabled
+) {
+  background: #fee4e2 !important;
+
+  border-color: #f97066 !important;
+}
+
+.mobile-table-card.deleting-card {
+  pointer-events: none;
+
+  opacity: 0.67;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff5f5,
+      #ffffff
+    );
+}
+
+/* ==================================================
+   RESPONSIVE NÚT THAO TÁC
+================================================== */
+
+@media (max-width: 1350px) {
+  /*
+   * Cho bảng cuộn ngang nếu màn hình laptop
+   * không đủ chỗ chứa ba nút thao tác.
+   */
+  .table-wrapper table {
+    min-width: 900px;
+  }
+
+  .action-column {
+    width: 240px;
+  }
+
+  .table-actions {
+    gap: 5px;
+  }
+
+  .action-button {
+    min-width: 54px;
+
+    padding:
+      0 7px;
+  }
+}
+
+@media (max-width: 680px) {
+  .mobile-card-actions {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+  }
+
+  .mobile-card-actions button {
+    min-width: 0;
+
+    padding:
+      0 7px;
+  }
+}
+
+
+
+
+
+/* ==================================================
+   THÊM MỚI:
+   GIAO DIỆN LỊCH SỬ CÓ NÚT XÓA
+================================================== */
+
+.history-card-subtitle {
+  margin:
+    5px
+    0
+    0;
+
+  color:
+    #93857d;
+
+  font-size:
+    9px;
+
+  line-height:
+    1.5;
+}
+
+.history-count-badge {
+  min-width:
+    27px;
+
+  height:
+    27px;
+
+  padding:
+    0
+    8px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  color:
+    #ff5700;
+
+  background:
+    #fff2e8;
+
+  border:
+    1px solid
+    #ffd8bc;
+
+  border-radius:
+    999px;
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+}
+
+/* ==================================================
+   CHIỀU RỘNG BẢNG LỊCH SỬ
+================================================== */
+
+.history-table {
+  min-width:
+    570px;
+}
+
+.history-user-column {
+  width:
+    105px;
+}
+
+.history-content-column {
+  min-width:
+    245px;
+}
+
+.history-date-column {
+  width:
+    88px;
+}
+
+.history-action-column {
+  width:
+    76px;
+
+  text-align:
+    center !important;
+}
+
+/* ==================================================
+   NHÂN VIÊN
+================================================== */
+
+.history-user-cell {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+}
+
+.history-user-icon {
+  width:
+    25px;
+
+  height:
+    25px;
+
+  min-width:
+    25px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  color:
+    #2f9d46;
+
+  background:
+    #effaf0;
+
+  border:
+    1px solid
+    #d9f0dc;
+
+  border-radius:
+    50%;
+}
+
+.history-user-icon
+.material-symbols-outlined {
+  font-size:
+    15px;
+
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 20;
+}
+
+.history-user-name {
+  color:
+    #4d4540;
+
+  font-size:
+    8px;
+
+  font-weight:
+    500;
+
+  line-height:
+    1.45;
+}
+
+/* ==================================================
+   NỘI DUNG LỊCH SỬ
+================================================== */
+
+.history-content-cell {
+  min-width:
+    245px;
+}
+
+.history-content-main {
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    6px;
+}
+
+.history-content-main
+.history-dot {
+  margin-top:
+    4px;
+}
+
+.history-content-main
+strong {
+  flex:
+    1;
+
+  color:
+    #302925;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.5;
+}
+
+.history-content-main
+strong.delete-history {
+  color:
+    #ed2d20;
+}
+
+.history-change-summary {
+  margin:
+    3px
+    0
+    0
+    13px !important;
+
+  color:
+    #8b7f78 !important;
+
+  font-size:
+    8px !important;
+
+  line-height:
+    1.45 !important;
+}
+
+/* ==================================================
+   THỜI GIAN
+================================================== */
+
+.history-date-cell {
+  white-space:
+    nowrap;
+}
+
+.history-date-cell span,
+.history-date-cell strong {
+  display:
+    block;
+}
+
+.history-date-cell span {
+  color:
+    #69615c;
+
+  font-size:
+    8px;
+}
+
+.history-date-cell strong {
+  margin-top:
+    3px;
+
+  color:
+    #4a423e;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+}
+
+/* ==================================================
+   NÚT XÓA LỊCH SỬ
+================================================== */
+
+.history-action-cell {
+  text-align:
+    center;
+}
+
+.history-delete-button {
+  min-width:
+    59px;
+
+  height:
+    29px;
+
+  padding:
+    0
+    8px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    4px;
+
+  color:
+    #ef4444;
+
+  background:
+    #ffffff;
+
+  border:
+    1px solid
+    #fda4af;
+
+  border-radius:
+    7px;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+
+  outline:
+    none;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.history-delete-button
+.material-symbols-outlined {
+  font-size:
+    14px;
+
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 450,
+    "GRAD" 0,
+    "opsz" 18;
+}
+
+.history-delete-button:hover:not(
+  :disabled
+) {
+  color:
+    #d92d20;
+
+  background:
+    #fff1f1;
+
+  border-color:
+    #f97066;
+
+  box-shadow:
+    0 5px 12px
+    rgba(
+      217,
+      45,
+      32,
+      0.12
+    );
+
+  transform:
+    translateY(-1px);
+}
+
+.history-delete-button:active:not(
+  :disabled
+) {
+  transform:
+    translateY(0);
+}
+
+.history-delete-button:disabled {
+  cursor:
+    not-allowed;
+
+  opacity:
+    0.5;
+}
+
+.history-delete-button.deleting {
+  color:
+    #b42318;
+
+  background:
+    #fef3f2;
+
+  border-color:
+    #fda29b;
+
+  opacity:
+    1;
+}
+
+/* ==================================================
+   SPINNER NÚT XÓA LỊCH SỬ
+================================================== */
+
+.history-delete-spinner {
+  width:
+    12px;
+
+  height:
+    12px;
+
+  min-width:
+    12px;
+
+  display:
+    inline-block;
+
+  border:
+    2px solid
+    rgba(
+      217,
+      45,
+      32,
+      0.22
+    );
+
+  border-top-color:
+    #d92d20;
+
+  border-radius:
+    50%;
+
+  animation:
+    history-delete-spin
+    0.7s
+    linear
+    infinite;
+}
+
+@keyframes history-delete-spin {
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+/* ==================================================
+   HÀNG LỊCH SỬ ĐANG XÓA
+================================================== */
+
+.history-table tbody
+tr.history-row-deleting {
+  pointer-events:
+    none;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff4f3,
+      #fffafa
+    );
+
+  opacity:
+    0.68;
+}
+
+.history-table tbody
+tr.history-row-deleting
+.history-delete-button {
+  opacity:
+    1;
+}
+
+/* ==================================================
+   TRẠNG THÁI KHÔNG CÓ LỊCH SỬ
+================================================== */
+
+.history-empty {
+  height:
+    180px;
+
+  text-align:
+    center;
+}
+
+.history-empty
+.material-symbols-outlined {
+  display:
+    block;
+
+  margin-bottom:
+    7px;
+
+  color:
+    #ffab75;
+
+  font-size:
+    35px;
+}
+
+.history-empty strong {
+  display:
+    block;
+
+  color:
+    #4b403a;
+
+  font-size:
+    11px;
+}
+
+.history-empty p {
+  margin:
+    5px
+    0
+    0;
+
+  color:
+    #93857d;
+
+  font-size:
+    9px;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (
+  max-width:
+  1100px
+) {
+  .history-table {
+    min-width:
+      620px;
+  }
+}
+
+@media (
+  max-width:
+  680px
+) {
+  .history-table {
+    min-width:
+      600px;
+  }
+
+  .history-delete-button {
+    min-width:
+      55px;
+
+    height:
+      28px;
+  }
+}
+
+
+/* ==================================================
+   CHỐT CUỐI:
+   NÚT XÓA LỊCH SỬ GIỐNG NÚT XÓA BÀN
+================================================== */
+
+.history-table {
+  min-width: 625px;
+}
+
+.history-action-column {
+  width: 76px;
+  min-width: 76px;
+  text-align: center !important;
+}
+
+.history-action-cell {
+  width: 76px;
+  min-width: 76px;
+  padding: 10px 7px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.history-table
+.history-action-cell
+button.action-button.delete.history-delete-button {
+  width: auto !important;
+  min-width: 60px !important;
+  height: 32px !important;
+  margin: 0 auto !important;
+  padding: 0 9px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+
+  color: #e5484d !important;
+  background: #ffffff !important;
+
+  border: 1px solid #f3c1c3 !important;
+  border-radius: 8px !important;
+
+  box-shadow: none !important;
+
+  font-family:
+    "Be Vietnam Pro",
+    Arial,
+    sans-serif !important;
+
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+.history-table
+.history-action-cell
+button.action-button.delete.history-delete-button
+.material-symbols-outlined {
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: inline-block !important;
+
+  color: inherit !important;
+  background: transparent !important;
+
+  font-size: 17px !important;
+  line-height: 1 !important;
+
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 450,
+    "GRAD" 0,
+    "opsz" 18;
+}
+
+.history-table
+.history-action-cell
+button.action-button.delete.history-delete-button
+span:last-child {
+  display: inline !important;
+  margin: 0 !important;
+
+  color: inherit !important;
+
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+}
+
+.history-table
+.history-action-cell
+button.action-button.delete.history-delete-button:hover:not(:disabled) {
+  color: #d92d20 !important;
+  background: #fff1f1 !important;
+  border-color: #f97066 !important;
+
+  box-shadow:
+    0 5px 13px
+    rgba(217, 45, 32, 0.1) !important;
+
+  transform: none !important;
+}
+
+.history-table
+.history-action-cell
+button.action-button.delete.history-delete-button.deleting {
+  color: #b42318 !important;
+  background: #fef3f2 !important;
+  border-color: #fda29b !important;
+}
+
+.history-table
+.history-action-cell
+button.action-button.delete.history-delete-button:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.58 !important;
+}
+
+.history-delete-spinner {
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+
+  display: inline-block !important;
+
+  border:
+    2px solid
+    rgba(217, 45, 32, 0.25) !important;
+
+  border-top-color: #d92d20 !important;
+  border-radius: 50% !important;
+
+  animation:
+    history-delete-button-spin
+    0.7s
+    linear
+    infinite !important;
+}
+
+@keyframes history-delete-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.history-table tbody
+tr.history-row-deleting {
+  pointer-events: none;
+  opacity: 0.68;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff4f3,
+      #fffafa
+    );
+}
+
+.history-table tbody
+tr.history-row-deleting
+.history-delete-button {
+  opacity: 1 !important;
+}
+
+/* ==================================================
+   CHỈNH FONT ALERT XÓA LỊCH SỬ
+   - Chữ nhỏ hơn, nhẹ hơn
+   - Không in đậm quá mức
+   - Không xuất hiện thanh cuộn ngang
+   SweetAlert được tạo ngoài component nên dùng ::ng-deep.
+================================================== */
+
+::ng-deep .restaurant-delete-popup {
+  width: min(560px, calc(100vw - 32px)) !important;
+  max-width: calc(100vw - 32px) !important;
+  padding: 30px 34px 28px !important;
+  overflow: hidden !important;
+  font-family: "Be Vietnam Pro", Arial, sans-serif !important;
+}
+
+::ng-deep .restaurant-delete-html,
+::ng-deep .restaurant-delete-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+::ng-deep .restaurant-delete-icon {
+  width: 76px !important;
+  height: 76px !important;
+  margin: 0 auto 18px !important;
+}
+
+::ng-deep .restaurant-delete-icon .material-symbols-outlined {
+  font-size: 42px !important;
+}
+
+::ng-deep .restaurant-delete-title {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #292623 !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.35px !important;
+}
+
+::ng-deep .restaurant-delete-title .restaurant-delete-code,
+::ng-deep .restaurant-delete-code {
+  color: #ff5b00 !important;
+  font-weight: 700 !important;
+}
+
+::ng-deep .restaurant-delete-question {
+  margin: 12px 0 0 !important;
+  color: #514d49 !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+}
+
+::ng-deep .restaurant-delete-unrecoverable {
+  margin: 4px 0 0 !important;
+  color: #85807c !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+
+::ng-deep .history-delete-information {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 20px 0 0 !important;
+  padding: 12px 18px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+  background: #fffaf6 !important;
+  border: 1px solid #ffd9bd !important;
+  border-radius: 12px !important;
+}
+
+::ng-deep .history-delete-information-row {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 9px 0 !important;
+  display: grid !important;
+  grid-template-columns: 20px 82px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 9px !important;
+  border-bottom: 1px solid rgba(231, 218, 207, 0.75) !important;
+  box-sizing: border-box !important;
+}
+
+::ng-deep .history-delete-information-row:last-child {
+  border-bottom: 0 !important;
+}
+
+::ng-deep .history-delete-information-row > .material-symbols-outlined {
+  margin: 0 !important;
+  color: #ff6500 !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+}
+
+::ng-deep .history-delete-information-label {
+  min-width: 0 !important;
+  color: #76706b !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+}
+
+::ng-deep .history-delete-information-row strong {
+  min-width: 0 !important;
+  color: #3f3b38 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1.55 !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+::ng-deep .restaurant-delete-notice {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 16px 0 0 !important;
+  padding: 13px 16px !important;
+  gap: 10px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+::ng-deep .restaurant-delete-notice .material-symbols-outlined {
+  min-width: 21px !important;
+  width: 21px !important;
+  font-size: 21px !important;
+}
+
+::ng-deep .restaurant-delete-notice span:last-child {
+  min-width: 0 !important;
+  color: #68615c !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+::ng-deep .restaurant-delete-actions {
+  width: 100% !important;
+  margin: 20px 0 0 !important;
+  gap: 12px !important;
+}
+
+::ng-deep .restaurant-delete-cancel-button,
+::ng-deep .restaurant-delete-confirm-button {
+  height: 46px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+::ng-deep .restaurant-delete-cancel-button .material-symbols-outlined,
+::ng-deep .restaurant-delete-confirm-button .material-symbols-outlined {
+  font-size: 18px !important;
+}
+
+::ng-deep .swal2-html-container,
+::ng-deep .swal2-actions,
+::ng-deep .restaurant-delete-popup * {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}
+
+::ng-deep .swal2-html-container {
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 560px) {
+  ::ng-deep .restaurant-delete-popup {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    padding: 24px 18px 20px !important;
+  }
+
+  ::ng-deep .restaurant-delete-title {
+    font-size: 22px !important;
+  }
+
+  ::ng-deep .history-delete-information-row {
+    grid-template-columns: 18px 70px minmax(0, 1fr) !important;
+    gap: 7px !important;
+  }
+
+  ::ng-deep .history-delete-information-label,
+  ::ng-deep .history-delete-information-row strong {
+    font-size: 12px !important;
+  }
+
+  ::ng-deep .restaurant-delete-actions {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -1,0 +1,1336 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==================================================
+   BỔ SUNG FIX:
+   GIỮ ỔN ĐỊNH THANH CUỘN KHI MỞ/ĐÓNG MODAL
+
+   SweetAlert và các modal có thể tạm ẩn scrollbar.
+   Nếu không giữ sẵn khoảng trống, giao diện chính
+   sẽ bị co giãn hoặc dịch ngang nhẹ.
+================================================== */
+
+html {
+  /*
+   * Luôn giữ vị trí cho thanh cuộn dọc.
+   */
+  overflow-y: scroll;
+
+  /*
+   * Giữ ổn định phần gutter của scrollbar.
+   */
+  scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+/* ==================================================
+   BỔ SUNG FIX:
+   SWEETALERT THƯỜNG TỰ THÊM PADDING-RIGHT VÀO BODY
+
+   Việc tự thêm padding-right có thể làm giao diện
+   chính dịch ngang nhẹ khi popup mở hoặc đóng.
+================================================== */
+
+body.swal2-shown {
+  padding-right: 0 !important;
+}
+
+/*
+ * Không để SweetAlert thay đổi chiều rộng body
+ * trong thời gian popup đang hiển thị.
+ */
+html.swal2-shown,
+body.swal2-shown {
+  width: 100% !important;
+}
+
+/*
+ * Container popup chỉ chiếm đúng phần màn hình,
+ * không tạo chiều rộng vượt quá viewport.
+ */
+.swal2-container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/*
+ * Ngăn thanh cuộn ngang xuất hiện trong lúc
+ * animation SweetAlert đang chạy.
+ */
+.swal2-container,
+.swal2-popup {
+  box-sizing: border-box;
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* ==================================================
+   SWEETALERT XÁC NHẬN XÓA BÀN
+   PHẢI ĐẶT TRONG src/styles.css
+================================================== */
+
+.restaurant-delete-container {
+  padding: 18px !important;
+
+  font-family:
+    "Be Vietnam Pro",
+    Arial,
+    sans-serif !important;
+
+  background:
+    rgba(40, 25, 16, 0.55) !important;
+
+  backdrop-filter:
+    blur(7px);
+
+  -webkit-backdrop-filter:
+    blur(7px);
+}
+
+/* ==================================================
+   POPUP
+================================================== */
+
+.restaurant-delete-popup {
+  width:
+    min(
+      590px,
+      calc(100vw - 36px)
+    ) !important;
+
+  padding:
+    38px
+    42px
+    34px !important;
+
+  overflow: hidden !important;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 224, 201, 0.38),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fffdfb 60%,
+      #fff8f2 100%
+    ) !important;
+
+  border:
+    1px solid
+    rgba(255, 124, 45, 0.28) !important;
+
+  border-radius:
+    21px !important;
+
+  box-shadow:
+    0 32px 95px
+    rgba(55, 27, 12, 0.34) !important;
+}
+
+/*
+ * Vệt trang trí mờ ở đầu popup.
+ */
+.restaurant-delete-popup::before {
+  content: "";
+
+  width: 310px;
+  height: 170px;
+
+  position: absolute;
+  top: -105px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 114, 28, 0.17),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+/* ==================================================
+   ICON CẢNH BÁO
+================================================== */
+
+.restaurant-delete-icon {
+  width: 94px !important;
+  height: 94px !important;
+  margin:
+    2px auto
+    24px !important;
+
+  position: relative;
+
+  display: grid !important;
+  place-items: center !important;
+
+  color:
+    #f36a0b !important;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff7f0 0%,
+      #ffe5d0 64%,
+      #ffd9bd 100%
+    ) !important;
+
+  border:
+    0 !important;
+
+  border-radius:
+    50% !important;
+
+  box-shadow:
+    0 0 0 12px
+      rgba(255, 116, 30, 0.07),
+    0 0 0 23px
+      rgba(255, 116, 30, 0.035);
+}
+
+.restaurant-delete-icon::before,
+.restaurant-delete-icon::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.restaurant-delete-icon::before {
+  inset: -14px;
+
+  border:
+    1px solid
+    rgba(255, 133, 61, 0.18);
+}
+
+.restaurant-delete-icon::after {
+  inset: -25px;
+
+  border:
+    1px solid
+    rgba(255, 133, 61, 0.09);
+}
+
+.restaurant-delete-icon
+.material-symbols-outlined {
+  font-size:
+    54px !important;
+
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 500,
+    "GRAD" 0,
+    "opsz" 48;
+}
+
+/* ==================================================
+   TIÊU ĐỀ
+================================================== */
+
+.restaurant-delete-title {
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  color:
+    #292623 !important;
+
+  font-size:
+    37px !important;
+
+  font-weight:
+    850 !important;
+
+  line-height:
+    1.25 !important;
+
+  letter-spacing:
+    -0.8px !important;
+}
+
+.restaurant-delete-code {
+  color:
+    #ff5500;
+}
+
+/* ==================================================
+   NỘI DUNG
+================================================== */
+
+.restaurant-delete-html {
+  margin:
+    23px 0
+    0 !important;
+
+  padding:
+    0 !important;
+
+  color:
+    #4d4844 !important;
+}
+
+.restaurant-delete-content {
+  width:
+    100%;
+
+  text-align:
+    center;
+}
+
+.restaurant-delete-question {
+  margin:
+    0;
+
+  color:
+    #4e4946;
+
+  font-size:
+    19px;
+
+  line-height:
+    1.55;
+}
+
+.restaurant-delete-question
+strong {
+  color:
+    #ff5500;
+
+  font-weight:
+    800;
+}
+
+.restaurant-delete-unrecoverable {
+  margin:
+    4px 0
+    0;
+
+  color:
+    #706b67;
+
+  font-size:
+    16px;
+
+  line-height:
+    1.5;
+}
+
+/* ==================================================
+   KHUNG THÔNG BÁO
+================================================== */
+
+.restaurant-delete-notice {
+  width:
+    100%;
+
+  margin:
+    25px auto
+    0;
+
+  padding:
+    17px
+    20px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  color:
+    #554943;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff9f5,
+      #fff0e5
+    );
+
+  border:
+    1px solid
+    #ffdfc7;
+
+  border-radius:
+    12px;
+
+  font-size:
+    13px;
+
+  line-height:
+    1.55;
+
+  text-align:
+    left;
+}
+
+.restaurant-delete-notice
+.material-symbols-outlined {
+  width:
+    28px;
+
+  min-width:
+    28px;
+
+  color:
+    #ff6500;
+
+  font-size:
+    27px;
+}
+
+/* ==================================================
+   KHU VỰC NÚT
+================================================== */
+
+.restaurant-delete-actions {
+  width:
+    100% !important;
+
+  margin:
+    27px 0
+    0 !important;
+
+  display:
+    grid !important;
+
+  grid-template-columns:
+    minmax(130px, 0.78fr)
+    minmax(170px, 1fr);
+
+  gap:
+    16px !important;
+}
+
+.restaurant-delete-cancel-button,
+.restaurant-delete-confirm-button {
+  height:
+    52px;
+
+  margin:
+    0 !important;
+
+  display:
+    inline-flex !important;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    8px;
+
+  border-radius:
+    11px;
+
+  font-family:
+    "Be Vietnam Pro",
+    Arial,
+    sans-serif;
+
+  font-size:
+    15px;
+
+  font-weight:
+    800;
+
+  outline:
+    none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* ==================================================
+   NÚT HỦY
+================================================== */
+
+.restaurant-delete-cancel-button {
+  color:
+    #5e626b;
+
+  background:
+    #ffffff;
+
+  border:
+    1px solid
+    #d9dee7;
+
+  box-shadow:
+    0 5px 13px
+    rgba(31, 41, 55, 0.04);
+}
+
+.restaurant-delete-cancel-button:hover {
+  color:
+    #ff5700;
+
+  background:
+    #fffaf6;
+
+  border-color:
+    #ffad7b;
+
+  transform:
+    translateY(-2px);
+}
+
+/* ==================================================
+   NÚT XÓA
+================================================== */
+
+.restaurant-delete-confirm-button {
+  color:
+    #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6800,
+      #ff3500
+    );
+
+  border:
+    0;
+
+  box-shadow:
+    0 13px 28px
+    rgba(255, 72, 0, 0.27);
+}
+
+.restaurant-delete-confirm-button:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 17px 34px
+    rgba(255, 72, 0, 0.35);
+}
+
+.restaurant-delete-confirm-button
+.material-symbols-outlined {
+  font-size:
+    21px;
+}
+
+/* ==================================================
+   HIỆU ỨNG MỞ VÀ ĐÓNG
+================================================== */
+
+.restaurant-delete-show {
+  animation:
+    restaurant-delete-enter
+    0.32s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.restaurant-delete-hide {
+  animation:
+    restaurant-delete-exit
+    0.22s
+    ease
+    forwards;
+}
+
+@keyframes restaurant-delete-enter {
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateY(22px)
+      scale(0.94);
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes restaurant-delete-exit {
+  from {
+    opacity:
+      1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  to {
+    opacity:
+      0;
+
+    transform:
+      translateY(12px)
+      scale(0.96);
+  }
+}
+
+/* ==================================================
+   CẢNH BÁO BÀN ĐANG PHỤC VỤ
+================================================== */
+
+.restaurant-warning-popup {
+  width:
+    min(
+      480px,
+      calc(100vw - 32px)
+    ) !important;
+
+  padding:
+    30px !important;
+
+  font-family:
+    "Be Vietnam Pro",
+    Arial,
+    sans-serif !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fff8f1
+    ) !important;
+
+  border:
+    1px solid
+    #ffd4b5 !important;
+
+  border-radius:
+    18px !important;
+
+  box-shadow:
+    0 28px 80px
+    rgba(57, 29, 13, 0.3) !important;
+}
+
+.restaurant-warning-title {
+  color:
+    #292623 !important;
+
+  font-size:
+    25px !important;
+
+  font-weight:
+    850 !important;
+}
+
+.restaurant-warning-html {
+  color:
+    #655d58 !important;
+
+  font-size:
+    14px !important;
+
+  line-height:
+    1.65 !important;
+}
+
+.restaurant-warning-confirm-button {
+  min-width:
+    130px;
+
+  height:
+    44px;
+
+  color:
+    #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6800,
+      #ff3e00
+    );
+
+  border:
+    0;
+
+  border-radius:
+    9px;
+
+  font-weight:
+    800;
+
+  box-shadow:
+    0 10px 22px
+    rgba(255, 75, 0, 0.24);
+
+  cursor:
+    pointer;
+}
+
+/* ==================================================
+   TOAST THÀNH CÔNG VÀ THẤT BẠI
+================================================== */
+
+.restaurant-toast-popup {
+  font-family:
+    "Be Vietnam Pro",
+    Arial,
+    sans-serif !important;
+
+  border:
+    1px solid
+    #f2e1d5 !important;
+
+  border-radius:
+    12px !important;
+
+  box-shadow:
+    0 15px 40px
+    rgba(73, 35, 13, 0.16) !important;
+}
+
+/* ==================================================
+   RESPONSIVE TABLET
+================================================== */
+
+@media (
+  max-width: 700px
+) {
+  .restaurant-delete-popup {
+    padding:
+      30px
+      25px
+      26px !important;
+  }
+
+  .restaurant-delete-title {
+    font-size:
+      30px !important;
+  }
+
+  .restaurant-delete-question {
+    font-size:
+      17px;
+  }
+
+  .restaurant-delete-unrecoverable {
+    font-size:
+      14px;
+  }
+}
+
+/* ==================================================
+   RESPONSIVE MOBILE
+================================================== */
+
+@media (
+  max-width: 480px
+) {
+  .restaurant-delete-container {
+    padding:
+      12px !important;
+  }
+
+  .restaurant-delete-popup {
+    width:
+      calc(100vw - 24px) !important;
+
+    padding:
+      27px
+      18px
+      20px !important;
+
+    border-radius:
+      17px !important;
+  }
+
+  .restaurant-delete-icon {
+    width:
+      76px !important;
+
+    height:
+      76px !important;
+
+    margin-bottom:
+      21px !important;
+  }
+
+  .restaurant-delete-icon
+  .material-symbols-outlined {
+    font-size:
+      44px !important;
+  }
+
+  .restaurant-delete-title {
+    font-size:
+      26px !important;
+
+    letter-spacing:
+      -0.4px !important;
+  }
+
+  .restaurant-delete-html {
+    margin-top:
+      18px !important;
+  }
+
+  .restaurant-delete-question {
+    font-size:
+      15px;
+  }
+
+  .restaurant-delete-unrecoverable {
+    font-size:
+      13px;
+  }
+
+  .restaurant-delete-notice {
+    margin-top:
+      20px;
+
+    padding:
+      14px;
+
+    font-size:
+      11px;
+  }
+
+  .restaurant-delete-actions {
+    margin-top:
+      22px !important;
+
+    grid-template-columns:
+      1fr;
+  }
+
+  .restaurant-delete-cancel-button,
+  .restaurant-delete-confirm-button {
+    width:
+      100%;
+
+    height:
+      48px;
+  }
+
+  /*
+   * Trên điện thoại đưa nút Xóa lên trước,
+   * nút Hủy xuống dưới.
+   */
+  .restaurant-delete-confirm-button {
+    order:
+      1;
+  }
+
+  .restaurant-delete-cancel-button {
+    order:
+      2;
+  }
+}
+
+/* ==================================================
+   GIẢM CHUYỂN ĐỘNG
+================================================== */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .restaurant-delete-show,
+  .restaurant-delete-hide {
+    animation-duration:
+      0.01ms !important;
+  }
+
+  .restaurant-delete-cancel-button,
+  .restaurant-delete-confirm-button {
+    transition-duration:
+      0.01ms !important;
+  }
+}
+
+
+
+
+/* ==================================================
+   FIX MÀN HÌNH GIẬT KHI MỞ / ĐÓNG MODAL
+================================================== */
+
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/*
+ * Không cho thư viện popup bù thêm khoảng scrollbar.
+ */
+body.swal2-shown,
+body.swal2-height-auto {
+  padding-right: 0 !important;
+}
+
+/*
+ * SweetAlert đôi khi đặt overflow trực tiếp lên html.
+ * Vẫn giữ khu vực scrollbar ổn định.
+ */
+html.swal2-shown {
+  overflow-y: scroll !important;
+}
+
+/*
+ * Ngăn container popup làm phát sinh chiều rộng ngang.
+ */
+.swal2-container {
+  inset: 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+
+
+/* ==================================================
+   SWEETALERT TOAST THÔNG BÁO
+
+   PHẢI ĐẶT TRONG:
+   src/styles.css
+
+   Vì SweetAlert được tạo bên ngoài component Angular.
+================================================== */
+
+/*
+ * Container đặt toast ở góc trên bên phải.
+ *
+ * Quan trọng:
+ * width: auto để container không chiếm toàn màn hình.
+ */
+.restaurant-toast-container.swal2-container {
+  width: auto !important;
+  max-width: none !important;
+
+  top: 18px !important;
+  right: 18px !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+
+  pointer-events: none;
+}
+
+/*
+ * Popup toast thực tế.
+ */
+.restaurant-toast-popup.swal2-popup {
+  width:
+    min(
+      390px,
+      calc(100vw - 36px)
+    ) !important;
+
+  min-width: 300px !important;
+  max-width: 390px !important;
+
+  margin: 0 !important;
+
+  padding:
+    13px 16px !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    auto minmax(0, 1fr);
+
+  align-items: center !important;
+
+  column-gap: 11px !important;
+
+  color: #344054 !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fffdf9 65%,
+      #fff8f1 100%
+    ) !important;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      115,
+      35,
+      0.2
+    ) !important;
+
+  border-radius: 13px !important;
+
+  box-shadow:
+    0 15px 38px
+    rgba(
+      74,
+      37,
+      16,
+      0.17
+    ) !important;
+
+  font-family:
+    "Be Vietnam Pro",
+    Arial,
+    sans-serif !important;
+
+  pointer-events: auto;
+
+  overflow: hidden !important;
+}
+
+/*
+ * Icon thành công.
+ */
+.restaurant-toast-popup
+.swal2-icon {
+  width: 34px !important;
+  height: 34px !important;
+
+  min-width: 34px !important;
+
+  margin: 0 !important;
+
+  grid-column: 1;
+  grid-row: 1;
+
+  border-width: 3px !important;
+
+  font-size: 9px !important;
+}
+
+/*
+ * Phần chứa tiêu đề.
+ */
+.restaurant-toast-popup
+.swal2-html-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/*
+ * Nội dung thông báo.
+ */
+.restaurant-toast-title.swal2-title {
+  min-width: 0;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  grid-column: 2;
+  grid-row: 1;
+
+  overflow-wrap: anywhere;
+
+  color: #3d3a37 !important;
+
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+
+  text-align: left !important;
+}
+
+/*
+ * Thanh thời gian ở đáy toast.
+ */
+.restaurant-toast-progress.swal2-timer-progress-bar {
+  height: 3px !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      #42b85a,
+      #8bdc91
+    ) !important;
+}
+
+/*
+ * Animation xuất hiện.
+ */
+.restaurant-toast-popup.swal2-show {
+  animation:
+    restaurant-toast-show
+    0.28s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ) !important;
+}
+
+/*
+ * Animation biến mất.
+ */
+.restaurant-toast-popup.swal2-hide {
+  animation:
+    restaurant-toast-hide
+    0.2s
+    ease
+    forwards !important;
+}
+
+@keyframes restaurant-toast-show {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(30px)
+      scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+  }
+}
+
+@keyframes restaurant-toast-hide {
+  from {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+  }
+
+  to {
+    opacity: 0;
+
+    transform:
+      translateX(25px)
+      scale(0.97);
+  }
+}
+
+/* ==================================================
+   RESPONSIVE MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+  .restaurant-toast-container.swal2-container {
+    top: 12px !important;
+    right: 12px !important;
+    left: 12px !important;
+
+    width: auto !important;
+  }
+
+  .restaurant-toast-popup.swal2-popup {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    padding:
+      12px 14px !important;
+  }
+
+  .restaurant-toast-title.swal2-title {
+    font-size: 12px !important;
+  }
+}
+
+
+
+
+
+/* ==================================================
+   FIX RUNG / CO GIÃN KHI ĐÓNG SWEETALERT
+================================================== */
+
+html {
+  width: 100%;
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/*
+ * SweetAlert thường thêm padding-right để bù scrollbar.
+ * Loại bỏ phần bù này để trang không dịch ngang.
+ */
+body.swal2-shown,
+body.swal2-height-auto {
+  padding-right: 0 !important;
+}
+
+/*
+ * Không cho SweetAlert ẩn scrollbar dọc của trang.
+ */
+html.swal2-shown,
+body.swal2-shown {
+  overflow-y: scroll !important;
+}
+
+/*
+ * Giữ nguyên chiều rộng trang khi popup mở.
+ */
+html.swal2-shown,
+body.swal2-shown,
+app-root {
+  width: 100% !important;
+}
+
+/*
+ * Container popup không được tạo chiều rộng vượt viewport.
+ */
+.swal2-container {
+  inset: 0 !important;
+
+  width: auto !important;
+  max-width: 100% !important;
+
+  padding-right: 0 !important;
+
+  overflow-x: hidden !important;
+}
+
+/*
+ * Không cho nội dung popup tạo thanh cuộn ngang.
+ */
+.swal2-popup,
+.swal2-html-container,
+.restaurant-delete-content,
+.history-delete-information,
+.restaurant-delete-notice {
+  box-sizing: border-box !important;
+
+  max-width: 100% !important;
+
+  overflow-x: hidden !important;
+}
+
+/*
+ * Cho nội dung dài tự xuống dòng,
+ * thay vì làm popup xuất hiện thanh kéo ngang.
+ */
+.history-delete-information-row,
+.history-delete-information-row strong,
+.restaurant-delete-notice span {
+  min-width: 0 !important;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/*
+ * Ghi đè trạng thái khóa scroll của SweetAlert.
+ */
+body.swal2-no-backdrop,
+body.swal2-toast-shown {
+  overflow-y: scroll !important;
+  padding-right: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+
+  overflow: hidden;
+}
+
+app-root {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

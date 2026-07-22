@@ -1,0 +1,2422 @@
+:host {
+  display: block;
+
+  width: 100%;
+  min-height: 100vh;
+
+  font-family:
+    "Be Vietnam Pro",
+    Arial,
+    sans-serif;
+
+  color: #2b170d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ===================================
+   LAYOUT CHÍNH
+=================================== */
+
+.admin-layout {
+  --sidebar-expanded-width: 286px;
+  --sidebar-collapsed-width: 82px;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  /*
+   * Không dùng transform tại đây.
+   * Nếu phần tử cha có transform,
+   * modal position: fixed có thể bị giới hạn.
+   */
+  transform: none;
+  filter: none;
+  perspective: none;
+  contain: initial;
+
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(255, 107, 0, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 40% 82%,
+      rgba(255, 157, 77, 0.08),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf6 0%,
+      #fff7f0 48%,
+      #fff3e9 100%
+    );
+}
+
+/* ===================================
+   SIDEBAR
+=================================== */
+
+.admin-sidebar {
+  width:
+    var(--sidebar-expanded-width);
+
+  min-width:
+    var(--sidebar-expanded-width);
+
+  height: 100vh;
+  height: 100dvh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 90% 3%,
+      rgba(255, 133, 42, 0.28),
+      transparent 23%
+    ),
+    radial-gradient(
+      circle at 8% 86%,
+      rgba(255, 104, 0, 0.14),
+      transparent 27%
+    ),
+    linear-gradient(
+      180deg,
+      #8d3204 0%,
+      #5b1f06 46%,
+      #321006 100%
+    );
+
+  border-right:
+    1px solid
+    rgba(126, 47, 6, 0.2);
+
+  box-shadow:
+    14px 0 40px
+    rgba(84, 31, 8, 0.14);
+
+  transition:
+    width 0.28s ease,
+    min-width 0.28s ease,
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.admin-sidebar::before {
+  content: "";
+
+  position: absolute;
+  top: -120px;
+  right: -120px;
+
+  width: 290px;
+  height: 290px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 139, 46, 0.18),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+.admin-sidebar.sidebar-collapsed {
+  width:
+    var(--sidebar-collapsed-width);
+
+  min-width:
+    var(--sidebar-collapsed-width);
+}
+
+.admin-sidebar.sidebar-expanded {
+  width:
+    var(--sidebar-expanded-width);
+
+  min-width:
+    var(--sidebar-expanded-width);
+}
+
+/* ===================================
+   HEADER SIDEBAR
+=================================== */
+
+.sidebar-header {
+  min-height: 92px;
+  padding: 0 18px;
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+.brand {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+
+  display: grid;
+  place-items: center;
+
+  color: #ff6b00;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.05)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 13px;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.12),
+    0 8px 18px
+    rgba(27, 7, 1, 0.18);
+}
+
+.brand-icon
+.material-symbols-outlined {
+  font-size: 42px;
+
+  filter:
+    drop-shadow(
+      0 6px 12px
+      rgba(255, 106, 0, 0.36)
+    );
+}
+
+.brand-text {
+  min-width: 145px;
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 1;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.25s ease;
+}
+
+.brand-text strong {
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.brand-text small {
+  margin-top: 4px;
+
+  color:
+    rgba(255, 240, 229, 0.86);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ===================================
+   NÚT GHIM
+=================================== */
+
+.sidebar-pin-button {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+  place-items: center;
+
+  color: #fff3e9;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 175, 112, 0.32),
+      rgba(255, 255, 255, 0.08)
+    );
+
+  border:
+    1px solid
+    rgba(255, 213, 180, 0.25);
+
+  border-radius: 11px;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.15),
+    0 8px 18px
+    rgba(38, 9, 0, 0.16);
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sidebar-pin-button:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 122, 26, 0.48);
+
+  transform:
+    translateY(-2px)
+    rotate(-7deg);
+
+  box-shadow:
+    0 10px 20px
+    rgba(255, 91, 0, 0.22);
+}
+
+.sidebar-pin-button.pinned {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff8100,
+      #ff4d00
+    );
+
+  border-color:
+    rgba(255, 197, 153, 0.55);
+
+  box-shadow:
+    0 10px 24px
+    rgba(255, 77, 0, 0.36),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-pin-button
+.material-symbols-outlined {
+  font-size: 20px;
+}
+
+.sidebar-close-button {
+  width: 38px;
+  height: 38px;
+
+  display: none;
+  place-items: center;
+
+  color: #ffffff;
+  background: transparent;
+
+  border: 0;
+  border-radius: 10px;
+}
+
+.sidebar-close-button:hover {
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+/* ===================================
+   MENU SIDEBAR
+=================================== */
+
+.sidebar-navigation {
+  flex: 1;
+
+  padding:
+    18px 13px;
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.sidebar-navigation::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-navigation::-webkit-scrollbar-thumb {
+  background:
+    rgba(255, 183, 128, 0.27);
+
+  border-radius: 20px;
+}
+
+.sidebar-menu-item {
+  width: 100%;
+  min-height: 52px;
+
+  padding:
+    0 15px;
+
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  overflow: hidden;
+
+  color:
+    rgba(255, 245, 238, 0.9);
+
+  text-decoration: none;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    color 0.22s ease,
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    padding 0.22s ease;
+}
+
+.sidebar-menu-item::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 116, 0, 0.82),
+      rgba(255, 68, 0, 0.68)
+    );
+
+  transition:
+    opacity 0.22s ease;
+}
+
+.sidebar-menu-item::after {
+  content: "";
+
+  width: 4px;
+  height: 24px;
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  opacity: 0;
+
+  transform:
+    translateY(-50%)
+    scaleY(0.6);
+
+  background: #ff8a1f;
+
+  border-radius:
+    0 5px 5px 0;
+
+  box-shadow:
+    0 0 12px
+    rgba(255, 123, 0, 0.55);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar-menu-item:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 214, 180, 0.1);
+
+  transform:
+    translateX(3px);
+}
+
+.sidebar-menu-item:hover::before {
+  opacity: 0.2;
+}
+
+.sidebar-menu-item.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      105deg,
+      #ca4500 0%,
+      #e85100 48%,
+      #bf3600 100%
+    );
+
+  border-color:
+    rgba(255, 155, 85, 0.35);
+
+  box-shadow:
+    0 12px 25px
+    rgba(99, 25, 0, 0.28),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.16);
+}
+
+.sidebar-menu-item.active::before {
+  opacity: 1;
+}
+
+.sidebar-menu-item.active::after {
+  opacity: 1;
+
+  transform:
+    translateY(-50%)
+    scaleY(1);
+}
+
+.menu-icon {
+  width: 25px;
+  min-width: 25px;
+
+  flex-shrink: 0;
+
+  color: #fff4ec;
+
+  font-size: 24px;
+  text-align: center;
+
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.sidebar-menu-item:hover
+.menu-icon,
+.sidebar-menu-item.active
+.menu-icon {
+  color: #ffffff;
+
+  transform:
+    scale(1.08);
+}
+
+.menu-label {
+  min-width: 145px;
+
+  flex: 1;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  opacity: 1;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.25s ease;
+}
+
+.menu-arrow {
+  color: #ffd5b7;
+
+  font-size: 18px;
+
+  opacity: 0;
+
+  transform:
+    translateX(-6px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar-menu-item.active
+.menu-arrow {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+/* ===================================
+   SIDEBAR THU GỌN
+=================================== */
+
+.admin-sidebar.sidebar-collapsed
+.brand-text,
+.admin-sidebar.sidebar-collapsed
+.menu-label,
+.admin-sidebar.sidebar-collapsed
+.menu-arrow,
+.admin-sidebar.sidebar-collapsed
+.clock-information,
+.admin-sidebar.sidebar-collapsed
+.sidebar-account-information,
+.admin-sidebar.sidebar-collapsed
+.account-expand-icon {
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translateX(-10px);
+}
+
+.admin-sidebar.sidebar-collapsed
+.sidebar-header {
+  padding:
+    0 16px;
+}
+
+.admin-sidebar.sidebar-collapsed
+.brand {
+  justify-content: center;
+}
+
+.admin-sidebar.sidebar-collapsed
+.sidebar-pin-button {
+  width: 25px;
+  height: 25px;
+
+  position: absolute;
+  top: 8px;
+  right: 6px;
+
+  opacity: 0.95;
+}
+
+.admin-sidebar.sidebar-collapsed
+.sidebar-pin-button
+.material-symbols-outlined {
+  font-size: 16px;
+}
+
+.admin-sidebar.sidebar-collapsed
+.sidebar-navigation {
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+.admin-sidebar.sidebar-collapsed
+.sidebar-menu-item {
+  padding: 0;
+
+  justify-content: center;
+}
+
+/* ===================================
+   KHỐI ĐỒNG HỒ
+=================================== */
+
+.sidebar-clock {
+  min-height: 82px;
+
+  margin:
+    0 14px 12px;
+
+  padding: 12px;
+
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 12% 50%,
+      rgba(255, 211, 176, 0.19),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #da5000 0%,
+      #bd3900 55%,
+      #a92d00 100%
+    );
+
+  border:
+    1px solid
+    rgba(255, 170, 105, 0.5);
+
+  border-radius: 16px;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.18),
+    0 12px 24px
+    rgba(57, 13, 0, 0.22);
+
+  transition:
+    margin 0.28s ease,
+    padding 0.28s ease,
+    min-height 0.28s ease;
+}
+
+.sidebar-clock::after {
+  content: "";
+
+  width: 105px;
+  height: 105px;
+
+  position: absolute;
+  top: -34px;
+  right: -34px;
+  z-index: -1;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 199, 153, 0.28),
+      transparent 68%
+    );
+}
+
+/* ===================================
+   MẶT ĐỒNG HỒ
+=================================== */
+
+.clock-visual {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+
+  position: relative;
+
+  border:
+    2px solid
+    rgba(255, 220, 193, 0.34);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 180, 117, 0.26),
+      rgba(97, 24, 0, 0.2)
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(255, 147, 69, 0.28),
+    inset 0 0 12px
+    rgba(255, 213, 178, 0.12);
+}
+
+.clock-center {
+  width: 6px;
+  height: 6px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+
+  transform:
+    translate(-50%, -50%);
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 8px
+    rgba(255, 229, 210, 0.95);
+}
+
+.clock-hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+
+  transform-origin:
+    center bottom;
+
+  border-radius: 10px;
+
+  transition:
+    transform 0.25s linear;
+}
+
+.clock-hour {
+  width: 3px;
+  height: 11px;
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      to top,
+      #ffd4b5,
+      #ffffff
+    );
+}
+
+.clock-minute {
+  width: 2px;
+  height: 16px;
+  z-index: 3;
+
+  background:
+    linear-gradient(
+      to top,
+      #ffbd8d,
+      #fff8f3
+    );
+}
+
+.clock-second {
+  width: 1px;
+  height: 18px;
+  z-index: 4;
+
+  background: #ffe0c7;
+
+  box-shadow:
+    0 0 6px
+    rgba(255, 224, 199, 0.85);
+}
+
+.clock-dot {
+  width: 3px;
+  height: 3px;
+
+  position: absolute;
+
+  background:
+    rgba(255, 229, 208, 0.92);
+
+  border-radius: 50%;
+}
+
+.dot-one {
+  top: 5px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+.dot-two {
+  top: 50%;
+  right: 5px;
+
+  transform:
+    translateY(-50%);
+}
+
+.dot-three {
+  bottom: 5px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+.dot-four {
+  top: 50%;
+  left: 5px;
+
+  transform:
+    translateY(-50%);
+}
+
+/* ===================================
+   THÔNG TIN ĐỒNG HỒ
+=================================== */
+
+.clock-information {
+  min-width: 115px;
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 1;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.25s ease;
+}
+
+.clock-information strong {
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.clock-information span {
+  margin-top: 4px;
+
+  color:
+    rgba(255, 239, 226, 0.92);
+
+  font-size: 11px;
+}
+
+.clock-information small {
+  margin-top: 3px;
+
+  color:
+    rgba(255, 226, 205, 0.8);
+
+  font-size: 10px;
+
+  text-transform: capitalize;
+}
+
+.admin-sidebar.sidebar-collapsed
+.sidebar-clock {
+  min-height: 54px;
+
+  margin:
+    0 11px 12px;
+
+  padding: 6px;
+
+  justify-content: center;
+
+  border-radius: 14px;
+}
+
+.admin-sidebar.sidebar-collapsed
+.clock-visual {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+}
+
+.admin-sidebar.sidebar-collapsed
+.clock-hour {
+  height: 10px;
+}
+
+.admin-sidebar.sidebar-collapsed
+.clock-minute {
+  height: 14px;
+}
+
+.admin-sidebar.sidebar-collapsed
+.clock-second {
+  height: 16px;
+}
+
+/* ===================================
+   TÀI KHOẢN SIDEBAR
+=================================== */
+
+.sidebar-account {
+  min-height: 84px;
+
+  padding:
+    13px 17px;
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(54, 13, 2, 0.12),
+      rgba(37, 8, 1, 0.25)
+    );
+
+  border-top:
+    1px solid
+    rgba(255, 224, 201, 0.12);
+}
+
+.sidebar-avatar-wrapper,
+.topbar-avatar-wrapper {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+.sidebar-avatar {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+
+  object-fit: cover;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffaf6,
+      #ffe8d8
+    );
+
+  border:
+    2px solid
+    rgba(255, 235, 220, 0.86);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 7px 18px
+    rgba(37, 8, 1, 0.28);
+}
+
+.online-status {
+  width: 11px;
+  height: 11px;
+
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+
+  background: #22c55e;
+
+  border:
+    2px solid #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 8px
+    rgba(34, 197, 94, 0.5);
+}
+
+.sidebar-account-information {
+  min-width: 130px;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 1;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.25s ease;
+}
+
+.sidebar-account-information strong {
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sidebar-account-information span {
+  margin-top: 4px;
+
+  overflow: hidden;
+
+  color:
+    rgba(255, 225, 204, 0.82);
+
+  font-size: 12px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.account-expand-icon {
+  color: #ffd5b7;
+
+  font-size: 21px;
+
+  opacity: 1;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.25s ease;
+}
+
+.sidebar-account:hover
+.account-expand-icon {
+  transform:
+    translateY(2px);
+}
+
+.admin-sidebar.sidebar-collapsed
+.sidebar-account {
+  padding:
+    13px 17px;
+
+  justify-content: center;
+}
+
+/* ===================================
+   PHẦN MAIN
+=================================== */
+
+.admin-main {
+  width:
+    calc(
+      100% -
+      var(--sidebar-expanded-width)
+    );
+
+  min-width: 0;
+  min-height: 100vh;
+
+  margin-left:
+    var(--sidebar-expanded-width);
+
+  display: flex;
+  flex-direction: column;
+
+  /*
+   * Không dùng transform tại phần tử
+   * chứa router-outlet và modal.
+   */
+  transform: none;
+  filter: none;
+  perspective: none;
+  contain: initial;
+
+  overflow: visible;
+
+  /*
+   * FIX GIẬT KHUNG HÌNH KHI MODAL MỞ / ĐÓNG:
+   * Không animation thuộc tính width vì scrollbar hoặc
+   * viewport thay đổi vài pixel sẽ làm toàn bộ main co giãn.
+   * Vẫn giữ animation margin-left cho sidebar như cũ.
+   */
+  transition:
+    margin-left 0.28s ease;
+}
+
+.admin-layout.sidebar-is-collapsed
+.admin-main {
+  width:
+    calc(
+      100% -
+      var(--sidebar-collapsed-width)
+    );
+
+  margin-left:
+    var(--sidebar-collapsed-width);
+}
+
+.admin-layout.sidebar-is-expanded
+.admin-main {
+  width: auto;
+  min-width: 0;
+  min-height: 100vh;
+
+  flex: 1 1 auto;
+
+  margin-left:
+    var(--sidebar-expanded-width);
+
+  display: flex;
+  flex-direction: column;
+
+  transform: none;
+  filter: none;
+  perspective: none;
+  contain: initial;
+
+  overflow: visible;
+
+  transition:
+    margin-left 0.28s ease;
+}
+
+.admin-layout.sidebar-is-collapsed
+.admin-main {
+  margin-left:
+    var(--sidebar-collapsed-width);
+}
+
+.admin-layout.sidebar-is-expanded
+.admin-main {
+  margin-left:
+    var(--sidebar-expanded-width);
+}
+
+/* ===================================
+   TOPBAR
+=================================== */
+
+.admin-topbar {
+  width: 100%;
+  min-height: 88px;
+
+  padding:
+    0 28px;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 251, 247, 0.97)
+    );
+
+  border-bottom:
+    1px solid #f0dfd2;
+
+  box-shadow:
+    0 8px 26px
+    rgba(90, 40, 13, 0.07);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-left {
+  min-width: 0;
+
+  gap: 17px;
+}
+
+.topbar-right {
+  gap: 15px;
+}
+
+.page-number {
+  width: 43px;
+  height: 43px;
+  min-width: 43px;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7b00,
+      #ff3d00
+    );
+
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 25px
+    rgba(255, 76, 0, 0.27),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.28);
+}
+
+.page-title-wrapper {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-topbar h1 {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #21140d;
+
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.25;
+
+  letter-spacing: -0.4px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.page-subtitle {
+  margin-top: 5px;
+
+  color: #9a7562;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.mobile-menu-button,
+.notification-button {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  color: #3a2216;
+  background: transparent;
+
+  border: 0;
+  border-radius: 12px;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+.mobile-menu-button:hover,
+.notification-button:hover {
+  color: #ff5a00;
+
+  background: #fff1e7;
+
+  transform:
+    translateY(-1px);
+}
+
+/* ===================================
+   THÔNG BÁO
+=================================== */
+
+.notification-button {
+  position: relative;
+}
+
+.notification-button
+.material-symbols-outlined {
+  font-size: 25px;
+}
+
+.notification-count {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  top: 0;
+  right: -1px;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff5a32,
+      #e82916
+    );
+
+  border:
+    2px solid #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  box-shadow:
+    0 5px 12px
+    rgba(229, 57, 29, 0.3);
+}
+
+/* ===================================
+   TÀI KHOẢN TOPBAR
+=================================== */
+
+.account-menu-wrapper {
+  position: relative;
+}
+
+.topbar-account-button {
+  min-height: 58px;
+
+  padding:
+    6px 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: #342016;
+  background: transparent;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 14px;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.topbar-account-button:hover {
+  background: #fff7f1;
+
+  border-color: #f1dfd2;
+
+  transform:
+    translateY(-1px);
+}
+
+.topbar-avatar-wrapper img {
+  width: 43px;
+  height: 43px;
+
+  object-fit: cover;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffaf6,
+      #ffe7d5
+    );
+
+  border:
+    2px solid #ffddc5;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 7px 18px
+    rgba(96, 42, 14, 0.12);
+}
+
+.topbar-account-information {
+  min-width: 80px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+}
+
+.topbar-account-name {
+  color: #29170e;
+
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.topbar-account-information small {
+  margin-top: 3px;
+
+  color: #9b7663;
+
+  font-size: 11px;
+}
+
+.topbar-account-button
+.material-symbols-outlined {
+  color: #64402e;
+
+  font-size: 20px;
+}
+
+/* ===================================
+   DROPDOWN TÀI KHOẢN
+=================================== */
+
+.account-dropdown {
+  width: 242px;
+
+  padding: 10px;
+
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 300;
+
+  background:
+    rgba(255, 253, 251, 0.99);
+
+  border:
+    1px solid #f0ddd0;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 24px 55px
+    rgba(72, 27, 7, 0.17);
+
+  animation:
+    dropdown-appear
+    0.2s ease;
+}
+
+@keyframes dropdown-appear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-6px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.dropdown-account-header {
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.dropdown-account-header img {
+  width: 42px;
+  height: 42px;
+
+  object-fit: cover;
+
+  background: #fff4ea;
+
+  border:
+    2px solid #ffdfc8;
+
+  border-radius: 50%;
+}
+
+.dropdown-account-header div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-account-header strong {
+  color: #2b180e;
+
+  font-size: 14px;
+}
+
+.dropdown-account-header span {
+  margin-top: 3px;
+
+  color: #9a7662;
+
+  font-size: 11px;
+}
+
+.account-dropdown button {
+  width: 100%;
+  min-height: 44px;
+
+  padding:
+    0 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #593a29;
+  background: transparent;
+
+  border: 0;
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.account-dropdown button:hover {
+  color: #e94f00;
+
+  background: #fff2e8;
+
+  transform:
+    translateX(2px);
+}
+
+.account-dropdown
+.material-symbols-outlined {
+  font-size: 21px;
+}
+
+.dropdown-divider {
+  height: 1px;
+
+  margin:
+    7px 0;
+
+  background: #f0dfd3;
+}
+
+.account-dropdown
+.logout-button {
+  color: #d92d20;
+}
+
+.account-dropdown
+.logout-button:hover {
+  color: #b42318;
+
+  background: #fff0ed;
+}
+
+/* ===================================
+   VÙNG NỘI DUNG
+=================================== */
+
+.admin-content {
+  width: 100%;
+
+  min-height:
+    calc(100vh - 88px);
+
+  position: relative;
+
+  /*
+   * QUAN TRỌNG:
+   *
+   * Không dùng isolation: isolate tại đây.
+   * isolation sẽ nhốt modal trong stacking context
+   * của vùng nội dung.
+   */
+  isolation: auto;
+
+  flex: 1;
+
+  padding: 24px;
+
+  /*
+   * Không cắt component position: fixed.
+   */
+  overflow: visible;
+
+  /*
+   * Không tạo containing block cho modal.
+   */
+  transform: none;
+  filter: none;
+  perspective: none;
+  contain: initial;
+
+  background:
+    radial-gradient(
+      circle at 92% 82%,
+      rgba(255, 118, 22, 0.09),
+      transparent 29%
+    ),
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(255, 180, 120, 0.08),
+      transparent 27%
+    ),
+    linear-gradient(
+      145deg,
+      #fffaf6 0%,
+      #fff8f3 48%,
+      #fff3ea 100%
+    );
+}
+
+/* ===================================
+   HÌNH TRANG TRÍ NỘI DUNG
+=================================== */
+
+.content-decoration {
+  position: absolute;
+
+  /*
+   * Không dùng z-index âm sau khi bỏ isolation.
+   */
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+.content-decoration-top {
+  width: 120px;
+  height: 120px;
+
+  position: absolute;
+  top: 24px;
+  right: 28px;
+
+  opacity: 0.33;
+
+  background:
+    radial-gradient(
+      circle,
+      #ffb37d 2px,
+      transparent 2.5px
+    );
+
+  background-size:
+    14px 14px;
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle,
+      #000 0 48%,
+      transparent 78%
+    );
+
+  mask-image:
+    radial-gradient(
+      circle,
+      #000 0 48%,
+      transparent 78%
+    );
+}
+
+.content-decoration-bottom {
+  width: 320px;
+  height: 320px;
+
+  position: absolute;
+  right: -85px;
+  bottom: -115px;
+
+  border:
+    2px solid
+    rgba(255, 118, 27, 0.13);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 18px
+    rgba(255, 118, 27, 0.06),
+    0 0 0 36px
+    rgba(255, 118, 27, 0.04),
+    0 0 0 54px
+    rgba(255, 118, 27, 0.025);
+}
+
+/*
+ * Router outlet chỉ là điểm đánh dấu.
+ */
+.admin-content >
+router-outlet {
+  position: relative;
+
+  z-index: 1;
+}
+
+/*
+ * Component Angular được render ngay sau
+ * router-outlet.
+ */
+.admin-content >
+router-outlet + * {
+  position: relative;
+
+  z-index: 1;
+}
+
+/* ===================================
+   OVERLAY MOBILE
+=================================== */
+
+.sidebar-overlay {
+  display: none;
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (
+  max-width: 1024px
+) {
+  .admin-sidebar,
+  .admin-sidebar.sidebar-collapsed,
+  .admin-sidebar.sidebar-expanded {
+    width: 286px;
+    min-width: 286px;
+
+    transform:
+      translateX(-100%);
+  }
+
+  .admin-sidebar.sidebar-open {
+    transform:
+      translateX(0);
+  }
+
+  .admin-sidebar
+  .brand-text,
+  .admin-sidebar
+  .menu-label,
+  .admin-sidebar
+  .menu-arrow,
+  .admin-sidebar
+  .clock-information,
+  .admin-sidebar
+  .sidebar-account-information,
+  .admin-sidebar
+  .account-expand-icon {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: none;
+  }
+
+  .admin-sidebar
+  .sidebar-header {
+    padding:
+      0 18px;
+  }
+
+  .admin-sidebar
+  .sidebar-menu-item {
+    padding:
+      0 15px;
+
+    justify-content:
+      flex-start;
+  }
+
+  .admin-sidebar
+  .sidebar-clock {
+    min-height: 82px;
+
+    margin:
+      0 14px 12px;
+
+    padding: 12px;
+
+    justify-content:
+      flex-start;
+
+    border-radius: 16px;
+  }
+
+  .admin-sidebar
+  .clock-visual {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+  }
+
+  .admin-sidebar
+  .clock-hour {
+    height: 11px;
+  }
+
+  .admin-sidebar
+  .clock-minute {
+    height: 16px;
+  }
+
+  .admin-sidebar
+  .clock-second {
+    height: 18px;
+  }
+
+  .admin-sidebar
+  .sidebar-account {
+    padding:
+      13px 17px;
+
+    justify-content:
+      flex-start;
+  }
+
+  .admin-main,
+  .admin-layout.sidebar-is-collapsed
+  .admin-main,
+  .admin-layout.sidebar-is-expanded
+  .admin-main {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .mobile-menu-button {
+    display: grid;
+  }
+
+  .sidebar-close-button {
+    display: grid;
+  }
+
+  .sidebar-pin-button {
+    display: none;
+  }
+
+  .sidebar-overlay {
+    display: block;
+
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+
+    background:
+      rgba(56, 20, 5, 0.56);
+
+    backdrop-filter:
+      blur(3px);
+
+    -webkit-backdrop-filter:
+      blur(3px);
+  }
+}
+
+/* ===================================
+   TABLET NHỎ
+=================================== */
+
+@media (
+  max-width: 768px
+) {
+  .admin-topbar {
+    min-height: 78px;
+
+    padding:
+      0 18px;
+  }
+
+  .admin-content {
+    min-height:
+      calc(100vh - 78px);
+
+    padding: 18px;
+  }
+
+  .topbar-left {
+    gap: 12px;
+  }
+
+  .topbar-right {
+    gap: 8px;
+  }
+
+  .page-number {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+  }
+
+  .admin-topbar h1 {
+    font-size: 21px;
+  }
+
+  .page-subtitle {
+    font-size: 11px;
+  }
+
+  .notification-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .topbar-account-button {
+    min-height: 50px;
+
+    padding:
+      5px 7px;
+  }
+
+  .topbar-avatar-wrapper img {
+    width: 39px;
+    height: 39px;
+  }
+
+  .topbar-account-information {
+    display: none;
+  }
+
+  .topbar-account-button >
+  .material-symbols-outlined {
+    display: none;
+  }
+
+  .account-dropdown {
+    right: 0;
+  }
+
+  .content-decoration-top {
+    opacity: 0.2;
+  }
+
+  .content-decoration-bottom {
+    opacity: 0.65;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (
+  max-width: 560px
+) {
+  .admin-topbar {
+    min-height: 70px;
+
+    padding:
+      0 12px;
+  }
+
+  .admin-content {
+    min-height:
+      calc(100vh - 70px);
+
+    padding:
+      14px 12px;
+  }
+
+  .topbar-left {
+    gap: 9px;
+  }
+
+  .mobile-menu-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .page-number {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+
+    font-size: 13px;
+  }
+
+  .admin-topbar h1 {
+    max-width: 175px;
+
+    font-size: 18px;
+  }
+
+  .page-subtitle {
+    display: none;
+  }
+
+  .notification-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .notification-button
+  .material-symbols-outlined {
+    font-size: 22px;
+  }
+
+  .notification-count {
+    width: 18px;
+    height: 18px;
+
+    font-size: 9px;
+  }
+
+  .topbar-avatar-wrapper img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .topbar-account-button {
+    min-height: 44px;
+
+    padding: 4px;
+  }
+
+  .account-dropdown {
+    width:
+      min(
+        242px,
+        calc(100vw - 24px)
+      );
+
+    position: fixed;
+    top: 64px;
+    right: 12px;
+  }
+
+  .admin-sidebar,
+  .admin-sidebar.sidebar-collapsed,
+  .admin-sidebar.sidebar-expanded {
+    width:
+      min(
+        286px,
+        88vw
+      );
+
+    min-width:
+      min(
+        286px,
+        88vw
+      );
+  }
+
+  .content-decoration-top {
+    display: none;
+  }
+
+  .content-decoration-bottom {
+    right: -165px;
+    bottom: -175px;
+
+    opacity: 0.45;
+  }
+}
+
+/* ===================================
+   MOBILE NHỎ
+=================================== */
+
+@media (
+  max-width: 390px
+) {
+  .admin-topbar {
+    padding:
+      0 9px;
+  }
+
+  .admin-content {
+    padding:
+      12px 9px;
+  }
+
+  .admin-topbar h1 {
+    max-width: 125px;
+
+    font-size: 16px;
+  }
+
+  .page-number {
+    display: none;
+  }
+
+  .topbar-right {
+    gap: 3px;
+  }
+
+  .notification-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .topbar-avatar-wrapper img {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* ===================================
+   MÀN HÌNH THẤP
+=================================== */
+
+@media
+  (max-height: 720px)
+  and
+  (min-width: 1025px) {
+
+  .sidebar-header {
+    min-height: 78px;
+  }
+
+  .sidebar-navigation {
+    padding-top: 11px;
+    padding-bottom: 11px;
+
+    gap: 5px;
+  }
+
+  .sidebar-menu-item {
+    min-height: 45px;
+  }
+
+  .sidebar-clock {
+    min-height: 70px;
+
+    padding: 9px;
+  }
+
+  .clock-visual {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+
+  .sidebar-account {
+    min-height: 70px;
+
+    padding:
+      10px 17px;
+  }
+}
+
+/* ===================================
+   SỬA STACKING CONTEXT CHO MODAL
+=================================== */
+
+/*
+ * Không áp dụng transform: none lên
+ * .admin-sidebar vì sidebar mobile cần transform
+ * để trượt ra vào.
+ */
+.admin-layout,
+.admin-main,
+.admin-content {
+  filter: none;
+  perspective: none;
+  contain: initial;
+}
+
+.admin-main,
+.admin-content {
+  transform: none;
+
+  overflow: visible;
+}
+
+.admin-content {
+  isolation: auto;
+}
+
+/* ===================================
+   GIẢM CHUYỂN ĐỘNG
+=================================== */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    scroll-behavior:
+      auto !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+:host {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  overflow: hidden;
+}
+
+/* ==================================================
+   TOÀN BỘ ADMIN LAYOUT
+================================================== */
+
+.admin-layout {
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+/* ==================================================
+   PHẦN NỘI DUNG BÊN PHẢI
+================================================== */
+
+.admin-main {
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+/* ==================================================
+   TOPBAR KHÔNG CO LẠI
+================================================== */
+
+.admin-topbar {
+  flex: 0 0 auto;
+}
+
+/* ==================================================
+   CHỈ CHO PHẦN NỘI DUNG NÀY CUỘN
+================================================== */
+
+.admin-content {
+  position: relative;
+
+  flex: 1 1 auto;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  overscroll-behavior: contain;
+}
+
+
+
+
+
+.admin-content {
+  scrollbar-width: thin;
+  scrollbar-color:
+    #bca99d
+    #fff7f1;
+}
+
+.admin-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.admin-content::-webkit-scrollbar-track {
+  background: #fff7f1;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: #bca99d;
+
+  border:
+    2px solid
+    #fff7f1;
+
+  border-radius: 999px;
+}
+
+.admin-content::-webkit-scrollbar-thumb:hover {
+  background: #9f887a;
+}

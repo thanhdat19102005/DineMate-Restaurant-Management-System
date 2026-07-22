@@ -1,0 +1,197 @@
+<div
+  class="delete-table-backdrop"
+  *ngIf="isOpen"
+  [class.closing]="isClosing"
+  (click)="onBackdropClick($event)"
+>
+  <section
+    class="delete-table-modal"
+    [class.closing]="isClosing"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="deleteTableTitle"
+  >
+    <!-- ==================================================
+         ICON CẢNH BÁO
+    ================================================== -->
+
+    <div class="warning-icon-wrapper">
+      <div class="warning-ring warning-ring-one"></div>
+
+      <div class="warning-ring warning-ring-two"></div>
+
+      <div class="warning-icon">
+        <span class="material-symbols-outlined">
+          warning
+        </span>
+      </div>
+
+      <span class="warning-decoration left"></span>
+
+      <span class="warning-decoration right"></span>
+    </div>
+
+    <!-- ==================================================
+         TIÊU ĐỀ
+    ================================================== -->
+
+    <h2 id="deleteTableTitle">
+      Xóa bàn
+
+      <strong>
+        {{ tableId }}
+      </strong>?
+    </h2>
+
+    <!-- ==================================================
+         NỘI DUNG
+    ================================================== -->
+
+    <p class="delete-question">
+      Bạn có chắc chắn muốn xóa
+
+      <strong>
+        {{ tableName }}
+      </strong>?
+    </p>
+
+    <p class="delete-warning-text">
+      Thao tác này không thể hoàn tác.
+    </p>
+
+    <!-- ==================================================
+         THÔNG TIN BÀN
+    ================================================== -->
+
+    <div class="table-information">
+      <div>
+        <span class="material-symbols-outlined">
+          table_restaurant
+        </span>
+
+        <div>
+          <small>
+            Mã bàn
+          </small>
+
+          <strong>
+            {{ tableId }}
+          </strong>
+        </div>
+      </div>
+
+      <div>
+        <span class="material-symbols-outlined">
+          location_on
+        </span>
+
+        <div>
+          <small>
+            Khu vực
+          </small>
+
+          <strong>
+            {{ tableArea }}
+          </strong>
+        </div>
+      </div>
+
+      <div>
+        <span class="material-symbols-outlined">
+          groups
+        </span>
+
+        <div>
+          <small>
+            Sức chứa
+          </small>
+
+          <strong>
+            {{ tableCapacity }} người
+          </strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================
+         LƯU Ý
+    ================================================== -->
+
+    <div class="delete-notice">
+      <span class="material-symbols-outlined">
+        info
+      </span>
+
+      <p>
+        Khi xóa, dữ liệu của bàn sẽ được loại khỏi
+        hệ thống. Lịch sử thao tác xóa vẫn được lưu
+        để phục vụ việc kiểm tra sau này.
+      </p>
+    </div>
+
+    <!-- ==================================================
+         THÔNG BÁO LỖI
+    ================================================== -->
+
+    <div
+      class="delete-error-message"
+      *ngIf="errorMessage"
+    >
+      <span class="material-symbols-outlined">
+        error
+      </span>
+
+      <span>
+        {{ errorMessage }}
+      </span>
+    </div>
+
+    <!-- ==================================================
+         NÚT THAO TÁC
+    ================================================== -->
+
+    <div class="delete-actions">
+      <button
+        type="button"
+        class="cancel-delete-button"
+        [disabled]="isDeleting || isClosing"
+        (click)="closeModal()"
+      >
+        <span class="material-symbols-outlined">
+          close
+        </span>
+
+        <span>
+          Hủy
+        </span>
+      </button>
+
+      <button
+        type="button"
+        class="confirm-delete-button"
+        [disabled]="isDeleting || isClosing"
+        (click)="confirmDelete()"
+      >
+        <span
+          class="delete-loading-spinner"
+          *ngIf="isDeleting"
+        ></span>
+
+        <span
+          class="material-symbols-outlined"
+          *ngIf="!isDeleting"
+        >
+          delete
+        </span>
+
+        <span>
+          {{
+            isDeleting
+              ? 'Đang xóa...'
+              : 'Xóa bàn'
+          }}
+        </span>
+      </button>
+    </div>
+  </section>
+</div>

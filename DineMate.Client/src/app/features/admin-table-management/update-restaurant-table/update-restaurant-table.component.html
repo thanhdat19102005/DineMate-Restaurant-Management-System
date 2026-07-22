@@ -1,0 +1,603 @@
+
+
+
+
+
+<div
+  class="update-table-backdrop"
+  *ngIf="isOpen"
+  [class.closing]="isClosing"
+  (click)="onBackdropClick($event)"
+>
+  <section
+    class="update-table-modal"
+    [class.closing]="isClosing"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="updateTableTitle"
+  >
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="modal-header">
+      <div class="modal-heading">
+        <span class="heading-icon">
+          <span class="material-symbols-outlined">
+            edit
+          </span>
+        </span>
+
+        <div>
+          <h2 id="updateTableTitle">
+            Chỉnh sửa bàn
+          </h2>
+
+          <p>
+            Cập nhật thông tin bàn trong hệ thống
+          </p>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="close-button"
+        aria-label="Đóng form chỉnh sửa"
+        [disabled]="isSubmitting || isClosing"
+        (click)="closeModal()"
+      >
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </button>
+    </header>
+
+    <!-- ==================================================
+         BODY
+    ================================================== -->
+
+    <div class="modal-body">
+      <!-- ==================================================
+           FORM BÊN TRÁI
+      ================================================== -->
+
+      <section class="form-panel">
+        <div class="section-heading">
+          <span class="section-dot"></span>
+
+          <h3>
+            Thông tin cơ bản
+          </h3>
+        </div>
+
+        <div class="form-grid">
+          <!-- MÃ BÀN -->
+
+          <div class="form-field">
+            <label for="updateTableId">
+              Mã bàn
+              <em>*</em>
+            </label>
+
+            <div class="control disabled-control">
+              <span class="material-symbols-outlined">
+                sell
+              </span>
+
+              <input
+                id="updateTableId"
+                type="text"
+                [value]="tableId"
+                disabled
+              />
+            </div>
+
+            <small>
+              Mã bàn không thể thay đổi.
+            </small>
+          </div>
+
+          <!-- TÊN BÀN -->
+
+          <div class="form-field">
+            <label for="updateTableName">
+              Tên bàn
+              <em>*</em>
+            </label>
+
+            <div class="control">
+              <span class="material-symbols-outlined">
+                table_restaurant
+              </span>
+
+              <input
+                id="updateTableName"
+                type="text"
+                maxlength="200"
+                placeholder="VD: Bàn A44"
+                [(ngModel)]="form.tableName"
+              />
+            </div>
+          </div>
+
+          <!-- SỨC CHỨA -->
+
+          <div class="form-field">
+            <label for="updateCapacity">
+              Sức chứa
+              <em>*</em>
+            </label>
+
+            <div class="control">
+              <span class="material-symbols-outlined">
+                groups
+              </span>
+
+              <select
+                id="updateCapacity"
+                [(ngModel)]="form.capacity"
+              >
+                <option
+                  *ngFor="
+                    let capacity of capacityOptions
+                  "
+                  [ngValue]="capacity"
+                >
+                  {{ capacity }} người
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- LOẠI BÀN -->
+
+          <div class="form-field">
+            <label for="updateTableType">
+              Loại bàn
+              <em>*</em>
+            </label>
+
+            <div class="control">
+              <span class="material-symbols-outlined">
+                table_restaurant
+              </span>
+
+              <select
+                id="updateTableType"
+                [(ngModel)]="form.tableType"
+              >
+                <option value="">
+                  Chọn loại bàn
+                </option>
+
+                <option value="Thường">
+                  Thường
+                </option>
+
+                <option value="VIP">
+                  VIP
+                </option>
+
+                <option value="Ngoài trời">
+                  Ngoài trời
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- KHU VỰC -->
+
+          <div class="form-field">
+            <label for="updateAreaName">
+              Khu vực
+              <em>*</em>
+            </label>
+
+            <div class="control">
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+
+              <input
+                id="updateAreaName"
+                type="text"
+                maxlength="200"
+                placeholder="VD: Tầng thượng"
+                list="updateAreaOptions"
+                [(ngModel)]="form.areaName"
+              />
+
+              <datalist id="updateAreaOptions">
+                <option
+                  *ngFor="let area of areas"
+                  [value]="area"
+                ></option>
+              </datalist>
+            </div>
+          </div>
+
+          <!-- TRẠNG THÁI -->
+
+          <div class="form-field">
+            <label for="updateStatus">
+              Trạng thái
+              <em>*</em>
+            </label>
+
+            <div
+              class="control status-control"
+              [ngClass]="statusClass"
+            >
+              <span class="status-dot"></span>
+
+              <select
+                id="updateStatus"
+                [(ngModel)]="form.status"
+              >
+                <option [ngValue]="0">
+                  Trống
+                </option>
+
+                <option [ngValue]="1">
+                  Đang phục vụ
+                </option>
+
+                <option [ngValue]="2">
+                  Đang bảo trì
+                </option>
+
+                <option [ngValue]="3">
+                  Đã đặt trước
+                </option>
+
+                <option [ngValue]="4">
+                  Tạm khóa
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- GHI CHÚ -->
+
+          <div class="form-field full-width">
+            <label for="updateNote">
+              Ghi chú
+            </label>
+
+            <div class="textarea-control">
+              <span class="material-symbols-outlined">
+                note_alt
+              </span>
+
+              <textarea
+                id="updateNote"
+                maxlength="1000"
+                rows="4"
+                placeholder="Nhập ghi chú của bàn..."
+                [(ngModel)]="form.note"
+              ></textarea>
+            </div>
+
+            <small class="count-text">
+              {{ noteLength }}/1000
+            </small>
+          </div>
+        </div>
+
+        <!-- ==================================================
+             QR CODE
+        ================================================== -->
+
+        <section class="qr-section">
+          <div class="section-heading">
+            <span
+              class="
+                material-symbols-outlined
+                qr-heading-icon
+              "
+            >
+              qr_code_2
+            </span>
+
+            <h3>
+              QR Code
+            </h3>
+          </div>
+
+          <div class="qr-notice">
+            <span class="material-symbols-outlined">
+              shopping_bag
+            </span>
+
+            <div>
+              <strong>
+                Hệ thống sẽ tự động tạo
+                QR Code cho bàn
+              </strong>
+
+              <p>
+                QR Code chứa đường dẫn để khách
+                quét và gọi món trực tiếp tại bàn.
+              </p>
+            </div>
+          </div>
+
+          <div class="qr-generator">
+            <ng-container
+              *ngIf="
+                !qrGenerated;
+                else generatedQrTemplate
+              "
+            >
+              <span class="qr-round-icon">
+                <span class="material-symbols-outlined">
+                  qr_code_2
+                </span>
+              </span>
+
+              <strong>
+                Chưa có mã QR
+              </strong>
+
+              <p>
+                Nhấn nút bên dưới để tạo
+                mã QR xem trước cho bàn
+              </p>
+
+              <button
+                type="button"
+                class="generate-button"
+                [disabled]="isSubmitting || isClosing"
+                (click)="generateQr()"
+              >
+                <span class="material-symbols-outlined">
+                  qr_code_2
+                </span>
+
+                Tạo mã QR
+              </button>
+            </ng-container>
+
+            <ng-template #generatedQrTemplate>
+              <div class="generated-qr">
+                <div class="generated-qr-image">
+                  <qrcode
+                    [qrdata]="previewQrUrl"
+                    [width]="155"
+                    [margin]="1"
+                    [errorCorrectionLevel]="'M'"
+                  ></qrcode>
+                </div>
+
+                <strong>
+                  Mã QR của bàn {{ previewCode }}
+                </strong>
+
+                <p>
+                  {{ previewQrUrl }}
+                </p>
+
+                <button
+                  type="button"
+                  class="generate-button"
+                  [disabled]="isSubmitting || isClosing"
+                  (click)="generateQr()"
+                >
+                  <span class="material-symbols-outlined">
+                    refresh
+                  </span>
+
+                  Tạo lại QR
+                </button>
+              </div>
+            </ng-template>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             ERROR
+        ================================================== -->
+
+        <div
+          class="error-message"
+          *ngIf="errorMessage"
+        >
+          <span class="material-symbols-outlined">
+            error
+          </span>
+
+          <span>
+            {{ errorMessage }}
+          </span>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           XEM TRƯỚC BÊN PHẢI
+      ================================================== -->
+
+      <aside class="preview-panel">
+        <div class="preview-heading">
+          <span class="material-symbols-outlined">
+            visibility
+          </span>
+
+          <h3>
+            Xem trước
+          </h3>
+        </div>
+
+        <div class="preview-card">
+          <span class="preview-table-icon">
+            <span class="material-symbols-outlined">
+              table_restaurant
+            </span>
+          </span>
+
+          <h4>
+            {{ previewName }}
+          </h4>
+
+          <span
+            class="status-chip"
+            [ngClass]="statusClass"
+          >
+            <span></span>
+
+            {{ statusLabel }}
+          </span>
+
+          <div class="preview-details">
+            <p>
+              Khu vực:
+              <strong>
+                {{ previewArea }}
+              </strong>
+            </p>
+
+            <p>
+              Sức chứa:
+              <strong>
+                {{ previewCapacity }} người
+              </strong>
+            </p>
+          </div>
+
+          <div class="preview-separator"></div>
+
+          <div
+            class="preview-qr"
+            *ngIf="qrGenerated"
+          >
+            <qrcode
+              [qrdata]="previewQrUrl"
+              [width]="150"
+              [margin]="1"
+              [errorCorrectionLevel]="'M'"
+            ></qrcode>
+          </div>
+
+          <div
+            class="preview-qr-empty"
+            *ngIf="!qrGenerated"
+          >
+            <span class="material-symbols-outlined">
+              qr_code_2
+            </span>
+          </div>
+
+          <p class="preview-code">
+            Mã bàn:
+
+            <strong>
+              {{ previewCode }}
+            </strong>
+          </p>
+
+          <div
+            class="preview-url-row"
+            *ngIf="qrGenerated"
+          >
+            <span class="preview-url">
+              {{ previewQrUrl }}
+            </span>
+
+            <button
+              type="button"
+              aria-label="Sao chép đường dẫn QR"
+              title="Sao chép đường dẫn"
+              (click)="copyQrUrl()"
+            >
+              <span class="material-symbols-outlined">
+                content_copy
+              </span>
+            </button>
+          </div>
+
+          <div class="preview-info">
+            <span class="material-symbols-outlined">
+              info
+            </span>
+
+            <span>
+              QR Code được giữ nguyên khi
+              cập nhật thông tin bàn
+            </span>
+          </div>
+        </div>
+
+        <div class="note-card">
+          <div class="note-title">
+            <span class="material-symbols-outlined">
+              stars
+            </span>
+
+            <strong>
+              Lưu ý
+            </strong>
+          </div>
+
+          <ul>
+            <li>
+              Mã bàn không thể thay đổi.
+            </li>
+
+            <li>
+              Thay đổi trạng thái sẽ được
+              lưu vào lịch sử hoạt động.
+            </li>
+
+            <li>
+              QR Code tiếp tục sử dụng
+              mã bàn hiện tại.
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="modal-footer">
+      <button
+        type="button"
+        class="cancel-button"
+        [disabled]="isSubmitting || isClosing"
+        (click)="closeModal()"
+      >
+        <span class="material-symbols-outlined">
+          close
+        </span>
+
+        Hủy bỏ
+      </button>
+
+      <button
+        type="button"
+        class="submit-button"
+        [disabled]="isSubmitting || isClosing"
+        (click)="updateTable()"
+      >
+        <span
+          class="material-symbols-outlined"
+          *ngIf="!isSubmitting"
+        >
+          save
+        </span>
+
+        <span
+          class="button-spinner"
+          *ngIf="isSubmitting"
+        ></span>
+
+        {{
+          isSubmitting
+            ? 'Đang lưu...'
+            : 'Lưu thay đổi'
+        }}
+      </button>
+    </footer>
+  </section>
+</div>
